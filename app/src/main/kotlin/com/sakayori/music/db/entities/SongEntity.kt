@@ -84,7 +84,7 @@ data class SongEntity(
 
     fun toggleLibrary(syncToYouTube: Boolean = true) =
         copy(
-            liked = if (inLibrary == null) liked else false,
+            liked = inLibrary == null && liked,
             inLibrary = if (inLibrary == null) LocalDateTime.now() else null,
             likedDate = if (inLibrary == null) likedDate else null,
         ).also {

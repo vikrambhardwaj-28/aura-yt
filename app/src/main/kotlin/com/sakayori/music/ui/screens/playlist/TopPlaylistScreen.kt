@@ -549,7 +549,7 @@ private fun TopPlaylistHeader(
         Box(
             modifier = Modifier.padding(top = 8.dp, bottom = 20.dp)
         ) {
-            androidx.compose.material3.Surface(
+            Surface(
                 modifier = Modifier
                     .size(240.dp)
                     .shadow(
@@ -605,7 +605,7 @@ private fun TopPlaylistHeader(
             verticalAlignment = Alignment.CenterVertically
         ) {
             // Shuffle Button - Smaller secondary button
-            androidx.compose.material3.Surface(
+            Surface(
                 onClick = {
                     playerConnection.playQueue(
                         ListQueue(
@@ -658,7 +658,7 @@ private fun TopPlaylistHeader(
             }
 
             // Menu Button - Smaller secondary button
-            androidx.compose.material3.Surface(
+            Surface(
                 onClick = {
                     menuState.show {
                         TopPlaylistMenu(

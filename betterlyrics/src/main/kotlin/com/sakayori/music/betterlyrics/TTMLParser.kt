@@ -83,7 +83,9 @@ object TTMLParser {
             try { factory.setFeature("http://xml.org/sax/features/external-general-entities", false) } catch (e: Exception) {}
             try { factory.setFeature("http://xml.org/sax/features/external-parameter-entities", false) } catch (e: Exception) {}
             try { factory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false) } catch (e: Exception) {}
-            try { factory.setXIncludeAware(false) } catch (e: Exception) {}
+            try {
+                factory.isXIncludeAware = false
+            } catch (e: Exception) {}
             try { factory.isExpandEntityReferences = false } catch (e: Exception) {}
             
             val builder = factory.newDocumentBuilder()
@@ -173,7 +175,7 @@ object TTMLParser {
                     when (role) {
                         "x-bg" -> {
                             if (isPBackground) parseWordSpan(child, offset, spanInfos, child)
-                            else parseBackgroundSpan(child, startTime, offset)?.let { backgroundLines.add(it) }
+                            else parseBackgroundSpan(child, startTime, offset).let { backgroundLines.add(it) }
                         }
                         "x-translation", "x-roman" -> {}
                         else -> parseWordSpan(child, offset, spanInfos, child)
@@ -218,7 +220,7 @@ object TTMLParser {
         }
     }
 
-    private fun parseBackgroundSpan(span: Element, parentStart: Double, offset: Double): ParsedLine? {
+    private fun parseBackgroundSpan(span: Element, parentStart: Double, offset: Double): ParsedLine {
         val begin = timingAttr(span, "begin")
         val start = if (begin.isNotEmpty()) parseTime(begin) + offset else parentStart
         val spanInfos = mutableListOf<SpanInfo>()

@@ -67,7 +67,7 @@ private class NewPipeDownloaderImpl : Downloader() {
     override fun execute(request: Request): Response {
         if (Thread.currentThread().isInterrupted) throw InterruptedIOException("Extractor request interrupted")
         val result = CompletableFuture<Response>()
-        val pending = executeAsync(request, object : Downloader.AsyncCallback {
+        val pending = executeAsync(request, object : AsyncCallback {
             override fun onSuccess(response: Response) {
                 result.complete(response)
             }
@@ -143,7 +143,7 @@ private class NewPipeDownloaderImpl : Downloader() {
     }
 
     @Throws(IOException::class, ReCaptchaException::class)
-    override fun executeAsync(request: Request, callback: Downloader.AsyncCallback?): CancellableCall {
+    override fun executeAsync(request: Request, callback: AsyncCallback?): CancellableCall {
         val call = newCall(request)
         val pending = CancellableCall(call)
         call.enqueue(object : Callback {

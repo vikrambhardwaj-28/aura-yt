@@ -238,7 +238,7 @@ fun OriginalLyrics(
 
     val playerBackground by rememberEnumPreference(
         key = PlayerBackgroundStyleKey,
-        defaultValue = PlayerBackgroundStyle.DEFAULT,
+        defaultValue = PlayerBackgroundStyle.GRADIENT,
     )
 
     val darkTheme by rememberEnumPreference(DarkModeKey, defaultValue = DarkMode.AUTO)
@@ -1098,20 +1098,20 @@ fun OriginalLyrics(
                             val mainText = if (romanizeAsMain && isRomanizedAvailable) romanizedText else item.text
                             val subText = if (romanizeAsMain && isRomanizedAvailable) item.text else romanizedText
 
-                            val hasWordTimings = if (romanizeAsMain && isRomanizedAvailable) false else item.words?.isNotEmpty() == true
+                            val hasWordTimings = !(romanizeAsMain && isRomanizedAvailable) && item.words?.isNotEmpty() == true
 
                             // Word-by-word animation styles
                             if (hasWordTimings && lyricsAnimationStyle == LyricsAnimationStyle.NONE) {
                                 val styledText =
                                     buildAnnotatedString {
-                                        item.words?.forEachIndexed { wordIndex, word ->
+                                        item.words.forEachIndexed { wordIndex, word ->
                                             val wordStartMs = (word.startTime * 1000).toLong()
                                             val wordEndMs = (word.endTime * 1000).toLong()
                                             val wordDuration = wordEndMs - wordStartMs
 
                                             val isWordActive =
                                                 isActiveLine && effectivePlaybackPosition >= wordStartMs &&
-                                                    effectivePlaybackPosition <= wordEndMs
+                                                        effectivePlaybackPosition <= wordEndMs
                                             val hasWordPassed = isActiveLine && effectivePlaybackPosition > wordEndMs
 
                                             val transitionProgress =
@@ -1167,14 +1167,14 @@ fun OriginalLyrics(
                             } else if (hasWordTimings && lyricsAnimationStyle == LyricsAnimationStyle.FADE) {
                                 val styledText =
                                     buildAnnotatedString {
-                                        item.words?.forEachIndexed { wordIndex, word ->
+                                        item.words.forEachIndexed { wordIndex, word ->
                                             val wordStartMs = (word.startTime * 1000).toLong()
                                             val wordEndMs = (word.endTime * 1000).toLong()
                                             val wordDuration = wordEndMs - wordStartMs
 
                                             val isWordActive =
                                                 isActiveLine && effectivePlaybackPosition >= wordStartMs &&
-                                                    effectivePlaybackPosition <= wordEndMs
+                                                        effectivePlaybackPosition <= wordEndMs
                                             val hasWordPassed = isActiveLine && effectivePlaybackPosition > wordEndMs
 
                                             val fadeProgress =
@@ -1243,7 +1243,7 @@ fun OriginalLyrics(
                             } else if (hasWordTimings && lyricsAnimationStyle == LyricsAnimationStyle.GLOW) {
                                 val styledText =
                                     buildAnnotatedString {
-                                        item.words?.forEachIndexed { wordIndex, word ->
+                                        item.words.forEachIndexed { wordIndex, word ->
                                             val wordStartMs = (word.startTime * 1000).toLong()
                                             val wordEndMs = (word.endTime * 1000).toLong()
                                             val wordDuration = wordEndMs - wordStartMs
@@ -1315,17 +1315,17 @@ fun OriginalLyrics(
                             } else if (hasWordTimings && lyricsAnimationStyle == LyricsAnimationStyle.SLIDE) {
                                 val styledText =
                                     buildAnnotatedString {
-                                        item.words?.forEachIndexed { wordIndex, word ->
+                                        item.words.forEachIndexed { wordIndex, word ->
                                             val wordStartMs = (word.startTime * 1000).toLong()
                                             val wordEndMs = (word.endTime * 1000).toLong()
                                             val wordDuration = wordEndMs - wordStartMs
 
                                             val isWordActive =
                                                 isActiveLine && effectivePlaybackPosition >= wordStartMs &&
-                                                    effectivePlaybackPosition < wordEndMs
+                                                        effectivePlaybackPosition < wordEndMs
                                             val hasWordPassed =
                                                 (isActiveLine && effectivePlaybackPosition >= wordEndMs) ||
-                                                    (!isActiveLine && item.time < currentLineTime)
+                                                        (!isActiveLine && item.time < currentLineTime)
 
                                             if (isWordActive && wordDuration > 0) {
                                                 val timeElapsed = effectivePlaybackPosition - wordStartMs
@@ -1333,10 +1333,10 @@ fun OriginalLyrics(
                                                 val breatheValue = (timeElapsed % 3000) / 3000f
                                                 val breatheEffect =
                                                     (
-                                                        kotlin.math.sin(
-                                                            breatheValue * Math.PI.toFloat() * 2f,
-                                                        ) * 0.03f
-                                                    ).coerceIn(0f, 0.03f)
+                                                            kotlin.math.sin(
+                                                                breatheValue * Math.PI.toFloat() * 2f,
+                                                            ) * 0.03f
+                                                            ).coerceIn(0f, 0.03f)
                                                 val glowIntensity = (0.3f + fillProgress * 0.7f + breatheEffect).coerceIn(0f, 1.1f)
 
                                                 val slideBrush =
@@ -1403,17 +1403,17 @@ fun OriginalLyrics(
                             } else if (hasWordTimings && lyricsAnimationStyle == LyricsAnimationStyle.KARAOKE) {
                                 val styledText =
                                     buildAnnotatedString {
-                                        item.words?.forEachIndexed { wordIndex, word ->
+                                        item.words.forEachIndexed { wordIndex, word ->
                                             val wordStartMs = (word.startTime * 1000).toLong()
                                             val wordEndMs = (word.endTime * 1000).toLong()
                                             val wordDuration = wordEndMs - wordStartMs
 
                                             val isWordActive =
                                                 isActiveLine && effectivePlaybackPosition >= wordStartMs &&
-                                                    effectivePlaybackPosition < wordEndMs
+                                                        effectivePlaybackPosition < wordEndMs
                                             val hasWordPassed =
                                                 (isActiveLine && effectivePlaybackPosition >= wordEndMs) ||
-                                                    (!isActiveLine && item.time < currentLineTime)
+                                                        (!isActiveLine && item.time < currentLineTime)
 
                                             if (isWordActive && wordDuration > 0) {
                                                 val timeElapsed = effectivePlaybackPosition - wordStartMs
@@ -1493,17 +1493,17 @@ fun OriginalLyrics(
                             } else if (hasWordTimings && lyricsAnimationStyle == LyricsAnimationStyle.APPLE) {
                                 val styledText =
                                     buildAnnotatedString {
-                                        item.words?.forEachIndexed { wordIndex, word ->
+                                        item.words.forEachIndexed { wordIndex, word ->
                                             val wordStartMs = (word.startTime * 1000).toLong()
                                             val wordEndMs = (word.endTime * 1000).toLong()
                                             val wordDuration = wordEndMs - wordStartMs
 
                                             val isWordActive =
                                                 isActiveLine && effectivePlaybackPosition >= wordStartMs &&
-                                                    effectivePlaybackPosition < wordEndMs
+                                                        effectivePlaybackPosition < wordEndMs
                                             val hasWordPassed =
                                                 (isActiveLine && effectivePlaybackPosition >= wordEndMs) ||
-                                                    (!isActiveLine && item.time < currentLineTime)
+                                                        (!isActiveLine && item.time < currentLineTime)
 
                                             val rawProgress =
                                                 if (isWordActive && wordDuration > 0) {

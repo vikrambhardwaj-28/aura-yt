@@ -5,66 +5,66 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.sakayori.music.listentogether.proto;
+package com.sakayori.music.listentogether.proto
 
-@kotlin.jvm.JvmName("-initializejoinRoomPayload")
-public inline fun joinRoomPayload(block: com.sakayori.music.listentogether.proto.JoinRoomPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.JoinRoomPayload =
-  com.sakayori.music.listentogether.proto.JoinRoomPayloadKt.Dsl._create(com.sakayori.music.listentogether.proto.Listentogether.JoinRoomPayload.newBuilder()).apply { block() }._build()
+@JvmName("-initializejoinRoomPayload")
+inline fun joinRoomPayload(block: JoinRoomPayloadKt.Dsl.() -> Unit): Listentogether.JoinRoomPayload =
+  JoinRoomPayloadKt.Dsl._create(Listentogether.JoinRoomPayload.newBuilder()).apply { block() }._build()
 /**
  * Protobuf type `listentogether.JoinRoomPayload`
  */
-public object JoinRoomPayloadKt {
-  @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+object JoinRoomPayloadKt {
+  @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
-  public class Dsl private constructor(
-    private val _builder: com.sakayori.music.listentogether.proto.Listentogether.JoinRoomPayload.Builder
+  class Dsl private constructor(
+    private val _builder: Listentogether.JoinRoomPayload.Builder
   ) {
-    public companion object {
-      @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-      internal fun _create(builder: com.sakayori.music.listentogether.proto.Listentogether.JoinRoomPayload.Builder): Dsl = Dsl(builder)
+    companion object {
+      @JvmSynthetic
+    @PublishedApi
+      internal fun _create(builder: Listentogether.JoinRoomPayload.Builder): Dsl = Dsl(builder)
     }
 
-    @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-    internal fun _build(): com.sakayori.music.listentogether.proto.Listentogether.JoinRoomPayload = _builder.build()
+    @JvmSynthetic
+  @PublishedApi
+    internal fun _build(): Listentogether.JoinRoomPayload = _builder.build()
 
     /**
      * `string room_code = 1;`
      */
-    public var roomCode: kotlin.String
-      @kotlin.jvm.JvmName("getRoomCode")
+    var roomCode: String
+      @JvmName("getRoomCode")
         get() = _builder.roomCode
-      @kotlin.jvm.JvmName("setRoomCode")
+      @JvmName("setRoomCode")
         set(value) {
         _builder.roomCode = value
       }
     /**
      * `string room_code = 1;`
      */
-    public fun clearRoomCode() {
+    fun clearRoomCode() {
       _builder.clearRoomCode()
     }
 
     /**
      * `string username = 2;`
      */
-    public var username: kotlin.String
-      @kotlin.jvm.JvmName("getUsername")
+    var username: String
+      @JvmName("getUsername")
         get() = _builder.username
-      @kotlin.jvm.JvmName("setUsername")
+      @JvmName("setUsername")
         set(value) {
         _builder.username = value
       }
     /**
      * `string username = 2;`
      */
-    public fun clearUsername() {
+    fun clearUsername() {
       _builder.clearUsername()
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
-public inline fun com.sakayori.music.listentogether.proto.Listentogether.JoinRoomPayload.copy(block: `com.sakayori.music.listentogether.proto`.JoinRoomPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.JoinRoomPayload =
-  `com.sakayori.music.listentogether.proto`.JoinRoomPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+@JvmSynthetic
+inline fun Listentogether.JoinRoomPayload.copy(block: JoinRoomPayloadKt.Dsl.() -> Unit): Listentogether.JoinRoomPayload =
+  JoinRoomPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

@@ -663,7 +663,7 @@ fun PlaylistMenu(
             onShare = { format ->
                 val playlistSongs =
                     songs.map { s ->
-                        com.sakayori.music.db.entities.PlaylistSong(
+                        PlaylistSong(
                             map =
                                 com.sakayori.music.db.entities.PlaylistSongMap(
                                     songId = s.id,
@@ -698,7 +698,7 @@ fun PlaylistMenu(
             onSave = { format ->
                 val playlistSongs =
                     songs.map { s ->
-                        com.sakayori.music.db.entities.PlaylistSong(
+                        PlaylistSong(
                             map =
                                 com.sakayori.music.db.entities.PlaylistSongMap(
                                     songId = s.id,

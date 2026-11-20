@@ -5,9 +5,8 @@
 
 package com.sakayori.music.ui.screens.settings
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -23,192 +22,34 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
-import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialShapes
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.SnackbarDuration
-import androidx.compose.material3.SnackbarHost
-import androidx.compose.material3.SnackbarHostState
-import androidx.compose.material3.SnackbarResult
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarScrollBehavior
-import androidx.compose.material3.toShape
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.BlendMode
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.graphics.Shape
-import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.graphics.shapes.RoundedPolygon
 import androidx.navigation.NavController
-import android.content.ClipData
-import android.content.ClipboardManager
-import android.content.Context
-import android.widget.Toast
-import coil3.compose.AsyncImage
-import com.sakayori.innertube.models.WatchEndpoint
 import com.sakayori.music.BuildConfig
 import com.sakayori.music.LocalPlayerAwareWindowInsets
-import com.sakayori.music.LocalPlayerConnection
 import com.sakayori.music.R
-import com.sakayori.music.playback.PlayerConnection
-import com.sakayori.music.playback.queues.YouTubeQueue
 import com.sakayori.music.ui.component.IconButton
 import com.sakayori.music.ui.component.Material3SettingsGroup
 import com.sakayori.music.ui.component.Material3SettingsItem
 import com.sakayori.music.ui.utils.backToMain
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
-import java.util.Locale
-
-private data class Contributor(
-    val name: String,
-    val roleRes: Int,
-    val githubHandle: String,
-    val avatarUrl: String = "https://github.com/$githubHandle.png",
-    val githubUrl: String = "https://github.com/$githubHandle",
-    val sponsorUrl: String? = null,
-    val polygon: RoundedPolygon? = null,
-    val favoriteSongVideoId: String? = null
-)
-
-private data class CommunityLink(
-    val labelRes: Int,
-    val iconRes: Int,
-    val url: String
-)
-
-@OptIn(ExperimentalMaterial3ExpressiveApi::class)
-private val leadDeveloper = Contributor(
-    name = "Sakayori Iroha",
-    roleRes = R.string.credits_lead_developer,
-    githubHandle = "Sakayorii",
-    polygon = MaterialShapes.Cookie9Sided,
-    favoriteSongVideoId = "Mh2JWGWvy_Y"
-)
-
-@OptIn(ExperimentalMaterial3ExpressiveApi::class)
-private val collaborators = listOf(
-    Contributor(name = "Lammk", roleRes = R.string.credits_collaborator, githubHandle = "Lammk", sponsorUrl = null, polygon = MaterialShapes.Cookie4Sided, favoriteSongVideoId = null),
-    Contributor(name = "Giangnam0201", roleRes = R.string.credits_collaborator, githubHandle = "Giangnam0201", sponsorUrl = null, polygon = MaterialShapes.Cookie12Sided, favoriteSongVideoId = null)
-)
-
-private val communityLinks = listOf(
-    CommunityLink(R.string.credits_discord, R.drawable.discord, "https://discord.gg/XUQQzGNDgA"),
-    CommunityLink(R.string.credits_view_repo, R.drawable.github, "https://github.com/Sakayorii/sakayori-music/"),
-    CommunityLink(R.string.credits_license_name, R.drawable.info, "https://github.com/Sakayorii/sakayori-music/blob/main/LICENSE")
-)
-
-private fun handleEasterEggClick(
-    clickCount: Int,
-    favoriteSongVideoId: String?,
-    coroutineScope: CoroutineScope,
-    snackbarHostState: SnackbarHostState,
-    playerConnection: PlayerConnection?,
-    wannaPlayStr: String,
-    yeahStr: String,
-    onCountUpdate: (Int) -> Unit
-) {
-    if (favoriteSongVideoId != null) {
-        val newCount = clickCount + 1
-        onCountUpdate(newCount)
-        if (newCount >= 3) {
-            onCountUpdate(0)
-            coroutineScope.launch {
-                val result = snackbarHostState.showSnackbar(
-                    message = wannaPlayStr,
-                    actionLabel = yeahStr,
-                    duration = SnackbarDuration.Short
-                )
-                if (result == SnackbarResult.ActionPerformed) {
-                    playerConnection?.playQueue(YouTubeQueue(WatchEndpoint(videoId = favoriteSongVideoId)))
-                }
-            }
-        }
-    }
-}
-
-@Composable
-private fun ContributorAvatar(
-    avatarUrl: String,
-    sizeDp: Int,
-    modifier: Modifier = Modifier,
-    shape: Shape = CircleShape,
-    contentDescription: String? = null,
-    onClick: (() -> Unit)? = null
-) {
-    val fallback = painterResource(R.drawable.about_icon)
-    Surface(
-        onClick = onClick ?: {},
-        enabled = onClick != null,
-        modifier = modifier.size(sizeDp.dp),
-        shape = shape,
-        color = MaterialTheme.colorScheme.surfaceContainerHighest,
-        tonalElevation = 4.dp,
-    ) {
-        AsyncImage(
-            model = avatarUrl,
-            contentDescription = contentDescription,
-            contentScale = ContentScale.Crop,
-            modifier = Modifier.fillMaxSize(),
-            placeholder = fallback,
-            fallback = fallback,
-            error = fallback,
-        )
-    }
-}
-
-@Composable
-private fun DeveloperSocials(
-    uriHandler: androidx.compose.ui.platform.UriHandler
-) {
-    Row(
-        modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.spacedBy(12.dp)
-    ) {
-        FilledTonalButton(
-            onClick = { uriHandler.openUri("https://music.sakayori.dev") },
-            modifier = Modifier.weight(1f).height(48.dp)
-        ) {
-            Icon(painterResource(R.drawable.language), contentDescription = null)
-        }
-        FilledTonalButton(
-            onClick = { uriHandler.openUri("https://github.com/Sakayorii") },
-            modifier = Modifier.weight(1f).height(48.dp)
-        ) {
-            Icon(painterResource(R.drawable.github), contentDescription = null)
-        }
-    }
-}
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 @Composable
@@ -216,13 +57,6 @@ fun AboutScreen(
     navController: NavController,
 ) {
     val uriHandler = LocalUriHandler.current
-    val context = LocalContext.current
-    val playerConnection = LocalPlayerConnection.current
-    val coroutineScope = rememberCoroutineScope()
-    val snackbarHostState = remember { SnackbarHostState() }
-    val wannaPlayStr = stringResource(R.string.wanna_play_favorite_song)
-    val yeahStr = stringResource(R.string.yeah)
-    
     val windowInsets = LocalPlayerAwareWindowInsets.current
 
     Column(
@@ -242,9 +76,14 @@ fun AboutScreen(
         Spacer(Modifier.height(16.dp))
 
         // App Header Section
-        ElevatedCard(
+        Card(
             shape = RoundedCornerShape(32.dp),
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
+            colors = CardDefaults.cardColors(
+                containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.45f)
+            ),
+            elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
+            border = BorderStroke(0.8.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.22f))
         ) {
             Row(
                 verticalAlignment = Alignment.CenterVertically,
@@ -260,7 +99,7 @@ fun AboutScreen(
                     )
                     Image(
                         painter = painterResource(R.drawable.about_icon),
-                        contentDescription = stringResource(R.string.sakayori),
+                        contentDescription = stringResource(R.string.app_name),
                         modifier = Modifier.size(64.dp)
                     )
                 }
@@ -268,12 +107,8 @@ fun AboutScreen(
                 Spacer(Modifier.width(20.dp))
         
                 Column {
-                    val appName = stringResource(R.string.sakayori)
-                        .lowercase(Locale.getDefault())
-                        .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
-
                     Text(
-                        text = appName,
+                        text = "Aura Music",
                         style = MaterialTheme.typography.headlineLarge,
                         fontWeight = FontWeight.Black,
                         color = MaterialTheme.colorScheme.onSurface,
@@ -303,27 +138,12 @@ fun AboutScreen(
                             color = MaterialTheme.colorScheme.secondaryContainer.copy(alpha = 0.5f)
                         ) {
                             Text(
-                                text = BuildConfig.ARCHITECTURE.uppercase(),
+                                text = "Made in India",
                                 style = MaterialTheme.typography.labelMedium,
                                 fontWeight = FontWeight.Bold,
                                 color = MaterialTheme.colorScheme.onSecondaryContainer,
                                 modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
                             )
-                        }
-
-                        if (BuildConfig.DEBUG) {
-                            Surface(
-                                shape = RoundedCornerShape(8.dp),
-                                color = MaterialTheme.colorScheme.tertiaryContainer.copy(alpha = 0.5f)
-                            ) {
-                                Text(
-                                    text = "DEBUG",
-                                    style = MaterialTheme.typography.labelMedium,
-                                    fontWeight = FontWeight.Bold,
-                                    color = MaterialTheme.colorScheme.onTertiaryContainer,
-                                    modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
-                                )
-                            }
                         }
                     }
                 }
@@ -332,238 +152,80 @@ fun AboutScreen(
 
         Spacer(Modifier.height(24.dp))
 
-        // Lead Developer Hero Card
-        ElevatedCard(
+        // Developer Info Card
+        Card(
             shape = RoundedCornerShape(32.dp),
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
+            colors = CardDefaults.cardColors(
+                containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.45f)
+            ),
+            elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
+            border = BorderStroke(0.8.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.22f))
         ) {
             Column(
                 modifier = Modifier.padding(24.dp),
             ) {
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(20.dp),
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    var leadClickCount by remember(leadDeveloper.name) { mutableIntStateOf(0) }
-            
-                    ContributorAvatar(
-                        avatarUrl = leadDeveloper.avatarUrl,
-                        sizeDp = 110,
-                        shape = leadDeveloper.polygon?.toShape() ?: CircleShape,
-                        contentDescription = leadDeveloper.name,
-                        onClick = {
-                            handleEasterEggClick(
-                                clickCount = leadClickCount,
-                                favoriteSongVideoId = leadDeveloper.favoriteSongVideoId,
-                                coroutineScope = coroutineScope,
-                                snackbarHostState = snackbarHostState,
-                                playerConnection = playerConnection,
-                                wannaPlayStr = wannaPlayStr,
-                                yeahStr = yeahStr,
-                                onCountUpdate = { leadClickCount = it }
-                            )
-                        }
-                    )
-
-                    Column(
-                        verticalArrangement = Arrangement.Center
-                    ) {
-                        Text(
-                            text = leadDeveloper.name,
-                            style = MaterialTheme.typography.headlineLarge,
-                            fontWeight = FontWeight.Black,
-                            color = MaterialTheme.colorScheme.onSurface,
-                            lineHeight = 38.sp,
-                            letterSpacing = (-0.5).sp
-                        )
-                        Text(
-                            text = stringResource(R.string.credits_lead_developer),
-                            style = MaterialTheme.typography.titleMedium,
-                            color = MaterialTheme.colorScheme.primary,
-                            fontWeight = FontWeight.SemiBold
-                        )
-                    }
-                }
-                
-                Spacer(Modifier.height(24.dp))
-                
-                DeveloperSocials(uriHandler)
-                
-                Spacer(Modifier.height(16.dp))
-                
-                Button(
-                    onClick = { uriHandler.openUri("https://buymeacoffee.com/sakayori") },
-                    modifier = Modifier.fillMaxWidth(),
-                    shape = CircleShape,
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = MaterialTheme.colorScheme.primary,
-                        contentColor = MaterialTheme.colorScheme.onPrimary
-                    )
-                ) {
-                    Icon(painterResource(R.drawable.buymeacoffee), contentDescription = null, modifier = Modifier.size(20.dp))
-                    Spacer(Modifier.width(12.dp))
-                    Text(stringResource(R.string.buy_mo_a_coffee), fontWeight = FontWeight.ExtraBold, fontSize = 16.sp)
-                }
-
-                Spacer(Modifier.height(16.dp))
-
                 Text(
-                    text = "Donate via VietQR:",
+                    text = "Vikram Bhardwaj",
+                    style = MaterialTheme.typography.headlineMedium,
+                    fontWeight = FontWeight.Black,
+                    color = MaterialTheme.colorScheme.onSurface
+                )
+                Spacer(Modifier.height(4.dp))
+                Text(
+                    text = "Lead Developer & Creator",
                     style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.SemiBold,
-                    modifier = Modifier.align(Alignment.CenterHorizontally)
+                    color = MaterialTheme.colorScheme.primary,
+                    fontWeight = FontWeight.SemiBold
                 )
-                Spacer(Modifier.height(8.dp))
-                AsyncImage(
-                    model = "https://qr.sakayori.me/image/970454-99ZP26301M80823757-payos.png?addInfo=ung%20ho%20nha%20phat%20trien",
-                    contentDescription = "VietQR",
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(200.dp)
-                        .clip(RoundedCornerShape(12.dp))
-                )
-
-                Spacer(Modifier.height(16.dp))
-
+                Spacer(Modifier.height(12.dp))
                 Text(
-                    text = "Monero (XMR):",
-                    style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.SemiBold,
-                    modifier = Modifier.align(Alignment.CenterHorizontally)
-                )
-                Text(
-                    text = "45SsusJDkAEaQgz8jWKPonhvWjhUj2EEfdTQat22TaaFLyb1noVfzN2U9PGpGeX5Qe55XikAKZ42eC7z1F9E3uL9LsLx14L",
-                    style = MaterialTheme.typography.bodySmall,
-                    modifier = Modifier
-                        .align(Alignment.CenterHorizontally)
-                        .clickable {
-                            val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-                            clipboard.setPrimaryClip(
-                                ClipData.newPlainText(
-                                    "Monero",
-                                    "45SsusJDkAEaQgz8jWKPonhvWjhUj2EEfdTQat22TaaFLyb1noVfzN2U9PGpGeX5Qe55XikAKZ42eC7z1F9E3uL9LsLx14L"
-                                )
-                            )
-                            Toast.makeText(context, R.string.copied_to_clipboard, Toast.LENGTH_SHORT).show()
-                        },
-                    textAlign = androidx.compose.ui.text.style.TextAlign.Center
+                    text = "Modinagar Ghaziabad uttar pradesh india",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }
         }
 
-        Spacer(Modifier.height(32.dp))
-        
-        // Collaborators section - back to Material3SettingsGroup
-        Material3SettingsGroup(
-            title = stringResource(R.string.credits_collaborators_section),
-            items = collaborators.map { contributor ->
-                Material3SettingsItem(
-                    leadingContent = {
-                        var clickCount by remember(contributor.name) { mutableIntStateOf(0) }
-                        ContributorAvatar(
-                            avatarUrl = contributor.avatarUrl,
-                            sizeDp = 48,
-                            shape = contributor.polygon?.toShape() ?: CircleShape,
-                            contentDescription = contributor.name,
-                            onClick = {
-                                handleEasterEggClick(
-                                    clickCount = clickCount,
-                                    favoriteSongVideoId = contributor.favoriteSongVideoId,
-                                    coroutineScope = coroutineScope,
-                                    snackbarHostState = snackbarHostState,
-                                    playerConnection = playerConnection,
-                                    wannaPlayStr = wannaPlayStr,
-                                    yeahStr = yeahStr,
-                                    onCountUpdate = { clickCount = it }
-                                )
-                            }
-                        )
-                    },
-                    title = { Text(text = contributor.name, fontWeight = FontWeight.SemiBold) },
-                    description = { Text(stringResource(contributor.roleRes)) },
-                    trailingContent = {
-                        Row(
-                            horizontalArrangement = Arrangement.spacedBy(8.dp),
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            if (contributor.sponsorUrl != null) {
-                                Surface(
-                                    onClick = { uriHandler.openUri(contributor.sponsorUrl) },
-                                    shape = CircleShape,
-                                    color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.3f),
-                                    modifier = Modifier.size(36.dp)
-                                ) {
-                                    Box(contentAlignment = Alignment.Center) {
-                                        Icon(
-                                            painter = painterResource(R.drawable.buymeacoffee),
-                                            contentDescription = null,
-                                            modifier = Modifier.size(20.dp),
-                                            tint = MaterialTheme.colorScheme.onSurfaceVariant
-                                        )
-                                    }
-                                }
-                            }
-                            Icon(
-                                painter = painterResource(R.drawable.github),
-                                contentDescription = null,
-                                modifier = Modifier.size(24.dp),
-                                tint = MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                        }
-                    },
-                    onClick = { uriHandler.openUri(contributor.githubUrl) }
-                )
-            }
-        )
+        Spacer(Modifier.height(24.dp))
 
-        Spacer(Modifier.height(32.dp))
-
-        // Upstream & Credits: Sakayori Music is a fork of Metrolist
+        // Community & Social Links
         Material3SettingsGroup(
-            title = stringResource(R.string.credits_upstream_section),
+            title = "Community & Info",
             items = listOf(
                 Material3SettingsItem(
-                    icon = painterResource(R.drawable.github),
-                    title = { Text(text = "Metrolist", fontWeight = FontWeight.SemiBold) },
-                    description = { Text(stringResource(R.string.credits_metrolist_desc)) },
-                    onClick = { uriHandler.openUri("https://github.com/MetrolistGroup/Metrolist") }
+                    icon = painterResource(R.drawable.instagram),
+                    title = { Text(text = "Instagram", fontWeight = FontWeight.SemiBold) },
+                    description = { Text("@vikrm_bhardwaj") },
+                    onClick = { uriHandler.openUri("https://www.instagram.com/vikrm_bhardwaj?igsh=OWh4ZHprbW5rNTZv") }
                 ),
                 Material3SettingsItem(
-                    icon = painterResource(R.drawable.github),
-                    title = { Text(text = "InnerTune", fontWeight = FontWeight.SemiBold) },
-                    description = { Text(stringResource(R.string.credits_innertune_desc)) },
-                    onClick = { uriHandler.openUri("https://github.com/z-huang/InnerTune") }
+                    icon = painterResource(R.drawable.share),
+                    title = { Text(text = "Facebook", fontWeight = FontWeight.SemiBold) },
+                    description = { Text("Vikram Bhardwaj") },
+                    onClick = { uriHandler.openUri("https://www.facebook.com/share/196jZuggxg/") }
+                ),
+                Material3SettingsItem(
+                    icon = painterResource(R.drawable.link),
+                    title = { Text(text = "Desktop & Web Experience", fontWeight = FontWeight.SemiBold) },
+                    description = { Text("aura-music.markiv.site") },
+                    onClick = { uriHandler.openUri("https://aura-music.markiv.site") }
+                ),
+                Material3SettingsItem(
+                    icon = painterResource(R.drawable.info),
+                    title = { Text(text = "Email", fontWeight = FontWeight.SemiBold) },
+                    description = { Text("vikram.2872006@gmail.com") },
+                    onClick = { uriHandler.openUri("mailto:vikram.2872006@gmail.com") }
+                ),
+                Material3SettingsItem(
+                    icon = painterResource(R.drawable.bug_report),
+                    title = { Text(text = "Send Feedback", fontWeight = FontWeight.SemiBold) },
+                    description = { Text("Share your feedback or report issues") },
+                    onClick = { uriHandler.openUri("mailto:vikram.2872006@gmail.com?subject=Aura%20Music%20Feedback") }
                 )
             )
         )
 
-        Spacer(Modifier.height(32.dp))
-
-        // Community & Info using standard Group
-        Material3SettingsGroup(
-            title = stringResource(R.string.community_and_info),
-            items = communityLinks.map { link ->
-                Material3SettingsItem(
-                    icon = painterResource(link.iconRes),
-                    title = { Text(stringResource(link.labelRes), fontWeight = FontWeight.SemiBold) },
-                    description = if (link.labelRes == R.string.credits_license_name) {
-                        { Text(stringResource(R.string.credits_license_desc)) }
-                    } else null,
-                    onClick = { uriHandler.openUri(link.url) }
-                )
-            }
-        )
-
-        Spacer(Modifier.height(48.dp))
-        
-        Text(
-            text = stringResource(R.string.stands_with_vietnam),
-            style = MaterialTheme.typography.labelLarge,
-            fontWeight = FontWeight.Bold,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-        )
-        
         Spacer(Modifier.height(48.dp))
     }
 
@@ -581,13 +243,4 @@ fun AboutScreen(
             }
         }
     )
-
-    Box(Modifier.fillMaxSize()) {
-        SnackbarHost(
-            hostState = snackbarHostState,
-            modifier = Modifier
-                .align(Alignment.BottomCenter)
-                .windowInsetsPadding(windowInsets.only(WindowInsetsSides.Bottom + WindowInsetsSides.Horizontal))
-        )
-    }
 }

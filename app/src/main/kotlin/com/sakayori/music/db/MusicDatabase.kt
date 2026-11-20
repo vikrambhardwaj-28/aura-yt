@@ -175,10 +175,10 @@ abstract class InternalDatabase : RoomDatabase() {
             return try {
                 val file = File(dbPath)
                 if (!file.exists()) return -1
-                android.database.sqlite.SQLiteDatabase.openDatabase(
+                SQLiteDatabase.openDatabase(
                     dbPath,
                     null,
-                    android.database.sqlite.SQLiteDatabase.OPEN_READONLY,
+                    SQLiteDatabase.OPEN_READONLY,
                 ).use { rawDb ->
                     rawDb.version
                 }
@@ -202,7 +202,7 @@ abstract class InternalDatabase : RoomDatabase() {
                     MIGRATION_22_24,
                     MIGRATION_24_25,
                 ).fallbackToDestructiveMigration()
-                .setJournalMode(RoomDatabase.JournalMode.WRITE_AHEAD_LOGGING)
+                .setJournalMode(JournalMode.WRITE_AHEAD_LOGGING)
                 .setTransactionExecutor(
                     java.util.concurrent.Executors
                         .newFixedThreadPool(4),
@@ -213,7 +213,7 @@ abstract class InternalDatabase : RoomDatabase() {
 
             if (withPragmaCallback) {
                 builder.addCallback(
-                    object : RoomDatabase.Callback() {
+                    object : Callback() {
                         override fun onCreate(db: SupportSQLiteDatabase) {
                             super.onCreate(db)
                             applyPragmaSettings(db)

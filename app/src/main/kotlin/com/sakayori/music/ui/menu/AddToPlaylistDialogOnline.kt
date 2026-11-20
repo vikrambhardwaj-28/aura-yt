@@ -311,7 +311,7 @@ fun AddToPlaylistDialogOnline(
                             }
                             
                             val songsIdx = AtomicInteger(0)
-                            val semaphore = kotlinx.coroutines.sync.Semaphore(15)
+                            val semaphore = Semaphore(15)
                             onProgressStart(true)
                             try {
                                 val jobs = songs.reversed().map { song ->
@@ -374,7 +374,7 @@ fun AddToPlaylistDialogOnline(
                             if (songsTot == 0) return@launch
 
                             val songsIdx = AtomicInteger(0)
-                            val semaphore = kotlinx.coroutines.sync.Semaphore(15)
+                            val semaphore = Semaphore(15)
                             onProgressStart(true)
                             try {
                                 val jobs = songs.reversed().map { song ->

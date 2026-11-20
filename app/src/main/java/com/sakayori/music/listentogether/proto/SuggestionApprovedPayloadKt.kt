@@ -5,79 +5,79 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.sakayori.music.listentogether.proto;
+package com.sakayori.music.listentogether.proto
 
-@kotlin.jvm.JvmName("-initializesuggestionApprovedPayload")
-public inline fun suggestionApprovedPayload(block: com.sakayori.music.listentogether.proto.SuggestionApprovedPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.SuggestionApprovedPayload =
-  com.sakayori.music.listentogether.proto.SuggestionApprovedPayloadKt.Dsl._create(com.sakayori.music.listentogether.proto.Listentogether.SuggestionApprovedPayload.newBuilder()).apply { block() }._build()
+@JvmName("-initializesuggestionApprovedPayload")
+inline fun suggestionApprovedPayload(block: SuggestionApprovedPayloadKt.Dsl.() -> Unit): Listentogether.SuggestionApprovedPayload =
+  SuggestionApprovedPayloadKt.Dsl._create(Listentogether.SuggestionApprovedPayload.newBuilder()).apply { block() }._build()
 /**
  * Protobuf type `listentogether.SuggestionApprovedPayload`
  */
-public object SuggestionApprovedPayloadKt {
-  @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+object SuggestionApprovedPayloadKt {
+  @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
-  public class Dsl private constructor(
-    private val _builder: com.sakayori.music.listentogether.proto.Listentogether.SuggestionApprovedPayload.Builder
+  class Dsl private constructor(
+    private val _builder: Listentogether.SuggestionApprovedPayload.Builder
   ) {
-    public companion object {
-      @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-      internal fun _create(builder: com.sakayori.music.listentogether.proto.Listentogether.SuggestionApprovedPayload.Builder): Dsl = Dsl(builder)
+    companion object {
+      @JvmSynthetic
+    @PublishedApi
+      internal fun _create(builder: Listentogether.SuggestionApprovedPayload.Builder): Dsl = Dsl(builder)
     }
 
-    @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-    internal fun _build(): com.sakayori.music.listentogether.proto.Listentogether.SuggestionApprovedPayload = _builder.build()
+    @JvmSynthetic
+  @PublishedApi
+    internal fun _build(): Listentogether.SuggestionApprovedPayload = _builder.build()
 
     /**
      * `string suggestion_id = 1;`
      */
-    public var suggestionId: kotlin.String
-      @kotlin.jvm.JvmName("getSuggestionId")
+    var suggestionId: String
+      @JvmName("getSuggestionId")
         get() = _builder.suggestionId
-      @kotlin.jvm.JvmName("setSuggestionId")
+      @JvmName("setSuggestionId")
         set(value) {
         _builder.suggestionId = value
       }
     /**
      * `string suggestion_id = 1;`
      */
-    public fun clearSuggestionId() {
+    fun clearSuggestionId() {
       _builder.clearSuggestionId()
     }
 
     /**
      * `.listentogether.TrackInfo track_info = 2;`
      */
-    public var trackInfo: com.sakayori.music.listentogether.proto.Listentogether.TrackInfo
-      @kotlin.jvm.JvmName("getTrackInfo")
+    var trackInfo: Listentogether.TrackInfo
+      @JvmName("getTrackInfo")
         get() = _builder.trackInfo
-      @kotlin.jvm.JvmName("setTrackInfo")
+      @JvmName("setTrackInfo")
         set(value) {
         _builder.trackInfo = value
       }
     /**
      * `.listentogether.TrackInfo track_info = 2;`
      */
-    public fun clearTrackInfo() {
+    fun clearTrackInfo() {
       _builder.clearTrackInfo()
     }
     /**
      * `.listentogether.TrackInfo track_info = 2;`
      * @return Whether the trackInfo field is set.
      */
-    public fun hasTrackInfo(): kotlin.Boolean {
+    fun hasTrackInfo(): Boolean {
       return _builder.hasTrackInfo()
     }
 
-    public val SuggestionApprovedPayloadKt.Dsl.trackInfoOrNull: com.sakayori.music.listentogether.proto.Listentogether.TrackInfo?
+    val Dsl.trackInfoOrNull: Listentogether.TrackInfo?
       get() = _builder.trackInfoOrNull
   }
 }
-@kotlin.jvm.JvmSynthetic
-public inline fun com.sakayori.music.listentogether.proto.Listentogether.SuggestionApprovedPayload.copy(block: `com.sakayori.music.listentogether.proto`.SuggestionApprovedPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.SuggestionApprovedPayload =
-  `com.sakayori.music.listentogether.proto`.SuggestionApprovedPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+@JvmSynthetic
+inline fun Listentogether.SuggestionApprovedPayload.copy(block: SuggestionApprovedPayloadKt.Dsl.() -> Unit): Listentogether.SuggestionApprovedPayload =
+  SuggestionApprovedPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 
-public val com.sakayori.music.listentogether.proto.Listentogether.SuggestionApprovedPayloadOrBuilder.trackInfoOrNull: com.sakayori.music.listentogether.proto.Listentogether.TrackInfo?
+val Listentogether.SuggestionApprovedPayloadOrBuilder.trackInfoOrNull: Listentogether.TrackInfo?
   get() = if (hasTrackInfo()) getTrackInfo() else null
 

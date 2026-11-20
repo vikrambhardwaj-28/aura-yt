@@ -637,9 +637,7 @@ object LyricsUtils {
                     trailingEndTime ?: nextLineTime ?: (startTimeSeconds + 0.5)
                 }
 
-                val wordHasTrailingSpace = if (!isLastWordInGroup) {
-                    true
-                } else if (!isLastWordOverall) {
+                val wordHasTrailingSpace = !isLastWordInGroup || if (!isLastWordOverall) {
                     hasTrailingSpace
                 } else {
                     // Last word of last match - check if there's text after it (excluding our optional trailing timestamp)
@@ -650,6 +648,7 @@ object LyricsUtils {
                     }
                     textAfterMatch.isNotBlank()
                 }
+                // Last word of last match - check if there's text after it (excluding our optional trailing timestamp)
 
                 if (word.isNotBlank()) {
                     wordTimings.add(WordTimestamp(word, wordStartTime, wordEndTime, wordHasTrailingSpace))

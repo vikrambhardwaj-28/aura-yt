@@ -5,66 +5,66 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.sakayori.music.listentogether.proto;
+package com.sakayori.music.listentogether.proto
 
-@kotlin.jvm.JvmName("-initializeerrorPayload")
-public inline fun errorPayload(block: com.sakayori.music.listentogether.proto.ErrorPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.ErrorPayload =
-  com.sakayori.music.listentogether.proto.ErrorPayloadKt.Dsl._create(com.sakayori.music.listentogether.proto.Listentogether.ErrorPayload.newBuilder()).apply { block() }._build()
+@JvmName("-initializeerrorPayload")
+inline fun errorPayload(block: ErrorPayloadKt.Dsl.() -> Unit): Listentogether.ErrorPayload =
+  ErrorPayloadKt.Dsl._create(Listentogether.ErrorPayload.newBuilder()).apply { block() }._build()
 /**
  * Protobuf type `listentogether.ErrorPayload`
  */
-public object ErrorPayloadKt {
-  @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+object ErrorPayloadKt {
+  @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
-  public class Dsl private constructor(
-    private val _builder: com.sakayori.music.listentogether.proto.Listentogether.ErrorPayload.Builder
+  class Dsl private constructor(
+    private val _builder: Listentogether.ErrorPayload.Builder
   ) {
-    public companion object {
-      @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-      internal fun _create(builder: com.sakayori.music.listentogether.proto.Listentogether.ErrorPayload.Builder): Dsl = Dsl(builder)
+    companion object {
+      @JvmSynthetic
+    @PublishedApi
+      internal fun _create(builder: Listentogether.ErrorPayload.Builder): Dsl = Dsl(builder)
     }
 
-    @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-    internal fun _build(): com.sakayori.music.listentogether.proto.Listentogether.ErrorPayload = _builder.build()
+    @JvmSynthetic
+  @PublishedApi
+    internal fun _build(): Listentogether.ErrorPayload = _builder.build()
 
     /**
      * `string code = 1;`
      */
-    public var code: kotlin.String
-      @kotlin.jvm.JvmName("getCode")
+    var code: String
+      @JvmName("getCode")
         get() = _builder.code
-      @kotlin.jvm.JvmName("setCode")
+      @JvmName("setCode")
         set(value) {
         _builder.code = value
       }
     /**
      * `string code = 1;`
      */
-    public fun clearCode() {
+    fun clearCode() {
       _builder.clearCode()
     }
 
     /**
      * `string message = 2;`
      */
-    public var message: kotlin.String
-      @kotlin.jvm.JvmName("getMessage")
+    var message: String
+      @JvmName("getMessage")
         get() = _builder.message
-      @kotlin.jvm.JvmName("setMessage")
+      @JvmName("setMessage")
         set(value) {
         _builder.message = value
       }
     /**
      * `string message = 2;`
      */
-    public fun clearMessage() {
+    fun clearMessage() {
       _builder.clearMessage()
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
-public inline fun com.sakayori.music.listentogether.proto.Listentogether.ErrorPayload.copy(block: `com.sakayori.music.listentogether.proto`.ErrorPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.ErrorPayload =
-  `com.sakayori.music.listentogether.proto`.ErrorPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+@JvmSynthetic
+inline fun Listentogether.ErrorPayload.copy(block: ErrorPayloadKt.Dsl.() -> Unit): Listentogether.ErrorPayload =
+  ErrorPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

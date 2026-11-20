@@ -368,7 +368,7 @@ fun PlayerMenu(
                             onClick = {
                                 val clipboard =
                                     context.getSystemService(
-                                        android.content.Context.CLIPBOARD_SERVICE,
+                                        "clipboard",
                                     ) as android.content.ClipboardManager
                                 val clip =
                                     android.content.ClipData.newPlainText(
@@ -376,8 +376,8 @@ fun PlayerMenu(
                                         "https://music.youtube.com/watch?v=${mediaMetadata.id}",
                                     )
                                 clipboard.setPrimaryClip(clip)
-                                android.widget.Toast
-                                    .makeText(context, R.string.link_copied, android.widget.Toast.LENGTH_SHORT)
+                                Toast
+                                    .makeText(context, R.string.link_copied, Toast.LENGTH_SHORT)
                                     .show()
                                 onDismiss()
                             },
@@ -775,7 +775,7 @@ fun TempoPitchDialog(onDismiss: () -> Unit) {
         playerConnection.player.playbackParameters =
             PlaybackParameters(tempo, 2f.pow(transposeValue.toFloat() / 12))
     }
-    val listenTogetherManager = com.sakayori.music.LocalListenTogetherManager.current
+    val listenTogetherManager = LocalListenTogetherManager.current
     val isInRoom = listenTogetherManager?.isInRoom ?: false
 
     AlertDialog(
@@ -842,7 +842,7 @@ fun SpeedDialog(onDismiss: () -> Unit) {
         playerConnection.player.playbackParameters =
             PlaybackParameters(speed, speed)
     }
-    val listenTogetherManager = com.sakayori.music.LocalListenTogetherManager.current
+    val listenTogetherManager = LocalListenTogetherManager.current
 
     AlertDialog(
         properties = DialogProperties(usePlatformDefaultWidth = false),
@@ -946,7 +946,7 @@ fun ListenTogetherDialog(
     if (!visible) return
 
     val context = LocalContext.current
-    val listenTogetherManager = com.sakayori.music.LocalListenTogetherManager.current
+    val listenTogetherManager = LocalListenTogetherManager.current
     val joiningRoomTemplate = stringResource(R.string.joining_room)
 
     // Handle case where manager is not available
@@ -1241,7 +1241,7 @@ fun ListenTogetherDialog(
                 is ListenTogetherEvent.RoomCreated -> {
                     isCreatingRoom = false
                     val clipboard =
-                        context.getSystemService(android.content.Context.CLIPBOARD_SERVICE) as android.content.ClipboardManager
+                        context.getSystemService("clipboard") as android.content.ClipboardManager
                     val clip = android.content.ClipData.newPlainText("ListenTogetherRoom", event.roomCode)
                     clipboard.setPrimaryClip(clip)
                 }
@@ -1459,7 +1459,7 @@ fun ListenTogetherDialog(
                                         onClick = {
                                             val clipboard =
                                                 context.getSystemService(
-                                                    Context.CLIPBOARD_SERVICE,
+                                                    "clipboard",
                                                 ) as android.content.ClipboardManager
                                             val clip = android.content.ClipData.newPlainText("Listen Together Link", inviteLink)
                                             clipboard.setPrimaryClip(clip)
@@ -1481,7 +1481,7 @@ fun ListenTogetherDialog(
                                         onClick = {
                                             val clipboard =
                                                 context.getSystemService(
-                                                    Context.CLIPBOARD_SERVICE,
+                                                    "clipboard",
                                                 ) as android.content.ClipboardManager
                                             val clip = android.content.ClipData.newPlainText("Room Code", room.roomCode)
                                             clipboard.setPrimaryClip(clip)

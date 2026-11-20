@@ -5,66 +5,66 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.sakayori.music.listentogether.proto;
+package com.sakayori.music.listentogether.proto
 
-@kotlin.jvm.JvmName("-initializerejectSuggestionPayload")
-public inline fun rejectSuggestionPayload(block: com.sakayori.music.listentogether.proto.RejectSuggestionPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.RejectSuggestionPayload =
-  com.sakayori.music.listentogether.proto.RejectSuggestionPayloadKt.Dsl._create(com.sakayori.music.listentogether.proto.Listentogether.RejectSuggestionPayload.newBuilder()).apply { block() }._build()
+@JvmName("-initializerejectSuggestionPayload")
+inline fun rejectSuggestionPayload(block: RejectSuggestionPayloadKt.Dsl.() -> Unit): Listentogether.RejectSuggestionPayload =
+  RejectSuggestionPayloadKt.Dsl._create(Listentogether.RejectSuggestionPayload.newBuilder()).apply { block() }._build()
 /**
  * Protobuf type `listentogether.RejectSuggestionPayload`
  */
-public object RejectSuggestionPayloadKt {
-  @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+object RejectSuggestionPayloadKt {
+  @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
-  public class Dsl private constructor(
-    private val _builder: com.sakayori.music.listentogether.proto.Listentogether.RejectSuggestionPayload.Builder
+  class Dsl private constructor(
+    private val _builder: Listentogether.RejectSuggestionPayload.Builder
   ) {
-    public companion object {
-      @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-      internal fun _create(builder: com.sakayori.music.listentogether.proto.Listentogether.RejectSuggestionPayload.Builder): Dsl = Dsl(builder)
+    companion object {
+      @JvmSynthetic
+    @PublishedApi
+      internal fun _create(builder: Listentogether.RejectSuggestionPayload.Builder): Dsl = Dsl(builder)
     }
 
-    @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-    internal fun _build(): com.sakayori.music.listentogether.proto.Listentogether.RejectSuggestionPayload = _builder.build()
+    @JvmSynthetic
+  @PublishedApi
+    internal fun _build(): Listentogether.RejectSuggestionPayload = _builder.build()
 
     /**
      * `string suggestion_id = 1;`
      */
-    public var suggestionId: kotlin.String
-      @kotlin.jvm.JvmName("getSuggestionId")
+    var suggestionId: String
+      @JvmName("getSuggestionId")
         get() = _builder.suggestionId
-      @kotlin.jvm.JvmName("setSuggestionId")
+      @JvmName("setSuggestionId")
         set(value) {
         _builder.suggestionId = value
       }
     /**
      * `string suggestion_id = 1;`
      */
-    public fun clearSuggestionId() {
+    fun clearSuggestionId() {
       _builder.clearSuggestionId()
     }
 
     /**
      * `string reason = 2;`
      */
-    public var reason: kotlin.String
-      @kotlin.jvm.JvmName("getReason")
+    var reason: String
+      @JvmName("getReason")
         get() = _builder.reason
-      @kotlin.jvm.JvmName("setReason")
+      @JvmName("setReason")
         set(value) {
         _builder.reason = value
       }
     /**
      * `string reason = 2;`
      */
-    public fun clearReason() {
+    fun clearReason() {
       _builder.clearReason()
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
-public inline fun com.sakayori.music.listentogether.proto.Listentogether.RejectSuggestionPayload.copy(block: `com.sakayori.music.listentogether.proto`.RejectSuggestionPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.RejectSuggestionPayload =
-  `com.sakayori.music.listentogether.proto`.RejectSuggestionPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+@JvmSynthetic
+inline fun Listentogether.RejectSuggestionPayload.copy(block: RejectSuggestionPayloadKt.Dsl.() -> Unit): Listentogether.RejectSuggestionPayload =
+  RejectSuggestionPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

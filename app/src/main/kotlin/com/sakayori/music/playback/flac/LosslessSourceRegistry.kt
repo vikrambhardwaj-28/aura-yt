@@ -254,8 +254,7 @@ class LosslessSourceRegistry @Inject constructor(
     internal fun isCurrentResource(resource: FlacResource): Boolean {
         if (resource.sourceId == ArchiveFlacSource.SOURCE_ID) return true
         val base = resource.sourceLocator?.let(LosslessApiHttp.Companion::validatedApiBase) ?: return false
-        if (resource.sourceId == MONOCHROME && base == MONOCHROME_BASE.toHttpUrl()) return true
-        return base == configuration.value.takeIf { it.isNotBlank() }?.let(LosslessApiHttp.Companion::validatedApiBase)
+        return resource.sourceId == MONOCHROME && base == MONOCHROME_BASE.toHttpUrl() || base == configuration.value.takeIf { it.isNotBlank() }?.let(LosslessApiHttp.Companion::validatedApiBase)
     }
 
     internal suspend fun validate(resource: FlacResource): Boolean {

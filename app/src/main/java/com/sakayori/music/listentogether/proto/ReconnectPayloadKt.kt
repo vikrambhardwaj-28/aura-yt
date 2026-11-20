@@ -5,49 +5,49 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.sakayori.music.listentogether.proto;
+package com.sakayori.music.listentogether.proto
 
-@kotlin.jvm.JvmName("-initializereconnectPayload")
-public inline fun reconnectPayload(block: com.sakayori.music.listentogether.proto.ReconnectPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.ReconnectPayload =
-  com.sakayori.music.listentogether.proto.ReconnectPayloadKt.Dsl._create(com.sakayori.music.listentogether.proto.Listentogether.ReconnectPayload.newBuilder()).apply { block() }._build()
+@JvmName("-initializereconnectPayload")
+inline fun reconnectPayload(block: ReconnectPayloadKt.Dsl.() -> Unit): Listentogether.ReconnectPayload =
+  ReconnectPayloadKt.Dsl._create(Listentogether.ReconnectPayload.newBuilder()).apply { block() }._build()
 /**
  * Protobuf type `listentogether.ReconnectPayload`
  */
-public object ReconnectPayloadKt {
-  @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+object ReconnectPayloadKt {
+  @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
-  public class Dsl private constructor(
-    private val _builder: com.sakayori.music.listentogether.proto.Listentogether.ReconnectPayload.Builder
+  class Dsl private constructor(
+    private val _builder: Listentogether.ReconnectPayload.Builder
   ) {
-    public companion object {
-      @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-      internal fun _create(builder: com.sakayori.music.listentogether.proto.Listentogether.ReconnectPayload.Builder): Dsl = Dsl(builder)
+    companion object {
+      @JvmSynthetic
+    @PublishedApi
+      internal fun _create(builder: Listentogether.ReconnectPayload.Builder): Dsl = Dsl(builder)
     }
 
-    @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-    internal fun _build(): com.sakayori.music.listentogether.proto.Listentogether.ReconnectPayload = _builder.build()
+    @JvmSynthetic
+  @PublishedApi
+    internal fun _build(): Listentogether.ReconnectPayload = _builder.build()
 
     /**
      * `string session_token = 1;`
      */
-    public var sessionToken: kotlin.String
-      @kotlin.jvm.JvmName("getSessionToken")
+    var sessionToken: String
+      @JvmName("getSessionToken")
         get() = _builder.sessionToken
-      @kotlin.jvm.JvmName("setSessionToken")
+      @JvmName("setSessionToken")
         set(value) {
         _builder.sessionToken = value
       }
     /**
      * `string session_token = 1;`
      */
-    public fun clearSessionToken() {
+    fun clearSessionToken() {
       _builder.clearSessionToken()
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
-public inline fun com.sakayori.music.listentogether.proto.Listentogether.ReconnectPayload.copy(block: `com.sakayori.music.listentogether.proto`.ReconnectPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.ReconnectPayload =
-  `com.sakayori.music.listentogether.proto`.ReconnectPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+@JvmSynthetic
+inline fun Listentogether.ReconnectPayload.copy(block: ReconnectPayloadKt.Dsl.() -> Unit): Listentogether.ReconnectPayload =
+  ReconnectPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

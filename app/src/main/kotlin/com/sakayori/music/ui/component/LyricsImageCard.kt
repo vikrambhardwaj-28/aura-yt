@@ -238,7 +238,7 @@ fun LyricsImageCard(
                     Box(
                         modifier = Modifier
                             .fillMaxSize()
-                            .background(gradientBrush ?: androidx.compose.ui.graphics.Brush.linearGradient(listOf(backgroundSolidColor, backgroundSolidColor)))
+                            .background(gradientBrush ?: Brush.linearGradient(listOf(backgroundSolidColor, backgroundSolidColor)))
                     )
                 }
             }
@@ -279,7 +279,7 @@ fun LyricsImageCard(
                     Box(
                         modifier = Modifier
                             .fillMaxSize()
-                            .background(gradientBrush ?: androidx.compose.ui.graphics.Brush.linearGradient(listOf(backgroundSolidColor, backgroundSolidColor)))
+                            .background(gradientBrush ?: Brush.linearGradient(listOf(backgroundSolidColor, backgroundSolidColor)))
                     )
                 }
             }

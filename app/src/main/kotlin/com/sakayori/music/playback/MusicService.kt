@@ -416,7 +416,7 @@ class MusicService :
     private var preloadCacheAvailable = true
     private var preloadRoomActive = false
     private var losslessWarmTarget: String? = null
-    private val cacheClearTasks = ConcurrentHashMap<String, kotlinx.coroutines.CompletableDeferred<Unit>>()
+    private val cacheClearTasks = ConcurrentHashMap<String, CompletableDeferred<Unit>>()
 
     private var currentQueue: Queue = EmptyQueue
     var queueTitle: String? = null
@@ -697,10 +697,10 @@ class MusicService :
     override fun onCreate() {
         super.onCreate()
         runningInstance = this
-        shutdownDeferred = kotlinx.coroutines.CompletableDeferred<Unit>()
+        shutdownDeferred = CompletableDeferred<Unit>()
 
         setListener(
-            object : MediaSessionService.Listener {
+            object : Listener {
                 override fun onForegroundServiceStartNotAllowedException() {
                     handleForegroundServiceStartNotAllowed(null)
                 }
@@ -799,7 +799,7 @@ class MusicService :
         _playerFlow.value = player
         Timber.tag(TAG).d("Player successfully initialized")
 
-        audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
+        audioManager = getSystemService(AUDIO_SERVICE) as AudioManager
         setupAudioFocusRequest()
 
         mediaLibrarySessionCallback.apply {
@@ -1459,7 +1459,7 @@ class MusicService :
 
         val offload = prefs[AudioOffload] ?: false
         val crossfade = prefs[CrossfadeEnabledKey] ?: false
-        player.setOffloadEnabled(if (crossfade) false else offload)
+        player.setOffloadEnabled(!crossfade && offload)
         player.skipSilenceEnabled = skipSilence
         val audibility = Audibility(silent = forcedResource != null)
         playerAudibility[player] = audibility
@@ -1856,7 +1856,7 @@ class MusicService :
         if (song.song.dateDownload != null || song.song.isDownloaded) return
         val contentLength = song.format?.contentLength
         if (!renditionStore.isFullyCached(mediaId, contentLength)) return
-        database.markPlaybackCached(mediaId, java.time.LocalDateTime.now())
+        database.markPlaybackCached(mediaId, LocalDateTime.now())
     }
 
     fun playQueue(
@@ -2158,34 +2158,64 @@ class MusicService :
                             publishAutomix(owner, secondResult.items.map { it.toMediaItem() })
                         }.onFailure { error ->
                             if (error is CancellationException) throw error
+                            Timber.tag(TAG).w(error, "Automix second page load failed, publishing first page items")
                             if (isActiveAutomixOwner(owner) && firstResult.items.isNotEmpty()) {
                                 publishAutomix(owner, firstResult.items.map { it.toMediaItem() })
                             }
                         }
                 }.onFailure playlistFailure@ { error ->
                     if (error is CancellationException) throw error
+                    Timber.tag(TAG).e(error, "Automix playlist load failed for $playlistId, attempting video radio/related fallback")
                     if (!isActiveAutomixOwner(owner) || !this::player.isInitialized) return@playlistFailure
                     val currentSong = player.currentMetadata ?: return@playlistFailure
-                    // Preserve personalized current-track and related fallbacks.
+                    
                     YouTube.next(WatchEndpoint(videoId = currentSong.id))
                         .onSuccess { radioResult ->
                             val items = radioResult.items.filter { it.id != currentSong.id }.map { it.toMediaItem() }
-                            if (items.isNotEmpty()) publishAutomix(owner, items)
-                        }.onFailure radioFailure@ { failure ->
-                            if (failure is CancellationException) throw failure
-                            if (!isActiveAutomixOwner(owner)) return@radioFailure
-                            YouTube.next(WatchEndpoint(videoId = currentSong.id)).getOrNull()
-                                ?.relatedEndpoint?.let { endpoint ->
-                                    YouTube.related(endpoint).onSuccess { relatedPage ->
-                                        val items = relatedPage.songs.filter { it.id != currentSong.id }.map { it.toMediaItem() }
-                                        if (items.isNotEmpty()) publishAutomix(owner, items)
-                                    }
-                                }
+                            if (items.isNotEmpty()) {
+                                publishAutomix(owner, items)
+                            } else {
+                                fetchSearchFallback(currentSong, owner)
+                            }
+                        }.onFailure { radioError ->
+                            if (radioError is CancellationException) throw radioError
+                            Timber.tag(TAG).e(radioError, "Automix video radio fallback failed, attempting search fallback")
+                            fetchSearchFallback(currentSong, owner)
                         }
                 }
         } catch (cancelled: CancellationException) {
             throw cancelled
-        } catch (_: Exception) {
+        } catch (error: Exception) {
+            Timber.tag(TAG).e(error, "Fatal error in loadAutomix for playlistId: $playlistId")
+            try {
+                val currentSong = player.currentMetadata
+                if (currentSong != null) {
+                    fetchSearchFallback(currentSong, owner)
+                }
+            } catch (_: Exception) {}
+        }
+    }
+
+    private suspend fun fetchSearchFallback(currentSong: com.sakayori.music.models.MediaMetadata, owner: AutomixRequestOwner) {
+        try {
+            val artistName = currentSong.artists.firstOrNull()?.name.orEmpty()
+            val query = if (artistName.isNotBlank()) "${currentSong.title} $artistName" else currentSong.title
+            if (query.isBlank()) return
+            YouTube.search(query, YouTube.SearchFilter.FILTER_SONG).onSuccess { searchResult ->
+                if (!isActiveAutomixOwner(owner)) return@onSuccess
+                val items = searchResult.items
+                    .filterIsInstance<SongItem>()
+                    .filter { it.id != currentSong.id }
+                    .map { it.toMediaItem() }
+                if (items.isNotEmpty()) {
+                    Timber.tag(TAG).i("Successfully populated automix queue via search fallback (${items.size} tracks)")
+                    publishAutomix(owner, items)
+                }
+            }.onFailure { searchError ->
+                Timber.tag(TAG).e(searchError, "Automix search fallback also failed")
+            }
+        } catch (e: Exception) {
+            Timber.tag(TAG).e(e, "Error in fetchSearchFallback")
         }
     }
 
@@ -2351,7 +2381,8 @@ class MusicService :
                 val orderAfter = mutableListOf<Int>()
                 var idx = currentIndex
                 while (true) {
-                    idx = timeline.getNextWindowIndex(idx, Player.REPEAT_MODE_OFF, /*shuffleModeEnabled=*/true)
+                    idx = timeline.getNextWindowIndex(idx,
+                        REPEAT_MODE_OFF, /*shuffleModeEnabled=*/true)
                     if (idx == C.INDEX_UNSET) break
                     if (idx != currentIndex) orderAfter.add(idx)
                 }
@@ -2359,7 +2390,8 @@ class MusicService :
                 val prevList = mutableListOf<Int>()
                 var pIdx = currentIndex
                 while (true) {
-                    pIdx = timeline.getPreviousWindowIndex(pIdx, Player.REPEAT_MODE_OFF, /*shuffleModeEnabled=*/true)
+                    pIdx = timeline.getPreviousWindowIndex(pIdx,
+                        REPEAT_MODE_OFF, /*shuffleModeEnabled=*/true)
                     if (pIdx == C.INDEX_UNSET) break
                     if (pIdx != currentIndex) prevList.add(pIdx)
                 }
@@ -2390,7 +2422,7 @@ class MusicService :
                     }
                 }
 
-                player.setShuffleOrder(DefaultShuffleOrder(finalOrder, System.currentTimeMillis()))
+                player.shuffleOrder = DefaultShuffleOrder(finalOrder, System.currentTimeMillis())
                 if (commandGeneration != playQueueGeneration) return null
             }
         }
@@ -2527,7 +2559,7 @@ class MusicService :
         database.query {
             update(
                 songEntity.copy(
-                    inLibrary = if (isCurrentlySaved) null else java.time.LocalDateTime.now(),
+                    inLibrary = if (isCurrentlySaved) null else LocalDateTime.now(),
                     isEpisode = true,
                 ),
             )
@@ -2672,10 +2704,10 @@ class MusicService :
         openedAudioEffectSessionId = audioSessionId
 
         sendBroadcast(
-            Intent(android.media.audiofx.AudioEffect.ACTION_OPEN_AUDIO_EFFECT_CONTROL_SESSION).apply {
-                putExtra(android.media.audiofx.AudioEffect.EXTRA_AUDIO_SESSION, audioSessionId)
-                putExtra(android.media.audiofx.AudioEffect.EXTRA_PACKAGE_NAME, packageName)
-                putExtra(android.media.audiofx.AudioEffect.EXTRA_CONTENT_TYPE, android.media.audiofx.AudioEffect.CONTENT_TYPE_MUSIC)
+            Intent(AudioEffect.ACTION_OPEN_AUDIO_EFFECT_CONTROL_SESSION).apply {
+                putExtra(AudioEffect.EXTRA_AUDIO_SESSION, audioSessionId)
+                putExtra(AudioEffect.EXTRA_PACKAGE_NAME, packageName)
+                putExtra(AudioEffect.EXTRA_CONTENT_TYPE, AudioEffect.CONTENT_TYPE_MUSIC)
             },
         )
     }
@@ -2939,7 +2971,7 @@ class MusicService :
             scheduleCrossfade()
         }
 
-        if (playbackState == Player.STATE_IDLE || playbackState == Player.STATE_ENDED) {
+        if (playbackState == STATE_IDLE || playbackState == Player.STATE_ENDED) {
             scrobbleManager?.onSongStop()
         }
     }
@@ -3059,7 +3091,7 @@ class MusicService :
                 if (focusGranted) {
                     openAudioEffectSession()
                 }
-            } else if (player.playbackState == Player.STATE_IDLE) {
+            } else if (player.playbackState == STATE_IDLE) {
                 closeAudioEffectSession()
             }
         }
@@ -3168,7 +3200,7 @@ class MusicService :
                 (0 until originalQueueSize).shuffled().forEach { shuffledIndices[pos++] = it }
                 addedIndices.forEach { shuffledIndices[pos++] = it }
             }
-            player.setShuffleOrder(DefaultShuffleOrder(shuffledIndices, System.currentTimeMillis()))
+            player.shuffleOrder = DefaultShuffleOrder(shuffledIndices, System.currentTimeMillis())
         } else {
             val shuffledIndices = IntArray(totalCount) { it }
             shuffledIndices.shuffle()
@@ -3179,7 +3211,7 @@ class MusicService :
                 shuffledIndices[0] = shuffledIndices[currentItemIndexInShuffled]
                 shuffledIndices[currentItemIndexInShuffled] = temp
             }
-            player.setShuffleOrder(DefaultShuffleOrder(shuffledIndices, System.currentTimeMillis()))
+            player.shuffleOrder = DefaultShuffleOrder(shuffledIndices, System.currentTimeMillis())
         }
     }
 
@@ -3263,15 +3295,12 @@ class MusicService :
 
     private fun isNetworkRelatedError(error: PlaybackException): Boolean {
         // Don't treat specific errors as network errors - they need special handling
-        if (isExpiredUrlError(error) || isRangeNotSatisfiableError(error) || isPageReloadError(error)) {
-            return false
-        }
-        return error.errorCode == PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_FAILED ||
-            error.errorCode == PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_TIMEOUT ||
-            error.errorCode == PlaybackException.ERROR_CODE_IO_INVALID_HTTP_CONTENT_TYPE ||
-            error.cause is java.net.ConnectException ||
-            error.cause is java.net.UnknownHostException ||
-            (error.cause as? PlaybackException)?.errorCode == PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_FAILED
+        return !(isExpiredUrlError(error) || isRangeNotSatisfiableError(error) || isPageReloadError(error)) && (error.errorCode == PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_FAILED ||
+                error.errorCode == PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_TIMEOUT ||
+                error.errorCode == PlaybackException.ERROR_CODE_IO_INVALID_HTTP_CONTENT_TYPE ||
+                error.cause is java.net.ConnectException ||
+                error.cause is java.net.UnknownHostException ||
+                (error.cause as? PlaybackException)?.errorCode == PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_FAILED)
     }
 
     /**
@@ -3426,7 +3455,7 @@ class MusicService :
         songUrlCache.invalidate(mediaId)
         freshAudioSelections[mediaId] = ++nextFreshAudioSelectionToken
         if (cacheClearTasks[mediaId]?.isActive == true) return
-        val completion = kotlinx.coroutines.CompletableDeferred<Unit>()
+        val completion = CompletableDeferred<Unit>()
         cacheClearTasks[mediaId] = completion
         scope.launch(Dispatchers.IO) {
             try {
@@ -4427,7 +4456,8 @@ class MusicService :
             order.add(index)
             index = timeline.getNextWindowIndex(index, REPEAT_MODE_OFF, true)
         }
-        if (order.size == timeline.windowCount) to.setShuffleOrder(DefaultShuffleOrder(order.toIntArray(), SystemClock.elapsedRealtime()))
+        if (order.size == timeline.windowCount) to.shuffleOrder =
+            DefaultShuffleOrder(order.toIntArray(), SystemClock.elapsedRealtime())
     }
 
     private fun returnToNormalPlayer(mediaId: String): Boolean {
@@ -4506,19 +4536,19 @@ class MusicService :
             val desired = target.takeIf { candidate === player }
             val changed = control.update(desired, candidate.currentMediaItem?.mediaId)
             if (changed && candidate.preloadConfiguration.targetPreloadDurationUs != C.TIME_UNSET) {
-                candidate.setPreloadConfiguration(ExoPlayer.PreloadConfiguration.DEFAULT)
+                candidate.preloadConfiguration = ExoPlayer.PreloadConfiguration.DEFAULT
             }
             val durationUs = if (desired == null) C.TIME_UNSET else NextItemPreloadController.TARGET_DURATION_US
             if (candidate.preloadConfiguration.targetPreloadDurationUs != durationUs) {
-                candidate.setPreloadConfiguration(ExoPlayer.PreloadConfiguration(durationUs))
+                candidate.preloadConfiguration = ExoPlayer.PreloadConfiguration(durationUs)
             }
         }
     }
 
     override fun onTrimMemory(level: Int) {
         super.onTrimMemory(level)
-        if (level == ComponentCallbacks2.TRIM_MEMORY_RUNNING_LOW ||
-            level == ComponentCallbacks2.TRIM_MEMORY_RUNNING_CRITICAL || level >= ComponentCallbacks2.TRIM_MEMORY_BACKGROUND
+        if (level == TRIM_MEMORY_RUNNING_LOW ||
+            level == TRIM_MEMORY_RUNNING_CRITICAL || level >= TRIM_MEMORY_BACKGROUND
         ) {
             preloadMemoryConstrained = true
             updateNativePreloading()
@@ -5276,7 +5306,7 @@ class MusicService :
                         ).getOrNull()
                 playbackData?.streamUrl
             } catch (e: Exception) {
-                timber.log.Timber.e(e, "Failed to get stream URL for Cast")
+                Timber.e(e, "Failed to get stream URL for Cast")
                 null
             }
         }
@@ -5298,9 +5328,9 @@ class MusicService :
                     }
                     updateNativePreloading()
                 }
-                timber.log.Timber.d("Google Cast initialized")
+                Timber.d("Google Cast initialized")
             } catch (e: Exception) {
-                timber.log.Timber.e(e, "Failed to initialize Google Cast")
+                Timber.e(e, "Failed to initialize Google Cast")
             }
         }
     }
@@ -5409,7 +5439,7 @@ class MusicService :
         secPlayer.volume = 0f
         playerAudibility[secPlayer]?.update(silent = true)
 
-        secPlayer.setPlaybackParameters(player.playbackParameters)
+        secPlayer.playbackParameters = player.playbackParameters
 
         secPlayer.repeatMode = savedRepeatMode
         secPlayer.shuffleModeEnabled = savedShuffleEnabled
@@ -5489,7 +5519,7 @@ class MusicService :
         secondaryPlayer = null
         updateNativePreloading()
 
-        fadingPlayer?.repeatMode = Player.REPEAT_MODE_OFF
+        fadingPlayer?.repeatMode = REPEAT_MODE_OFF
         fadingPlayer?.let {
             val currentIndex = it.currentMediaItemIndex
             if (currentIndex < it.mediaItemCount - 1) {
@@ -5522,7 +5552,7 @@ class MusicService :
         try {
             mediaSession?.let { (it as MediaSession).player = player }
         } catch (e: Exception) {
-            timber.log.Timber.e(e, "Failed to swap player in MediaSession")
+            Timber.e(e, "Failed to swap player in MediaSession")
         }
 
         // secondaryPlayer was playing this item silently in the background without
@@ -5701,6 +5731,6 @@ class MusicService :
             get() = runningInstance != null
             
         @Volatile
-        var shutdownDeferred = kotlinx.coroutines.CompletableDeferred<Unit>().apply { complete(Unit) }
+        var shutdownDeferred = CompletableDeferred<Unit>().apply { complete(Unit) }
     }
 }

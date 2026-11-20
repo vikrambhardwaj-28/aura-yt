@@ -249,7 +249,7 @@ fun AndroidAutoSettings(
                 onDismissRequest = { showTargetPlaylistDialog = false },
                 title = { Text(stringResource(R.string.android_auto_target_playlist)) },
                 text = {
-                    androidx.compose.foundation.lazy.LazyColumn {
+                    LazyColumn {
                         items(playlistOptions) { value ->
                             Row(
                                 verticalAlignment = Alignment.CenterVertically,

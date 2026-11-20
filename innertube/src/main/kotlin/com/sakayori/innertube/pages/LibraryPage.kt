@@ -196,7 +196,7 @@ data class LibraryPage(
                             ?.content?.confirmDialogRenderer?.confirmButton?.buttonRenderer
                             ?.command?.musicDeletePrivatelyOwnedEntityCommand?.entityId
                     }
-                    timber.log.Timber.d("Parsed uploaded song: id=$videoId, entityId=$uploadEntityId")
+                    Timber.d("Parsed uploaded song: id=$videoId, entityId=$uploadEntityId")
 
                     SongItem(
                         id = videoId,

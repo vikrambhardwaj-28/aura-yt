@@ -5,6 +5,7 @@
 
 package com.sakayori.music.constants
 
+import androidx.compose.ui.graphics.Color
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.floatPreferencesKey
 import androidx.datastore.preferences.core.intPreferencesKey
@@ -28,6 +29,22 @@ enum class MiniPlayerBackgroundStyle {
     BLUR,
     GRADIENT,
     PURE_BLACK,
+}
+
+val AppBackgroundGradientKey = stringPreferencesKey("appBackgroundGradient")
+val CustomAppBackgroundColorKey = intPreferencesKey("customAppBackgroundColor")
+val CustomAppTextColorKey = intPreferencesKey("customAppTextColor")
+
+enum class AppBackgroundGradient(
+    val title: String,
+    val colors: List<Color>
+) {
+    DEFAULT("Standard Theme", listOf(Color.Transparent, Color.Transparent)),
+    APPLE_MUSIC_DARK("Apple Music Dark", listOf(Color(0xFF0A0F24), Color(0xFF040610), Color(0xFF020308))),
+    CRIMSON_GLOW("Crimson Red Glow", listOf(Color(0xFF1F080C), Color(0xFF0D0305), Color(0xFF050203))),
+    MIDNIGHT_PURPLE("Midnight Purple", listOf(Color(0xFF160A24), Color(0xFF090312), Color(0xFF030108))),
+    OCEAN_BLUE("Deep Ocean Blue", listOf(Color(0xFF07182E), Color(0xFF030A14), Color(0xFF010205))),
+    SUNSET_CORAL("Sunset Coral", listOf(Color(0xFF240A10), Color(0xFF120306), Color(0xFF050203)))
 }
 
 val DensityScaleKey = floatPreferencesKey("density_scale_factor")

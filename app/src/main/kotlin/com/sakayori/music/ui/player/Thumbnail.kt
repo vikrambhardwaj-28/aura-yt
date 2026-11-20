@@ -57,7 +57,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.MotionDurationScale
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import com.sakayori.music.ui.theme.glassBackground
 import androidx.compose.ui.graphics.CompositingStrategy
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.painter.Painter
@@ -294,7 +296,7 @@ fun Thumbnail(
     val cropAlbumArt by rememberPreference(CropAlbumArtKey, false)
     val playerBackground by rememberEnumPreference(
         key = PlayerBackgroundStyleKey,
-        defaultValue = PlayerBackgroundStyle.DEFAULT
+        defaultValue = PlayerBackgroundStyle.GRADIENT
     )
     
     // Pre-calculate text color based on background style
@@ -837,7 +839,14 @@ private fun ThumbnailItem(
         Box(
             modifier = Modifier
                 .size(dimensions.thumbnailSize)
+                .shadow(
+                    elevation = 20.dp,
+                    shape = RoundedCornerShape(dimensions.cornerRadius),
+                    ambientColor = Color.Black.copy(alpha = 0.6f),
+                    spotColor = Color.Black.copy(alpha = 0.6f)
+                )
                 .clip(RoundedCornerShape(dimensions.cornerRadius))
+                .glassBackground(shape = RoundedCornerShape(dimensions.cornerRadius))
         ) {
             if (hidePlayerThumbnail) {
                 HiddenThumbnailPlaceholder(textBackgroundColor = textBackgroundColor)

@@ -96,11 +96,7 @@ fun AlarmSettingsSection(showTitle: Boolean = true) {
     val playlists by playlistsFlow.collectAsStateWithLifecycle(initialValue = emptyList())
 
     val canScheduleExact = remember(context) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            context.getSystemService(AlarmManager::class.java)?.canScheduleExactAlarms() == true
-        } else {
-            true
-        }
+        Build.VERSION.SDK_INT < Build.VERSION_CODES.S || context.getSystemService(AlarmManager::class.java)?.canScheduleExactAlarms() == true
     }
     val ignoringBatteryOptimization = remember(context) {
         context.getSystemService(PowerManager::class.java)?.isIgnoringBatteryOptimizations(context.packageName) == true

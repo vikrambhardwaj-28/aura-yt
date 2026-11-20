@@ -448,7 +448,7 @@ fun PlayerSettings(
                     },
                     trailingContent = {
                         Switch(
-                            checked = if (crossfadeEnabled) false else audioOffload,
+                            checked = !crossfadeEnabled && audioOffload,
                             onCheckedChange = onAudioOffloadChange,
                             enabled = !crossfadeEnabled,
                             thumbContent = {

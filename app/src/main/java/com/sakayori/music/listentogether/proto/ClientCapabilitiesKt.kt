@@ -5,11 +5,11 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.sakayori.music.listentogether.proto;
+package com.sakayori.music.listentogether.proto
 
-@kotlin.jvm.JvmName("-initializeclientCapabilities")
-public inline fun clientCapabilities(block: com.sakayori.music.listentogether.proto.ClientCapabilitiesKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.ClientCapabilities =
-  com.sakayori.music.listentogether.proto.ClientCapabilitiesKt.Dsl._create(com.sakayori.music.listentogether.proto.Listentogether.ClientCapabilities.newBuilder()).apply { block() }._build()
+@JvmName("-initializeclientCapabilities")
+inline fun clientCapabilities(block: ClientCapabilitiesKt.Dsl.() -> Unit): Listentogether.ClientCapabilities =
+  ClientCapabilitiesKt.Dsl._create(Listentogether.ClientCapabilities.newBuilder()).apply { block() }._build()
 /**
  * ```
  * Capability negotiation (first message from client)
@@ -17,75 +17,75 @@ public inline fun clientCapabilities(block: com.sakayori.music.listentogether.pr
  *
  * Protobuf type `listentogether.ClientCapabilities`
  */
-public object ClientCapabilitiesKt {
-  @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+object ClientCapabilitiesKt {
+  @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
-  public class Dsl private constructor(
-    private val _builder: com.sakayori.music.listentogether.proto.Listentogether.ClientCapabilities.Builder
+  class Dsl private constructor(
+    private val _builder: Listentogether.ClientCapabilities.Builder
   ) {
-    public companion object {
-      @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-      internal fun _create(builder: com.sakayori.music.listentogether.proto.Listentogether.ClientCapabilities.Builder): Dsl = Dsl(builder)
+    companion object {
+      @JvmSynthetic
+    @PublishedApi
+      internal fun _create(builder: Listentogether.ClientCapabilities.Builder): Dsl = Dsl(builder)
     }
 
-    @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-    internal fun _build(): com.sakayori.music.listentogether.proto.Listentogether.ClientCapabilities = _builder.build()
+    @JvmSynthetic
+  @PublishedApi
+    internal fun _build(): Listentogether.ClientCapabilities = _builder.build()
 
     /**
      * `bool supports_protobuf = 1;`
      */
-    public var supportsProtobuf: kotlin.Boolean
-      @kotlin.jvm.JvmName("getSupportsProtobuf")
+    var supportsProtobuf: Boolean
+      @JvmName("getSupportsProtobuf")
         get() = _builder.supportsProtobuf
-      @kotlin.jvm.JvmName("setSupportsProtobuf")
+      @JvmName("setSupportsProtobuf")
         set(value) {
         _builder.supportsProtobuf = value
       }
     /**
      * `bool supports_protobuf = 1;`
      */
-    public fun clearSupportsProtobuf() {
+    fun clearSupportsProtobuf() {
       _builder.clearSupportsProtobuf()
     }
 
     /**
      * `bool supports_compression = 2;`
      */
-    public var supportsCompression: kotlin.Boolean
-      @kotlin.jvm.JvmName("getSupportsCompression")
+    var supportsCompression: Boolean
+      @JvmName("getSupportsCompression")
         get() = _builder.supportsCompression
-      @kotlin.jvm.JvmName("setSupportsCompression")
+      @JvmName("setSupportsCompression")
         set(value) {
         _builder.supportsCompression = value
       }
     /**
      * `bool supports_compression = 2;`
      */
-    public fun clearSupportsCompression() {
+    fun clearSupportsCompression() {
       _builder.clearSupportsCompression()
     }
 
     /**
      * `string client_version = 3;`
      */
-    public var clientVersion: kotlin.String
-      @kotlin.jvm.JvmName("getClientVersion")
+    var clientVersion: String
+      @JvmName("getClientVersion")
         get() = _builder.clientVersion
-      @kotlin.jvm.JvmName("setClientVersion")
+      @JvmName("setClientVersion")
         set(value) {
         _builder.clientVersion = value
       }
     /**
      * `string client_version = 3;`
      */
-    public fun clearClientVersion() {
+    fun clearClientVersion() {
       _builder.clearClientVersion()
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
-public inline fun com.sakayori.music.listentogether.proto.Listentogether.ClientCapabilities.copy(block: `com.sakayori.music.listentogether.proto`.ClientCapabilitiesKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.ClientCapabilities =
-  `com.sakayori.music.listentogether.proto`.ClientCapabilitiesKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+@JvmSynthetic
+inline fun Listentogether.ClientCapabilities.copy(block: ClientCapabilitiesKt.Dsl.() -> Unit): Listentogether.ClientCapabilities =
+  ClientCapabilitiesKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

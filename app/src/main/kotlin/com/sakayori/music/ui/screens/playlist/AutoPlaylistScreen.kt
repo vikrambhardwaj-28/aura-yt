@@ -888,7 +888,7 @@ private fun AutoPlaylistHeader(
         Box(
             modifier = Modifier.padding(top = 8.dp, bottom = 20.dp),
         ) {
-            androidx.compose.material3.Surface(
+            Surface(
                 modifier =
                     Modifier
                         .size(240.dp)
@@ -947,7 +947,7 @@ private fun AutoPlaylistHeader(
             verticalAlignment = Alignment.CenterVertically,
         ) {
             // Shuffle Button - Smaller secondary button
-            androidx.compose.material3.Surface(
+            Surface(
                 onClick = {
                     playerConnection.playQueue(
                         ListQueue(

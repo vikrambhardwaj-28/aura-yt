@@ -153,7 +153,7 @@ class MusicRecognizerWidgetService : Service() {
                 val result = MusicRecognitionService.recognize(this@MusicRecognizerWidgetService)
                 pulseJob?.cancel()
 
-                val prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+                val prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
                 when (result) {
                     is RecognitionStatus.Success -> {
                         Timber.tag(TAG).i("Widget recognition success: '%s' by %s", result.result.title, result.result.artist)
@@ -228,7 +228,7 @@ class MusicRecognizerWidgetService : Service() {
             } catch (e: Exception) {
                 Timber.tag(TAG).e(e, "Widget recognition crashed")
                 pulseJob?.cancel()
-                getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+                getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
                     .edit()
                     .putInt(PREF_STATE, STATE_ERROR)
                     .putString(PREF_ERROR_MESSAGE, e.message ?: getString(R.string.widget_recognizer_error))
@@ -302,14 +302,14 @@ class MusicRecognizerWidgetService : Service() {
     }
 
     private fun saveState(state: Int) {
-        getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+        getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
             .edit()
             .putInt(PREF_STATE, state)
             .apply()
     }
 
     private fun savePulseFrame(frame: Int) {
-        getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+        getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
             .edit()
             .putInt(PREF_PULSE_FRAME, frame)
             .apply()

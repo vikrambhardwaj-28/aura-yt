@@ -130,7 +130,7 @@ fun serializeArtistPage(
     subscriberCountText: String?,
     monthlyListenerCount: String?,
     isSubscribed: Boolean,
-    artist: com.sakayori.innertube.models.ArtistItem? = null,
+    artist: ArtistItem? = null,
 ): String {
     val cached = CachedArtistPage(
         artist = artist?.let { CachedArtistItem(it.id, it.title, it.thumbnail, it.channelId, it.isProfile) },
@@ -157,7 +157,7 @@ fun deserializeArtistPage(jsonString: String): CachedArtistPage {
 fun CachedArtistPage.toArtistPage(): com.sakayori.innertube.pages.ArtistPage {
     return com.sakayori.innertube.pages.ArtistPage(
         artist = artist?.let { cached ->
-            com.sakayori.innertube.models.ArtistItem(
+            ArtistItem(
                 id = cached.id,
                 title = cached.title,
                 thumbnail = cached.thumbnail,
@@ -167,7 +167,7 @@ fun CachedArtistPage.toArtistPage(): com.sakayori.innertube.pages.ArtistPage {
                 radioEndpoint = null,
                 isProfile = cached.isProfile,
             )
-        } ?: com.sakayori.innertube.models.ArtistItem(
+        } ?: ArtistItem(
             id = "",
             title = "",
             thumbnail = null,

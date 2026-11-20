@@ -5,49 +5,49 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.sakayori.music.listentogether.proto;
+package com.sakayori.music.listentogether.proto
 
-@kotlin.jvm.JvmName("-initializetransferHostPayload")
-public inline fun transferHostPayload(block: com.sakayori.music.listentogether.proto.TransferHostPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.TransferHostPayload =
-  com.sakayori.music.listentogether.proto.TransferHostPayloadKt.Dsl._create(com.sakayori.music.listentogether.proto.Listentogether.TransferHostPayload.newBuilder()).apply { block() }._build()
+@JvmName("-initializetransferHostPayload")
+inline fun transferHostPayload(block: TransferHostPayloadKt.Dsl.() -> Unit): Listentogether.TransferHostPayload =
+  TransferHostPayloadKt.Dsl._create(Listentogether.TransferHostPayload.newBuilder()).apply { block() }._build()
 /**
  * Protobuf type `listentogether.TransferHostPayload`
  */
-public object TransferHostPayloadKt {
-  @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+object TransferHostPayloadKt {
+  @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
-  public class Dsl private constructor(
-    private val _builder: com.sakayori.music.listentogether.proto.Listentogether.TransferHostPayload.Builder
+  class Dsl private constructor(
+    private val _builder: Listentogether.TransferHostPayload.Builder
   ) {
-    public companion object {
-      @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-      internal fun _create(builder: com.sakayori.music.listentogether.proto.Listentogether.TransferHostPayload.Builder): Dsl = Dsl(builder)
+    companion object {
+      @JvmSynthetic
+    @PublishedApi
+      internal fun _create(builder: Listentogether.TransferHostPayload.Builder): Dsl = Dsl(builder)
     }
 
-    @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-    internal fun _build(): com.sakayori.music.listentogether.proto.Listentogether.TransferHostPayload = _builder.build()
+    @JvmSynthetic
+  @PublishedApi
+    internal fun _build(): Listentogether.TransferHostPayload = _builder.build()
 
     /**
      * `string new_host_id = 1;`
      */
-    public var newHostId: kotlin.String
-      @kotlin.jvm.JvmName("getNewHostId")
+    var newHostId: String
+      @JvmName("getNewHostId")
         get() = _builder.newHostId
-      @kotlin.jvm.JvmName("setNewHostId")
+      @JvmName("setNewHostId")
         set(value) {
         _builder.newHostId = value
       }
     /**
      * `string new_host_id = 1;`
      */
-    public fun clearNewHostId() {
+    fun clearNewHostId() {
       _builder.clearNewHostId()
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
-public inline fun com.sakayori.music.listentogether.proto.Listentogether.TransferHostPayload.copy(block: `com.sakayori.music.listentogether.proto`.TransferHostPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.TransferHostPayload =
-  `com.sakayori.music.listentogether.proto`.TransferHostPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+@JvmSynthetic
+inline fun Listentogether.TransferHostPayload.copy(block: TransferHostPayloadKt.Dsl.() -> Unit): Listentogether.TransferHostPayload =
+  TransferHostPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

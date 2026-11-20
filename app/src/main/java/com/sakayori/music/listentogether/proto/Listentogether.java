@@ -249,7 +249,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.Envelope prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -394,9 +394,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.Envelope();
@@ -960,7 +960,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.TrackInfo prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -1310,9 +1310,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.TrackInfo();
@@ -1668,7 +1668,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.UserInfo prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -1850,9 +1850,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.UserInfo();
@@ -2585,7 +2585,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.RoomState prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -3102,9 +3102,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.RoomState();
@@ -3337,7 +3337,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.CreateRoomPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -3410,9 +3410,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.CreateRoomPayload();
@@ -3693,7 +3693,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.JoinRoomPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -3815,9 +3815,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.JoinRoomPayload();
@@ -3831,8 +3831,7 @@ public final class Listentogether {
               "username_",
             };
             java.lang.String info =
-                "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u0208" +
-                "";
+                    "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u0208";
             return newMessageInfo(DEFAULT_INSTANCE, info, objects);
         }
         case GET_DEFAULT_INSTANCE: {
@@ -3978,7 +3977,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.LeaveRoomPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -4002,9 +4001,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.LeaveRoomPayload();
@@ -4222,7 +4221,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.ApproveJoinPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -4295,9 +4294,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.ApproveJoinPayload();
@@ -4578,7 +4577,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.RejectJoinPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -4700,9 +4699,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.RejectJoinPayload();
@@ -4716,8 +4715,7 @@ public final class Listentogether {
               "reason_",
             };
             java.lang.String info =
-                "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u0208" +
-                "";
+                    "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u0208";
             return newMessageInfo(DEFAULT_INSTANCE, info, objects);
         }
         case GET_DEFAULT_INSTANCE: {
@@ -5410,7 +5408,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.PlaybackActionPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -5898,9 +5896,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.PlaybackActionPayload();
@@ -6137,7 +6135,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.PingPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -6217,9 +6215,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.PingPayload();
@@ -6233,8 +6231,7 @@ public final class Listentogether {
               "sequence_",
             };
             java.lang.String info =
-                "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0002\u0002\u0003" +
-                "";
+                    "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0002\u0002\u0003";
             return newMessageInfo(DEFAULT_INSTANCE, info, objects);
         }
         case GET_DEFAULT_INSTANCE: {
@@ -6441,7 +6438,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.BufferReadyPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -6514,9 +6511,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.BufferReadyPayload();
@@ -6797,7 +6794,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.KickUserPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -6919,9 +6916,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.KickUserPayload();
@@ -6935,8 +6932,7 @@ public final class Listentogether {
               "reason_",
             };
             java.lang.String info =
-                "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u0208" +
-                "";
+                    "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u0208";
             return newMessageInfo(DEFAULT_INSTANCE, info, objects);
         }
         case GET_DEFAULT_INSTANCE: {
@@ -7143,7 +7139,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.TransferHostPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -7216,9 +7212,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.TransferHostPayload();
@@ -7437,7 +7433,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.SuggestTrackPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -7508,9 +7504,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.SuggestTrackPayload();
@@ -7731,7 +7727,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.ApproveSuggestionPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -7804,9 +7800,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.ApproveSuggestionPayload();
@@ -8087,7 +8083,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.RejectSuggestionPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -8209,9 +8205,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.RejectSuggestionPayload();
@@ -8225,8 +8221,7 @@ public final class Listentogether {
               "reason_",
             };
             java.lang.String info =
-                "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u0208" +
-                "";
+                    "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u0208";
             return newMessageInfo(DEFAULT_INSTANCE, info, objects);
         }
         case GET_DEFAULT_INSTANCE: {
@@ -8433,7 +8428,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.ReconnectPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -8506,9 +8501,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.ReconnectPayload();
@@ -8850,7 +8845,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.RoomCreatedPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -9021,9 +9016,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.RoomCreatedPayload();
@@ -9307,7 +9302,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.JoinRequestPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -9429,9 +9424,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.JoinRequestPayload();
@@ -9445,8 +9440,7 @@ public final class Listentogether {
               "username_",
             };
             java.lang.String info =
-                "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u0208" +
-                "";
+                    "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u0208";
             return newMessageInfo(DEFAULT_INSTANCE, info, objects);
         }
         case GET_DEFAULT_INSTANCE: {
@@ -9835,7 +9829,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.JoinApprovedPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -10053,9 +10047,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.JoinApprovedPayload();
@@ -10280,7 +10274,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.JoinRejectedPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -10353,9 +10347,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.JoinRejectedPayload();
@@ -10636,7 +10630,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.UserJoinedPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -10758,9 +10752,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.UserJoinedPayload();
@@ -10774,8 +10768,7 @@ public final class Listentogether {
               "username_",
             };
             java.lang.String info =
-                "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u0208" +
-                "";
+                    "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u0208";
             return newMessageInfo(DEFAULT_INSTANCE, info, objects);
         }
         case GET_DEFAULT_INSTANCE: {
@@ -11043,7 +11036,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.UserLeftPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -11165,9 +11158,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.UserLeftPayload();
@@ -11181,8 +11174,7 @@ public final class Listentogether {
               "username_",
             };
             java.lang.String info =
-                "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u0208" +
-                "";
+                    "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u0208";
             return newMessageInfo(DEFAULT_INSTANCE, info, objects);
         }
         case GET_DEFAULT_INSTANCE: {
@@ -11510,7 +11502,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.BufferWaitPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -11675,9 +11667,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.BufferWaitPayload();
@@ -11691,8 +11683,7 @@ public final class Listentogether {
               "waitingFor_",
             };
             java.lang.String info =
-                "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0001\u0000\u0001\u0208\u0002\u021a" +
-                "";
+                    "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0001\u0000\u0001\u0208\u0002\u021a";
             return newMessageInfo(DEFAULT_INSTANCE, info, objects);
         }
         case GET_DEFAULT_INSTANCE: {
@@ -11899,7 +11890,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.BufferCompletePayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -11972,9 +11963,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.BufferCompletePayload();
@@ -12255,7 +12246,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.ErrorPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -12377,9 +12368,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.ErrorPayload();
@@ -12393,8 +12384,7 @@ public final class Listentogether {
               "message_",
             };
             java.lang.String info =
-                "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u0208" +
-                "";
+                    "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u0208";
             return newMessageInfo(DEFAULT_INSTANCE, info, objects);
         }
         case GET_DEFAULT_INSTANCE: {
@@ -12662,7 +12652,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.HostChangedPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -12784,9 +12774,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.HostChangedPayload();
@@ -12800,8 +12790,7 @@ public final class Listentogether {
               "newHostName_",
             };
             java.lang.String info =
-                "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u0208" +
-                "";
+                    "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u0208";
             return newMessageInfo(DEFAULT_INSTANCE, info, objects);
         }
         case GET_DEFAULT_INSTANCE: {
@@ -13008,7 +12997,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.KickedPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -13081,9 +13070,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.KickedPayload();
@@ -13574,7 +13563,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.SyncStatePayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -13887,9 +13876,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.SyncStatePayload();
@@ -14185,7 +14174,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.PongPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -14321,9 +14310,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.PongPayload();
@@ -14700,7 +14689,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.ReconnectedPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -14897,9 +14886,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.ReconnectedPayload();
@@ -15185,7 +15174,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.UserReconnectedPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -15307,9 +15296,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.UserReconnectedPayload();
@@ -15323,8 +15312,7 @@ public final class Listentogether {
               "username_",
             };
             java.lang.String info =
-                "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u0208" +
-                "";
+                    "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u0208";
             return newMessageInfo(DEFAULT_INSTANCE, info, objects);
         }
         case GET_DEFAULT_INSTANCE: {
@@ -15592,7 +15580,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.UserDisconnectedPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -15714,9 +15702,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.UserDisconnectedPayload();
@@ -15730,8 +15718,7 @@ public final class Listentogether {
               "username_",
             };
             java.lang.String info =
-                "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u0208" +
-                "";
+                    "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u0208";
             return newMessageInfo(DEFAULT_INSTANCE, info, objects);
         }
         case GET_DEFAULT_INSTANCE: {
@@ -16120,7 +16107,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.SuggestionReceivedPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -16338,9 +16325,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.SuggestionReceivedPayload();
@@ -16625,7 +16612,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.SuggestionApprovedPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -16745,9 +16732,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.SuggestionApprovedPayload();
@@ -17031,7 +17018,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.SuggestionRejectedPayload prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -17153,9 +17140,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.SuggestionRejectedPayload();
@@ -17169,8 +17156,7 @@ public final class Listentogether {
               "reason_",
             };
             java.lang.String info =
-                "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u0208" +
-                "";
+                    "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u0208";
             return newMessageInfo(DEFAULT_INSTANCE, info, objects);
         }
         case GET_DEFAULT_INSTANCE: {
@@ -17445,7 +17431,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.ClientCapabilities prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -17578,9 +17564,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.ClientCapabilities();
@@ -17867,7 +17853,7 @@ public final class Listentogether {
     }
 
     public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
+      return DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(com.sakayori.music.listentogether.proto.Listentogether.ServerCapabilities prototype) {
       return DEFAULT_INSTANCE.createBuilder(prototype);
@@ -17996,9 +17982,9 @@ public final class Listentogether {
     }
     @java.lang.Override
     @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
+    protected java.lang.Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            java.lang.Object arg0, java.lang.Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
           return new com.sakayori.music.listentogether.proto.Listentogether.ServerCapabilities();

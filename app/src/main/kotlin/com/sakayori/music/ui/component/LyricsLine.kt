@@ -371,7 +371,7 @@ private fun WordLevelLyrics(
                             text = segmentText,
                             startTime = word.startTime + index * segmentDuration,
                             endTime = word.startTime + (index + 1) * segmentDuration,
-                            hasTrailingSpace = if (index == segments.size - 1) word.hasTrailingSpace else false
+                            hasTrailingSpace = index == segments.size - 1 && word.hasTrailingSpace
                         ) to originalIdx
                     }
                 } else listOf(word to originalIdx)

@@ -5,6 +5,7 @@
 
 package com.sakayori.music.ui.component
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.tween
@@ -35,8 +36,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.unit.dp
+import com.sakayori.music.ui.theme.glassBackground
 
 /**
  * A Material 3 Expressive style settings group component
@@ -87,13 +90,13 @@ fun Material3SettingsGroup(
                         ),
                     shape = shape,
                     colors = CardDefaults.cardColors(
-                        containerColor = if (!useLowContrast) {
-                            MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.3f)
-                        } else {
-                            MaterialTheme.colorScheme.surfaceContainerLow
-                        }
+                        containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f)
                     ),
-                    elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
+                    elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+                    border = BorderStroke(
+                        width = 1.dp,
+                        color = MaterialTheme.colorScheme.outline.copy(alpha = 0.15f)
+                    )
                 ) {
                     Material3SettingsItemRow(item = item)
                 }
@@ -142,13 +145,13 @@ fun LazyListScope.material3SettingsGroupItems(
                 ),
             shape = shape,
             colors = CardDefaults.cardColors(
-                containerColor = if (!useLowContrast) {
-                    MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.3f)
-                } else {
-                    MaterialTheme.colorScheme.surfaceContainerLow
-                }
+                containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f)
             ),
-            elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
+            elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+            border = BorderStroke(
+                width = 1.dp,
+                color = MaterialTheme.colorScheme.outline.copy(alpha = 0.15f)
+            ),
         ) {
             Material3SettingsItemRow(item = item)
         }

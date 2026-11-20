@@ -5,122 +5,122 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.sakayori.music.listentogether.proto;
+package com.sakayori.music.listentogether.proto
 
-@kotlin.jvm.JvmName("-initializeplaybackActionPayload")
-public inline fun playbackActionPayload(block: com.sakayori.music.listentogether.proto.PlaybackActionPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.PlaybackActionPayload =
-  com.sakayori.music.listentogether.proto.PlaybackActionPayloadKt.Dsl._create(com.sakayori.music.listentogether.proto.Listentogether.PlaybackActionPayload.newBuilder()).apply { block() }._build()
+@JvmName("-initializeplaybackActionPayload")
+inline fun playbackActionPayload(block: PlaybackActionPayloadKt.Dsl.() -> Unit): Listentogether.PlaybackActionPayload =
+  PlaybackActionPayloadKt.Dsl._create(Listentogether.PlaybackActionPayload.newBuilder()).apply { block() }._build()
 /**
  * Protobuf type `listentogether.PlaybackActionPayload`
  */
-public object PlaybackActionPayloadKt {
-  @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+object PlaybackActionPayloadKt {
+  @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
-  public class Dsl private constructor(
-    private val _builder: com.sakayori.music.listentogether.proto.Listentogether.PlaybackActionPayload.Builder
+  class Dsl private constructor(
+    private val _builder: Listentogether.PlaybackActionPayload.Builder
   ) {
-    public companion object {
-      @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-      internal fun _create(builder: com.sakayori.music.listentogether.proto.Listentogether.PlaybackActionPayload.Builder): Dsl = Dsl(builder)
+    companion object {
+      @JvmSynthetic
+    @PublishedApi
+      internal fun _create(builder: Listentogether.PlaybackActionPayload.Builder): Dsl = Dsl(builder)
     }
 
-    @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-    internal fun _build(): com.sakayori.music.listentogether.proto.Listentogether.PlaybackActionPayload = _builder.build()
+    @JvmSynthetic
+  @PublishedApi
+    internal fun _build(): Listentogether.PlaybackActionPayload = _builder.build()
 
     /**
      * `string action = 1;`
      */
-    public var action: kotlin.String
-      @kotlin.jvm.JvmName("getAction")
+    var action: String
+      @JvmName("getAction")
         get() = _builder.action
-      @kotlin.jvm.JvmName("setAction")
+      @JvmName("setAction")
         set(value) {
         _builder.action = value
       }
     /**
      * `string action = 1;`
      */
-    public fun clearAction() {
+    fun clearAction() {
       _builder.clearAction()
     }
 
     /**
      * `string track_id = 2;`
      */
-    public var trackId: kotlin.String
-      @kotlin.jvm.JvmName("getTrackId")
+    var trackId: String
+      @JvmName("getTrackId")
         get() = _builder.trackId
-      @kotlin.jvm.JvmName("setTrackId")
+      @JvmName("setTrackId")
         set(value) {
         _builder.trackId = value
       }
     /**
      * `string track_id = 2;`
      */
-    public fun clearTrackId() {
+    fun clearTrackId() {
       _builder.clearTrackId()
     }
 
     /**
      * `int64 position = 3;`
      */
-    public var position: kotlin.Long
-      @kotlin.jvm.JvmName("getPosition")
+    var position: Long
+      @JvmName("getPosition")
         get() = _builder.position
-      @kotlin.jvm.JvmName("setPosition")
+      @JvmName("setPosition")
         set(value) {
         _builder.position = value
       }
     /**
      * `int64 position = 3;`
      */
-    public fun clearPosition() {
+    fun clearPosition() {
       _builder.clearPosition()
     }
 
     /**
      * `.listentogether.TrackInfo track_info = 4;`
      */
-    public var trackInfo: com.sakayori.music.listentogether.proto.Listentogether.TrackInfo
-      @kotlin.jvm.JvmName("getTrackInfo")
+    var trackInfo: Listentogether.TrackInfo
+      @JvmName("getTrackInfo")
         get() = _builder.trackInfo
-      @kotlin.jvm.JvmName("setTrackInfo")
+      @JvmName("setTrackInfo")
         set(value) {
         _builder.trackInfo = value
       }
     /**
      * `.listentogether.TrackInfo track_info = 4;`
      */
-    public fun clearTrackInfo() {
+    fun clearTrackInfo() {
       _builder.clearTrackInfo()
     }
     /**
      * `.listentogether.TrackInfo track_info = 4;`
      * @return Whether the trackInfo field is set.
      */
-    public fun hasTrackInfo(): kotlin.Boolean {
+    fun hasTrackInfo(): Boolean {
       return _builder.hasTrackInfo()
     }
 
-    public val PlaybackActionPayloadKt.Dsl.trackInfoOrNull: com.sakayori.music.listentogether.proto.Listentogether.TrackInfo?
+    val Dsl.trackInfoOrNull: Listentogether.TrackInfo?
       get() = _builder.trackInfoOrNull
 
     /**
      * `bool insert_next = 5;`
      */
-    public var insertNext: kotlin.Boolean
-      @kotlin.jvm.JvmName("getInsertNext")
+    var insertNext: Boolean
+      @JvmName("getInsertNext")
         get() = _builder.insertNext
-      @kotlin.jvm.JvmName("setInsertNext")
+      @JvmName("setInsertNext")
         set(value) {
         _builder.insertNext = value
       }
     /**
      * `bool insert_next = 5;`
      */
-    public fun clearInsertNext() {
+    fun clearInsertNext() {
       _builder.clearInsertNext()
     }
 
@@ -128,13 +128,13 @@ public object PlaybackActionPayloadKt {
      * An uninstantiable, behaviorless type to represent the field in
      * generics.
      */
-    @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
-    public class QueueProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
+    @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+    class QueueProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
      * `repeated .listentogether.TrackInfo queue = 6;`
      */
-     public val queue: com.google.protobuf.kotlin.DslList<com.sakayori.music.listentogether.proto.Listentogether.TrackInfo, QueueProxy>
-      @kotlin.jvm.JvmSynthetic
+    val queue: com.google.protobuf.kotlin.DslList<Listentogether.TrackInfo, QueueProxy>
+      @JvmSynthetic
   get() = com.google.protobuf.kotlin.DslList(
         _builder.queueList
       )
@@ -142,38 +142,38 @@ public object PlaybackActionPayloadKt {
      * `repeated .listentogether.TrackInfo queue = 6;`
      * @param value The queue to add.
      */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addQueue")
-    public fun com.google.protobuf.kotlin.DslList<com.sakayori.music.listentogether.proto.Listentogether.TrackInfo, QueueProxy>.add(value: com.sakayori.music.listentogether.proto.Listentogether.TrackInfo) {
+    @JvmSynthetic
+@JvmName("addQueue")
+    fun com.google.protobuf.kotlin.DslList<Listentogether.TrackInfo, QueueProxy>.add(value: Listentogether.TrackInfo) {
       _builder.addQueue(value)
     }
     /**
      * `repeated .listentogether.TrackInfo queue = 6;`
      * @param value The queue to add.
      */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignQueue")
+    @JvmSynthetic
+@JvmName("plusAssignQueue")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<com.sakayori.music.listentogether.proto.Listentogether.TrackInfo, QueueProxy>.plusAssign(value: com.sakayori.music.listentogether.proto.Listentogether.TrackInfo) {
+    inline operator fun com.google.protobuf.kotlin.DslList<Listentogether.TrackInfo, QueueProxy>.plusAssign(value: Listentogether.TrackInfo) {
       add(value)
     }
     /**
      * `repeated .listentogether.TrackInfo queue = 6;`
      * @param values The queue to add.
      */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addAllQueue")
-    public fun com.google.protobuf.kotlin.DslList<com.sakayori.music.listentogether.proto.Listentogether.TrackInfo, QueueProxy>.addAll(values: kotlin.collections.Iterable<com.sakayori.music.listentogether.proto.Listentogether.TrackInfo>) {
+    @JvmSynthetic
+@JvmName("addAllQueue")
+    fun com.google.protobuf.kotlin.DslList<Listentogether.TrackInfo, QueueProxy>.addAll(values: Iterable<Listentogether.TrackInfo>) {
       _builder.addAllQueue(values)
     }
     /**
      * `repeated .listentogether.TrackInfo queue = 6;`
      * @param values The queue to add.
      */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignAllQueue")
+    @JvmSynthetic
+@JvmName("plusAssignAllQueue")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<com.sakayori.music.listentogether.proto.Listentogether.TrackInfo, QueueProxy>.plusAssign(values: kotlin.collections.Iterable<com.sakayori.music.listentogether.proto.Listentogether.TrackInfo>) {
+    inline operator fun com.google.protobuf.kotlin.DslList<Listentogether.TrackInfo, QueueProxy>.plusAssign(values: Iterable<Listentogether.TrackInfo>) {
       addAll(values)
     }
     /**
@@ -181,110 +181,110 @@ public object PlaybackActionPayloadKt {
      * @param index The index to set the value at.
      * @param value The queue to set.
      */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("setQueue")
-    public operator fun com.google.protobuf.kotlin.DslList<com.sakayori.music.listentogether.proto.Listentogether.TrackInfo, QueueProxy>.set(index: kotlin.Int, value: com.sakayori.music.listentogether.proto.Listentogether.TrackInfo) {
+    @JvmSynthetic
+@JvmName("setQueue")
+    operator fun com.google.protobuf.kotlin.DslList<Listentogether.TrackInfo, QueueProxy>.set(index: Int, value: Listentogether.TrackInfo) {
       _builder.setQueue(index, value)
     }
     /**
      * `repeated .listentogether.TrackInfo queue = 6;`
      */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("clearQueue")
-    public fun com.google.protobuf.kotlin.DslList<com.sakayori.music.listentogether.proto.Listentogether.TrackInfo, QueueProxy>.clear() {
+    @JvmSynthetic
+@JvmName("clearQueue")
+    fun com.google.protobuf.kotlin.DslList<Listentogether.TrackInfo, QueueProxy>.clear() {
       _builder.clearQueue()
     }
 
     /**
      * `string queue_title = 7;`
      */
-    public var queueTitle: kotlin.String
-      @kotlin.jvm.JvmName("getQueueTitle")
+    var queueTitle: String
+      @JvmName("getQueueTitle")
         get() = _builder.queueTitle
-      @kotlin.jvm.JvmName("setQueueTitle")
+      @JvmName("setQueueTitle")
         set(value) {
         _builder.queueTitle = value
       }
     /**
      * `string queue_title = 7;`
      */
-    public fun clearQueueTitle() {
+    fun clearQueueTitle() {
       _builder.clearQueueTitle()
     }
 
     /**
      * `float volume = 8;`
      */
-    public var volume: kotlin.Float
-      @kotlin.jvm.JvmName("getVolume")
+    var volume: Float
+      @JvmName("getVolume")
         get() = _builder.volume
-      @kotlin.jvm.JvmName("setVolume")
+      @JvmName("setVolume")
         set(value) {
         _builder.volume = value
       }
     /**
      * `float volume = 8;`
      */
-    public fun clearVolume() {
+    fun clearVolume() {
       _builder.clearVolume()
     }
 
     /**
      * `int64 server_time = 9;`
      */
-    public var serverTime: kotlin.Long
-      @kotlin.jvm.JvmName("getServerTime")
+    var serverTime: Long
+      @JvmName("getServerTime")
         get() = _builder.serverTime
-      @kotlin.jvm.JvmName("setServerTime")
+      @JvmName("setServerTime")
         set(value) {
         _builder.serverTime = value
       }
     /**
      * `int64 server_time = 9;`
      */
-    public fun clearServerTime() {
+    fun clearServerTime() {
       _builder.clearServerTime()
     }
 
     /**
      * `uint64 revision = 10;`
      */
-    public var revision: kotlin.Long
-      @kotlin.jvm.JvmName("getRevision")
+    var revision: Long
+      @JvmName("getRevision")
         get() = _builder.revision
-      @kotlin.jvm.JvmName("setRevision")
+      @JvmName("setRevision")
         set(value) {
         _builder.revision = value
       }
     /**
      * `uint64 revision = 10;`
      */
-    public fun clearRevision() {
+    fun clearRevision() {
       _builder.clearRevision()
     }
 
     /**
      * `int64 captured_at_server_time = 11;`
      */
-    public var capturedAtServerTime: kotlin.Long
-      @kotlin.jvm.JvmName("getCapturedAtServerTime")
+    var capturedAtServerTime: Long
+      @JvmName("getCapturedAtServerTime")
         get() = _builder.capturedAtServerTime
-      @kotlin.jvm.JvmName("setCapturedAtServerTime")
+      @JvmName("setCapturedAtServerTime")
         set(value) {
         _builder.capturedAtServerTime = value
       }
     /**
      * `int64 captured_at_server_time = 11;`
      */
-    public fun clearCapturedAtServerTime() {
+    fun clearCapturedAtServerTime() {
       _builder.clearCapturedAtServerTime()
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
-public inline fun com.sakayori.music.listentogether.proto.Listentogether.PlaybackActionPayload.copy(block: `com.sakayori.music.listentogether.proto`.PlaybackActionPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.PlaybackActionPayload =
-  `com.sakayori.music.listentogether.proto`.PlaybackActionPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+@JvmSynthetic
+inline fun Listentogether.PlaybackActionPayload.copy(block: PlaybackActionPayloadKt.Dsl.() -> Unit): Listentogether.PlaybackActionPayload =
+  PlaybackActionPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 
-public val com.sakayori.music.listentogether.proto.Listentogether.PlaybackActionPayloadOrBuilder.trackInfoOrNull: com.sakayori.music.listentogether.proto.Listentogether.TrackInfo?
+val Listentogether.PlaybackActionPayloadOrBuilder.trackInfoOrNull: Listentogether.TrackInfo?
   get() = if (hasTrackInfo()) getTrackInfo() else null
 

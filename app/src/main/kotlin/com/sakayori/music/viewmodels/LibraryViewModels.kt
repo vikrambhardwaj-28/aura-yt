@@ -474,7 +474,7 @@ constructor(
 
     // Podcast channels: API subscriptions + locally bookmarked artists that have podcasts
     // Only shows channels explicitly subscribed to (not derived from saved podcasts)
-    val podcastChannels = kotlinx.coroutines.flow.combine(
+    val podcastChannels = combine(
         _apiPodcastChannels,
         database.bookmarkedPodcastChannels()
     ) { apiChannels, localPodcastChannels ->

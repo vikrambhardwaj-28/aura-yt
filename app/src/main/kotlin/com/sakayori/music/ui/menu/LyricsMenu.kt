@@ -458,7 +458,7 @@ fun LyricsMenu(
                                             lyrics
                                         }
 
-                                    val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                                    val clipboard = context.getSystemService("clipboard") as ClipboardManager
                                     val clip = ClipData.newPlainText("Lyrics", plainLyrics)
                                     clipboard.setPrimaryClip(clip)
                                     Toast.makeText(context, R.string.copied_to_clipboard, Toast.LENGTH_SHORT).show()

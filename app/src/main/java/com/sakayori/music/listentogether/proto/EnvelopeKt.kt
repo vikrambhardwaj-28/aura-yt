@@ -5,11 +5,11 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.sakayori.music.listentogether.proto;
+package com.sakayori.music.listentogether.proto
 
-@kotlin.jvm.JvmName("-initializeenvelope")
-public inline fun envelope(block: com.sakayori.music.listentogether.proto.EnvelopeKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.Envelope =
-  com.sakayori.music.listentogether.proto.EnvelopeKt.Dsl._create(com.sakayori.music.listentogether.proto.Listentogether.Envelope.newBuilder()).apply { block() }._build()
+@JvmName("-initializeenvelope")
+inline fun envelope(block: EnvelopeKt.Dsl.() -> Unit): Listentogether.Envelope =
+  EnvelopeKt.Dsl._create(Listentogether.Envelope.newBuilder()).apply { block() }._build()
 /**
  * ```
  * Message envelope with type and payload
@@ -17,53 +17,53 @@ public inline fun envelope(block: com.sakayori.music.listentogether.proto.Envelo
  *
  * Protobuf type `listentogether.Envelope`
  */
-public object EnvelopeKt {
-  @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+object EnvelopeKt {
+  @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
-  public class Dsl private constructor(
-    private val _builder: com.sakayori.music.listentogether.proto.Listentogether.Envelope.Builder
+  class Dsl private constructor(
+    private val _builder: Listentogether.Envelope.Builder
   ) {
-    public companion object {
-      @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-      internal fun _create(builder: com.sakayori.music.listentogether.proto.Listentogether.Envelope.Builder): Dsl = Dsl(builder)
+    companion object {
+      @JvmSynthetic
+    @PublishedApi
+      internal fun _create(builder: Listentogether.Envelope.Builder): Dsl = Dsl(builder)
     }
 
-    @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-    internal fun _build(): com.sakayori.music.listentogether.proto.Listentogether.Envelope = _builder.build()
+    @JvmSynthetic
+  @PublishedApi
+    internal fun _build(): Listentogether.Envelope = _builder.build()
 
     /**
      * `string type = 1;`
      */
-    public var type: kotlin.String
-      @kotlin.jvm.JvmName("getType")
+    var type: String
+      @JvmName("getType")
         get() = _builder.type
-      @kotlin.jvm.JvmName("setType")
+      @JvmName("setType")
         set(value) {
         _builder.type = value
       }
     /**
      * `string type = 1;`
      */
-    public fun clearType() {
+    fun clearType() {
       _builder.clearType()
     }
 
     /**
      * `bytes payload = 2;`
      */
-    public var payload: com.google.protobuf.ByteString
-      @kotlin.jvm.JvmName("getPayload")
+    var payload: com.google.protobuf.ByteString
+      @JvmName("getPayload")
         get() = _builder.payload
-      @kotlin.jvm.JvmName("setPayload")
+      @JvmName("setPayload")
         set(value) {
         _builder.payload = value
       }
     /**
      * `bytes payload = 2;`
      */
-    public fun clearPayload() {
+    fun clearPayload() {
       _builder.clearPayload()
     }
 
@@ -74,10 +74,10 @@ public object EnvelopeKt {
      *
      * `bool compressed = 3;`
      */
-    public var compressed: kotlin.Boolean
-      @kotlin.jvm.JvmName("getCompressed")
+    var compressed: Boolean
+      @JvmName("getCompressed")
         get() = _builder.compressed
-      @kotlin.jvm.JvmName("setCompressed")
+      @JvmName("setCompressed")
         set(value) {
         _builder.compressed = value
       }
@@ -88,12 +88,12 @@ public object EnvelopeKt {
      *
      * `bool compressed = 3;`
      */
-    public fun clearCompressed() {
+    fun clearCompressed() {
       _builder.clearCompressed()
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
-public inline fun com.sakayori.music.listentogether.proto.Listentogether.Envelope.copy(block: `com.sakayori.music.listentogether.proto`.EnvelopeKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.Envelope =
-  `com.sakayori.music.listentogether.proto`.EnvelopeKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+@JvmSynthetic
+inline fun Listentogether.Envelope.copy(block: EnvelopeKt.Dsl.() -> Unit): Listentogether.Envelope =
+  EnvelopeKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

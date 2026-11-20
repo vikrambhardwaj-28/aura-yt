@@ -575,7 +575,7 @@ fun LogsDialog(
                                 log.details?.let { d -> append(" -- $d") }
                             }
                         }
-                    val cm = context.getSystemService(android.content.Context.CLIPBOARD_SERVICE) as android.content.ClipboardManager
+                    val cm = context.getSystemService("clipboard") as android.content.ClipboardManager
                     val clip = android.content.ClipData.newPlainText("ListenTogetherLogs", textToCopy)
                     cm.setPrimaryClip(clip)
                     Toast.makeText(context, R.string.copied_to_clipboard, Toast.LENGTH_SHORT).show()

@@ -389,7 +389,7 @@ object YTPlayerUtils {
                             streamUrl = "${streamUrl}${separator}pot=${Uri.encode(poToken.streamingDataPoToken)}"
                             Timber.tag(TAG).d("  Final URL length (with pot): ${streamUrl.length}")
                         }
-                    } catch (e: kotlinx.coroutines.CancellationException) {
+                    } catch (e: CancellationException) {
                         throw e // request superseded/cancelled — abort cleanly, don't validate an un-transformed URL
                     } catch (e: Exception) {
                         Timber.tag(TAG).e(e, "N-transform or pot append failed: ${e.message}")
@@ -756,7 +756,7 @@ object YTPlayerUtils {
         val cipherSts = try {
             CipherDeobfuscator.signatureTimestamp()
                 ?.also { Timber.tag(logTag).d("Signature timestamp from cipher player: $it") }
-        } catch (e: kotlinx.coroutines.CancellationException) {
+        } catch (e: CancellationException) {
             throw e // cooperative cancellation: don't swallow, let the playback coroutine unwind
         } catch (e: Exception) {
             Timber.tag(logTag).e(e, "Cipher player STS fetch failed")

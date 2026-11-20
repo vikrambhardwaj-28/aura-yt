@@ -5,32 +5,32 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.sakayori.music.listentogether.proto;
+package com.sakayori.music.listentogether.proto
 
-@kotlin.jvm.JvmName("-initializeleaveRoomPayload")
-public inline fun leaveRoomPayload(block: com.sakayori.music.listentogether.proto.LeaveRoomPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.LeaveRoomPayload =
-  com.sakayori.music.listentogether.proto.LeaveRoomPayloadKt.Dsl._create(com.sakayori.music.listentogether.proto.Listentogether.LeaveRoomPayload.newBuilder()).apply { block() }._build()
+@JvmName("-initializeleaveRoomPayload")
+inline fun leaveRoomPayload(block: LeaveRoomPayloadKt.Dsl.() -> Unit): Listentogether.LeaveRoomPayload =
+  LeaveRoomPayloadKt.Dsl._create(Listentogether.LeaveRoomPayload.newBuilder()).apply { block() }._build()
 /**
  * Protobuf type `listentogether.LeaveRoomPayload`
  */
-public object LeaveRoomPayloadKt {
-  @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+object LeaveRoomPayloadKt {
+  @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
-  public class Dsl private constructor(
-    private val _builder: com.sakayori.music.listentogether.proto.Listentogether.LeaveRoomPayload.Builder
+  class Dsl private constructor(
+    private val _builder: Listentogether.LeaveRoomPayload.Builder
   ) {
-    public companion object {
-      @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-      internal fun _create(builder: com.sakayori.music.listentogether.proto.Listentogether.LeaveRoomPayload.Builder): Dsl = Dsl(builder)
+    companion object {
+      @JvmSynthetic
+    @PublishedApi
+      internal fun _create(builder: Listentogether.LeaveRoomPayload.Builder): Dsl = Dsl(builder)
     }
 
-    @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-    internal fun _build(): com.sakayori.music.listentogether.proto.Listentogether.LeaveRoomPayload = _builder.build()
+    @JvmSynthetic
+  @PublishedApi
+    internal fun _build(): Listentogether.LeaveRoomPayload = _builder.build()
   }
 }
-@kotlin.jvm.JvmSynthetic
-public inline fun com.sakayori.music.listentogether.proto.Listentogether.LeaveRoomPayload.copy(block: `com.sakayori.music.listentogether.proto`.LeaveRoomPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.LeaveRoomPayload =
-  `com.sakayori.music.listentogether.proto`.LeaveRoomPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+@JvmSynthetic
+inline fun Listentogether.LeaveRoomPayload.copy(block: LeaveRoomPayloadKt.Dsl.() -> Unit): Listentogether.LeaveRoomPayload =
+  LeaveRoomPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

@@ -786,7 +786,7 @@ class ListenTogetherManager
             val parameters = driftBasePlaybackParameters
             val appliedParameters = driftAppliedPlaybackParameters
             if (player != null && parameters != null && appliedParameters != null && player.playbackParameters == appliedParameters) {
-                player.setPlaybackParameters(parameters)
+                player.playbackParameters = parameters
             }
             driftBasePlaybackParameters = null
             driftAppliedPlaybackParameters = null
@@ -899,7 +899,7 @@ class ListenTogetherManager
                         if (appliedParameters != null && player.playbackParameters != appliedParameters) break
                         val multiplier = if (drift > 0L) 1f + DRIFT_CORRECTION_SPEED else 1f - DRIFT_CORRECTION_SPEED
                         val correctedParameters = baseParameters.withSpeed(baseParameters.speed * multiplier)
-                        player.setPlaybackParameters(correctedParameters)
+                        player.playbackParameters = correctedParameters
                         driftAppliedPlaybackParameters = correctedParameters
                         delay(DRIFT_CHECK_INTERVAL_MS)
                     }

@@ -331,26 +331,6 @@ fun YouTubeSongMenu(
                         onClick = {
                             showChoosePlaylistDialog = true
                         }
-                    ),
-                    NewAction(
-                        icon = {
-                            Icon(
-                                painter = painterResource(R.drawable.share),
-                                contentDescription = null,
-                                modifier = Modifier.size(28.dp),
-                                tint = MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                        },
-                        text = stringResource(R.string.share),
-                        onClick = {
-                            val intent = Intent().apply {
-                                action = Intent.ACTION_SEND
-                                type = "text/plain"
-                                putExtra(Intent.EXTRA_TEXT, song.shareLink)
-                            }
-                            context.startActivity(Intent.createChooser(intent, null))
-                            onDismiss()
-                        }
                     )
                 ),
                 columns = if (isGuest) 2 else 3,
@@ -466,9 +446,9 @@ fun YouTubeSongMenu(
                                         // Update local database first (optimistic update)
                                         database.query {
                                             if (librarySong != null) {
-                                                update(librarySong!!.song.copy(inLibrary = java.time.LocalDateTime.now()))
+                                                update(librarySong!!.song.copy(inLibrary = LocalDateTime.now()))
                                             } else {
-                                                insert(song.toMediaMetadata().toSongEntity().copy(inLibrary = java.time.LocalDateTime.now(), isEpisode = true))
+                                                insert(song.toMediaMetadata().toSongEntity().copy(inLibrary = LocalDateTime.now(), isEpisode = true))
                                             }
                                         }
                                         // Sync with YouTube (handles login check internally)

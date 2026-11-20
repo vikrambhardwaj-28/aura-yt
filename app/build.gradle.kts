@@ -117,7 +117,7 @@ android {
         // every marker without changing composition, content or motion.
         buildConfigField("Boolean", "PLAYER_TRACE_ENABLED", playerTraceEnabled.toString())
         buildCommit?.let { versionName = "$baseVersionName+$it" }
-        resValue("string", "app_name", appNameOverride ?: "Sakayori Music")
+        resValue("string", "app_name", appNameOverride ?: "Aura Music")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
@@ -206,7 +206,7 @@ android {
             }
             isDebuggable = true
             if (appNameOverride == null) {
-                resValue("string", "app_name", "Sakayori Music Debug")
+                resValue("string", "app_name", "Aura Music")
             }
             signingConfig =
                 if (workflowDebugKeystoreFile != null) {

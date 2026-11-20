@@ -5,105 +5,105 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.sakayori.music.listentogether.proto;
+package com.sakayori.music.listentogether.proto
 
-@kotlin.jvm.JvmName("-initializesyncStatePayload")
-public inline fun syncStatePayload(block: com.sakayori.music.listentogether.proto.SyncStatePayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.SyncStatePayload =
-  com.sakayori.music.listentogether.proto.SyncStatePayloadKt.Dsl._create(com.sakayori.music.listentogether.proto.Listentogether.SyncStatePayload.newBuilder()).apply { block() }._build()
+@JvmName("-initializesyncStatePayload")
+inline fun syncStatePayload(block: SyncStatePayloadKt.Dsl.() -> Unit): Listentogether.SyncStatePayload =
+  SyncStatePayloadKt.Dsl._create(Listentogether.SyncStatePayload.newBuilder()).apply { block() }._build()
 /**
  * Protobuf type `listentogether.SyncStatePayload`
  */
-public object SyncStatePayloadKt {
-  @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+object SyncStatePayloadKt {
+  @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
-  public class Dsl private constructor(
-    private val _builder: com.sakayori.music.listentogether.proto.Listentogether.SyncStatePayload.Builder
+  class Dsl private constructor(
+    private val _builder: Listentogether.SyncStatePayload.Builder
   ) {
-    public companion object {
-      @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-      internal fun _create(builder: com.sakayori.music.listentogether.proto.Listentogether.SyncStatePayload.Builder): Dsl = Dsl(builder)
+    companion object {
+      @JvmSynthetic
+    @PublishedApi
+      internal fun _create(builder: Listentogether.SyncStatePayload.Builder): Dsl = Dsl(builder)
     }
 
-    @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-    internal fun _build(): com.sakayori.music.listentogether.proto.Listentogether.SyncStatePayload = _builder.build()
+    @JvmSynthetic
+  @PublishedApi
+    internal fun _build(): Listentogether.SyncStatePayload = _builder.build()
 
     /**
      * `.listentogether.TrackInfo current_track = 1;`
      */
-    public var currentTrack: com.sakayori.music.listentogether.proto.Listentogether.TrackInfo
-      @kotlin.jvm.JvmName("getCurrentTrack")
+    var currentTrack: Listentogether.TrackInfo
+      @JvmName("getCurrentTrack")
         get() = _builder.currentTrack
-      @kotlin.jvm.JvmName("setCurrentTrack")
+      @JvmName("setCurrentTrack")
         set(value) {
         _builder.currentTrack = value
       }
     /**
      * `.listentogether.TrackInfo current_track = 1;`
      */
-    public fun clearCurrentTrack() {
+    fun clearCurrentTrack() {
       _builder.clearCurrentTrack()
     }
     /**
      * `.listentogether.TrackInfo current_track = 1;`
      * @return Whether the currentTrack field is set.
      */
-    public fun hasCurrentTrack(): kotlin.Boolean {
+    fun hasCurrentTrack(): Boolean {
       return _builder.hasCurrentTrack()
     }
 
-    public val SyncStatePayloadKt.Dsl.currentTrackOrNull: com.sakayori.music.listentogether.proto.Listentogether.TrackInfo?
+    val Dsl.currentTrackOrNull: Listentogether.TrackInfo?
       get() = _builder.currentTrackOrNull
 
     /**
      * `bool is_playing = 2;`
      */
-    public var isPlaying: kotlin.Boolean
-      @kotlin.jvm.JvmName("getIsPlaying")
+    var isPlaying: Boolean
+      @JvmName("getIsPlaying")
         get() = _builder.isPlaying
-      @kotlin.jvm.JvmName("setIsPlaying")
+      @JvmName("setIsPlaying")
         set(value) {
         _builder.isPlaying = value
       }
     /**
      * `bool is_playing = 2;`
      */
-    public fun clearIsPlaying() {
+    fun clearIsPlaying() {
       _builder.clearIsPlaying()
     }
 
     /**
      * `int64 position = 3;`
      */
-    public var position: kotlin.Long
-      @kotlin.jvm.JvmName("getPosition")
+    var position: Long
+      @JvmName("getPosition")
         get() = _builder.position
-      @kotlin.jvm.JvmName("setPosition")
+      @JvmName("setPosition")
         set(value) {
         _builder.position = value
       }
     /**
      * `int64 position = 3;`
      */
-    public fun clearPosition() {
+    fun clearPosition() {
       _builder.clearPosition()
     }
 
     /**
      * `int64 last_update = 4;`
      */
-    public var lastUpdate: kotlin.Long
-      @kotlin.jvm.JvmName("getLastUpdate")
+    var lastUpdate: Long
+      @JvmName("getLastUpdate")
         get() = _builder.lastUpdate
-      @kotlin.jvm.JvmName("setLastUpdate")
+      @JvmName("setLastUpdate")
         set(value) {
         _builder.lastUpdate = value
       }
     /**
      * `int64 last_update = 4;`
      */
-    public fun clearLastUpdate() {
+    fun clearLastUpdate() {
       _builder.clearLastUpdate()
     }
 
@@ -111,13 +111,13 @@ public object SyncStatePayloadKt {
      * An uninstantiable, behaviorless type to represent the field in
      * generics.
      */
-    @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
-    public class QueueProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
+    @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+    class QueueProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
      * `repeated .listentogether.TrackInfo queue = 5;`
      */
-     public val queue: com.google.protobuf.kotlin.DslList<com.sakayori.music.listentogether.proto.Listentogether.TrackInfo, QueueProxy>
-      @kotlin.jvm.JvmSynthetic
+    val queue: com.google.protobuf.kotlin.DslList<Listentogether.TrackInfo, QueueProxy>
+      @JvmSynthetic
   get() = com.google.protobuf.kotlin.DslList(
         _builder.queueList
       )
@@ -125,38 +125,38 @@ public object SyncStatePayloadKt {
      * `repeated .listentogether.TrackInfo queue = 5;`
      * @param value The queue to add.
      */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addQueue")
-    public fun com.google.protobuf.kotlin.DslList<com.sakayori.music.listentogether.proto.Listentogether.TrackInfo, QueueProxy>.add(value: com.sakayori.music.listentogether.proto.Listentogether.TrackInfo) {
+    @JvmSynthetic
+@JvmName("addQueue")
+    fun com.google.protobuf.kotlin.DslList<Listentogether.TrackInfo, QueueProxy>.add(value: Listentogether.TrackInfo) {
       _builder.addQueue(value)
     }
     /**
      * `repeated .listentogether.TrackInfo queue = 5;`
      * @param value The queue to add.
      */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignQueue")
+    @JvmSynthetic
+@JvmName("plusAssignQueue")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<com.sakayori.music.listentogether.proto.Listentogether.TrackInfo, QueueProxy>.plusAssign(value: com.sakayori.music.listentogether.proto.Listentogether.TrackInfo) {
+    inline operator fun com.google.protobuf.kotlin.DslList<Listentogether.TrackInfo, QueueProxy>.plusAssign(value: Listentogether.TrackInfo) {
       add(value)
     }
     /**
      * `repeated .listentogether.TrackInfo queue = 5;`
      * @param values The queue to add.
      */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addAllQueue")
-    public fun com.google.protobuf.kotlin.DslList<com.sakayori.music.listentogether.proto.Listentogether.TrackInfo, QueueProxy>.addAll(values: kotlin.collections.Iterable<com.sakayori.music.listentogether.proto.Listentogether.TrackInfo>) {
+    @JvmSynthetic
+@JvmName("addAllQueue")
+    fun com.google.protobuf.kotlin.DslList<Listentogether.TrackInfo, QueueProxy>.addAll(values: Iterable<Listentogether.TrackInfo>) {
       _builder.addAllQueue(values)
     }
     /**
      * `repeated .listentogether.TrackInfo queue = 5;`
      * @param values The queue to add.
      */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignAllQueue")
+    @JvmSynthetic
+@JvmName("plusAssignAllQueue")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<com.sakayori.music.listentogether.proto.Listentogether.TrackInfo, QueueProxy>.plusAssign(values: kotlin.collections.Iterable<com.sakayori.music.listentogether.proto.Listentogether.TrackInfo>) {
+    inline operator fun com.google.protobuf.kotlin.DslList<Listentogether.TrackInfo, QueueProxy>.plusAssign(values: Iterable<Listentogether.TrackInfo>) {
       addAll(values)
     }
     /**
@@ -164,59 +164,59 @@ public object SyncStatePayloadKt {
      * @param index The index to set the value at.
      * @param value The queue to set.
      */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("setQueue")
-    public operator fun com.google.protobuf.kotlin.DslList<com.sakayori.music.listentogether.proto.Listentogether.TrackInfo, QueueProxy>.set(index: kotlin.Int, value: com.sakayori.music.listentogether.proto.Listentogether.TrackInfo) {
+    @JvmSynthetic
+@JvmName("setQueue")
+    operator fun com.google.protobuf.kotlin.DslList<Listentogether.TrackInfo, QueueProxy>.set(index: Int, value: Listentogether.TrackInfo) {
       _builder.setQueue(index, value)
     }
     /**
      * `repeated .listentogether.TrackInfo queue = 5;`
      */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("clearQueue")
-    public fun com.google.protobuf.kotlin.DslList<com.sakayori.music.listentogether.proto.Listentogether.TrackInfo, QueueProxy>.clear() {
+    @JvmSynthetic
+@JvmName("clearQueue")
+    fun com.google.protobuf.kotlin.DslList<Listentogether.TrackInfo, QueueProxy>.clear() {
       _builder.clearQueue()
     }
 
     /**
      * `float volume = 6;`
      */
-    public var volume: kotlin.Float
-      @kotlin.jvm.JvmName("getVolume")
+    var volume: Float
+      @JvmName("getVolume")
         get() = _builder.volume
-      @kotlin.jvm.JvmName("setVolume")
+      @JvmName("setVolume")
         set(value) {
         _builder.volume = value
       }
     /**
      * `float volume = 6;`
      */
-    public fun clearVolume() {
+    fun clearVolume() {
       _builder.clearVolume()
     }
 
     /**
      * `uint64 revision = 7;`
      */
-    public var revision: kotlin.Long
-      @kotlin.jvm.JvmName("getRevision")
+    var revision: Long
+      @JvmName("getRevision")
         get() = _builder.revision
-      @kotlin.jvm.JvmName("setRevision")
+      @JvmName("setRevision")
         set(value) {
         _builder.revision = value
       }
     /**
      * `uint64 revision = 7;`
      */
-    public fun clearRevision() {
+    fun clearRevision() {
       _builder.clearRevision()
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
-public inline fun com.sakayori.music.listentogether.proto.Listentogether.SyncStatePayload.copy(block: `com.sakayori.music.listentogether.proto`.SyncStatePayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.SyncStatePayload =
-  `com.sakayori.music.listentogether.proto`.SyncStatePayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+@JvmSynthetic
+inline fun Listentogether.SyncStatePayload.copy(block: SyncStatePayloadKt.Dsl.() -> Unit): Listentogether.SyncStatePayload =
+  SyncStatePayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 
-public val com.sakayori.music.listentogether.proto.Listentogether.SyncStatePayloadOrBuilder.currentTrackOrNull: com.sakayori.music.listentogether.proto.Listentogether.TrackInfo?
+val Listentogether.SyncStatePayloadOrBuilder.currentTrackOrNull: Listentogether.TrackInfo?
   get() = if (hasCurrentTrack()) getCurrentTrack() else null
 

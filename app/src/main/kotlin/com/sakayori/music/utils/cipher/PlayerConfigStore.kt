@@ -420,7 +420,7 @@ object PlayerConfigStore {
         }
     }
 
-    private fun loadBundledJson(context: Context): String? =
+    private fun loadBundledJson(context: Context): String =
         context.assets.open(ASSET_NAME).bufferedReader().use { it.readText() }
 
     // Test seam: unit tests point this at a temp dir; production resolves from appContext.

@@ -5,113 +5,113 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.sakayori.music.listentogether.proto;
+package com.sakayori.music.listentogether.proto
 
-@kotlin.jvm.JvmName("-initializejoinApprovedPayload")
-public inline fun joinApprovedPayload(block: com.sakayori.music.listentogether.proto.JoinApprovedPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.JoinApprovedPayload =
-  com.sakayori.music.listentogether.proto.JoinApprovedPayloadKt.Dsl._create(com.sakayori.music.listentogether.proto.Listentogether.JoinApprovedPayload.newBuilder()).apply { block() }._build()
+@JvmName("-initializejoinApprovedPayload")
+inline fun joinApprovedPayload(block: JoinApprovedPayloadKt.Dsl.() -> Unit): Listentogether.JoinApprovedPayload =
+  JoinApprovedPayloadKt.Dsl._create(Listentogether.JoinApprovedPayload.newBuilder()).apply { block() }._build()
 /**
  * Protobuf type `listentogether.JoinApprovedPayload`
  */
-public object JoinApprovedPayloadKt {
-  @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+object JoinApprovedPayloadKt {
+  @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
-  public class Dsl private constructor(
-    private val _builder: com.sakayori.music.listentogether.proto.Listentogether.JoinApprovedPayload.Builder
+  class Dsl private constructor(
+    private val _builder: Listentogether.JoinApprovedPayload.Builder
   ) {
-    public companion object {
-      @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-      internal fun _create(builder: com.sakayori.music.listentogether.proto.Listentogether.JoinApprovedPayload.Builder): Dsl = Dsl(builder)
+    companion object {
+      @JvmSynthetic
+    @PublishedApi
+      internal fun _create(builder: Listentogether.JoinApprovedPayload.Builder): Dsl = Dsl(builder)
     }
 
-    @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-    internal fun _build(): com.sakayori.music.listentogether.proto.Listentogether.JoinApprovedPayload = _builder.build()
+    @JvmSynthetic
+  @PublishedApi
+    internal fun _build(): Listentogether.JoinApprovedPayload = _builder.build()
 
     /**
      * `string room_code = 1;`
      */
-    public var roomCode: kotlin.String
-      @kotlin.jvm.JvmName("getRoomCode")
+    var roomCode: String
+      @JvmName("getRoomCode")
         get() = _builder.roomCode
-      @kotlin.jvm.JvmName("setRoomCode")
+      @JvmName("setRoomCode")
         set(value) {
         _builder.roomCode = value
       }
     /**
      * `string room_code = 1;`
      */
-    public fun clearRoomCode() {
+    fun clearRoomCode() {
       _builder.clearRoomCode()
     }
 
     /**
      * `string user_id = 2;`
      */
-    public var userId: kotlin.String
-      @kotlin.jvm.JvmName("getUserId")
+    var userId: String
+      @JvmName("getUserId")
         get() = _builder.userId
-      @kotlin.jvm.JvmName("setUserId")
+      @JvmName("setUserId")
         set(value) {
         _builder.userId = value
       }
     /**
      * `string user_id = 2;`
      */
-    public fun clearUserId() {
+    fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
      * `string session_token = 3;`
      */
-    public var sessionToken: kotlin.String
-      @kotlin.jvm.JvmName("getSessionToken")
+    var sessionToken: String
+      @JvmName("getSessionToken")
         get() = _builder.sessionToken
-      @kotlin.jvm.JvmName("setSessionToken")
+      @JvmName("setSessionToken")
         set(value) {
         _builder.sessionToken = value
       }
     /**
      * `string session_token = 3;`
      */
-    public fun clearSessionToken() {
+    fun clearSessionToken() {
       _builder.clearSessionToken()
     }
 
     /**
      * `.listentogether.RoomState state = 4;`
      */
-    public var state: com.sakayori.music.listentogether.proto.Listentogether.RoomState
-      @kotlin.jvm.JvmName("getState")
+    var state: Listentogether.RoomState
+      @JvmName("getState")
         get() = _builder.state
-      @kotlin.jvm.JvmName("setState")
+      @JvmName("setState")
         set(value) {
         _builder.state = value
       }
     /**
      * `.listentogether.RoomState state = 4;`
      */
-    public fun clearState() {
+    fun clearState() {
       _builder.clearState()
     }
     /**
      * `.listentogether.RoomState state = 4;`
      * @return Whether the state field is set.
      */
-    public fun hasState(): kotlin.Boolean {
+    fun hasState(): Boolean {
       return _builder.hasState()
     }
 
-    public val JoinApprovedPayloadKt.Dsl.stateOrNull: com.sakayori.music.listentogether.proto.Listentogether.RoomState?
+    val Dsl.stateOrNull: Listentogether.RoomState?
       get() = _builder.stateOrNull
   }
 }
-@kotlin.jvm.JvmSynthetic
-public inline fun com.sakayori.music.listentogether.proto.Listentogether.JoinApprovedPayload.copy(block: `com.sakayori.music.listentogether.proto`.JoinApprovedPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.JoinApprovedPayload =
-  `com.sakayori.music.listentogether.proto`.JoinApprovedPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+@JvmSynthetic
+inline fun Listentogether.JoinApprovedPayload.copy(block: JoinApprovedPayloadKt.Dsl.() -> Unit): Listentogether.JoinApprovedPayload =
+  JoinApprovedPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 
-public val com.sakayori.music.listentogether.proto.Listentogether.JoinApprovedPayloadOrBuilder.stateOrNull: com.sakayori.music.listentogether.proto.Listentogether.RoomState?
+val Listentogether.JoinApprovedPayloadOrBuilder.stateOrNull: Listentogether.RoomState?
   get() = if (hasState()) getState() else null
 

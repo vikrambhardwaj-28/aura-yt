@@ -5,11 +5,11 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.sakayori.music.listentogether.proto;
+package com.sakayori.music.listentogether.proto
 
-@kotlin.jvm.JvmName("-initializetrackInfo")
-public inline fun trackInfo(block: com.sakayori.music.listentogether.proto.TrackInfoKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.TrackInfo =
-  com.sakayori.music.listentogether.proto.TrackInfoKt.Dsl._create(com.sakayori.music.listentogether.proto.Listentogether.TrackInfo.newBuilder()).apply { block() }._build()
+@JvmName("-initializetrackInfo")
+inline fun trackInfo(block: TrackInfoKt.Dsl.() -> Unit): Listentogether.TrackInfo =
+  TrackInfoKt.Dsl._create(Listentogether.TrackInfo.newBuilder()).apply { block() }._build()
 /**
  * ```
  * Track information
@@ -17,143 +17,143 @@ public inline fun trackInfo(block: com.sakayori.music.listentogether.proto.Track
  *
  * Protobuf type `listentogether.TrackInfo`
  */
-public object TrackInfoKt {
-  @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+object TrackInfoKt {
+  @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
-  public class Dsl private constructor(
-    private val _builder: com.sakayori.music.listentogether.proto.Listentogether.TrackInfo.Builder
+  class Dsl private constructor(
+    private val _builder: Listentogether.TrackInfo.Builder
   ) {
-    public companion object {
-      @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-      internal fun _create(builder: com.sakayori.music.listentogether.proto.Listentogether.TrackInfo.Builder): Dsl = Dsl(builder)
+    companion object {
+      @JvmSynthetic
+    @PublishedApi
+      internal fun _create(builder: Listentogether.TrackInfo.Builder): Dsl = Dsl(builder)
     }
 
-    @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-    internal fun _build(): com.sakayori.music.listentogether.proto.Listentogether.TrackInfo = _builder.build()
+    @JvmSynthetic
+  @PublishedApi
+    internal fun _build(): Listentogether.TrackInfo = _builder.build()
 
     /**
      * `string id = 1;`
      */
-    public var id: kotlin.String
-      @kotlin.jvm.JvmName("getId")
+    var id: String
+      @JvmName("getId")
         get() = _builder.id
-      @kotlin.jvm.JvmName("setId")
+      @JvmName("setId")
         set(value) {
         _builder.id = value
       }
     /**
      * `string id = 1;`
      */
-    public fun clearId() {
+    fun clearId() {
       _builder.clearId()
     }
 
     /**
      * `string title = 2;`
      */
-    public var title: kotlin.String
-      @kotlin.jvm.JvmName("getTitle")
+    var title: String
+      @JvmName("getTitle")
         get() = _builder.title
-      @kotlin.jvm.JvmName("setTitle")
+      @JvmName("setTitle")
         set(value) {
         _builder.title = value
       }
     /**
      * `string title = 2;`
      */
-    public fun clearTitle() {
+    fun clearTitle() {
       _builder.clearTitle()
     }
 
     /**
      * `string artist = 3;`
      */
-    public var artist: kotlin.String
-      @kotlin.jvm.JvmName("getArtist")
+    var artist: String
+      @JvmName("getArtist")
         get() = _builder.artist
-      @kotlin.jvm.JvmName("setArtist")
+      @JvmName("setArtist")
         set(value) {
         _builder.artist = value
       }
     /**
      * `string artist = 3;`
      */
-    public fun clearArtist() {
+    fun clearArtist() {
       _builder.clearArtist()
     }
 
     /**
      * `string album = 4;`
      */
-    public var album: kotlin.String
-      @kotlin.jvm.JvmName("getAlbum")
+    var album: String
+      @JvmName("getAlbum")
         get() = _builder.album
-      @kotlin.jvm.JvmName("setAlbum")
+      @JvmName("setAlbum")
         set(value) {
         _builder.album = value
       }
     /**
      * `string album = 4;`
      */
-    public fun clearAlbum() {
+    fun clearAlbum() {
       _builder.clearAlbum()
     }
 
     /**
      * `int64 duration = 5;`
      */
-    public var duration: kotlin.Long
-      @kotlin.jvm.JvmName("getDuration")
+    var duration: Long
+      @JvmName("getDuration")
         get() = _builder.duration
-      @kotlin.jvm.JvmName("setDuration")
+      @JvmName("setDuration")
         set(value) {
         _builder.duration = value
       }
     /**
      * `int64 duration = 5;`
      */
-    public fun clearDuration() {
+    fun clearDuration() {
       _builder.clearDuration()
     }
 
     /**
      * `string thumbnail = 6;`
      */
-    public var thumbnail: kotlin.String
-      @kotlin.jvm.JvmName("getThumbnail")
+    var thumbnail: String
+      @JvmName("getThumbnail")
         get() = _builder.thumbnail
-      @kotlin.jvm.JvmName("setThumbnail")
+      @JvmName("setThumbnail")
         set(value) {
         _builder.thumbnail = value
       }
     /**
      * `string thumbnail = 6;`
      */
-    public fun clearThumbnail() {
+    fun clearThumbnail() {
       _builder.clearThumbnail()
     }
 
     /**
      * `string suggested_by = 7;`
      */
-    public var suggestedBy: kotlin.String
-      @kotlin.jvm.JvmName("getSuggestedBy")
+    var suggestedBy: String
+      @JvmName("getSuggestedBy")
         get() = _builder.suggestedBy
-      @kotlin.jvm.JvmName("setSuggestedBy")
+      @JvmName("setSuggestedBy")
         set(value) {
         _builder.suggestedBy = value
       }
     /**
      * `string suggested_by = 7;`
      */
-    public fun clearSuggestedBy() {
+    fun clearSuggestedBy() {
       _builder.clearSuggestedBy()
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
-public inline fun com.sakayori.music.listentogether.proto.Listentogether.TrackInfo.copy(block: `com.sakayori.music.listentogether.proto`.TrackInfoKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.TrackInfo =
-  `com.sakayori.music.listentogether.proto`.TrackInfoKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+@JvmSynthetic
+inline fun Listentogether.TrackInfo.copy(block: TrackInfoKt.Dsl.() -> Unit): Listentogether.TrackInfo =
+  TrackInfoKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

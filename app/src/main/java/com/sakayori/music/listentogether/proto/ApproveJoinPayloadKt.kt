@@ -5,49 +5,49 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.sakayori.music.listentogether.proto;
+package com.sakayori.music.listentogether.proto
 
-@kotlin.jvm.JvmName("-initializeapproveJoinPayload")
-public inline fun approveJoinPayload(block: com.sakayori.music.listentogether.proto.ApproveJoinPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.ApproveJoinPayload =
-  com.sakayori.music.listentogether.proto.ApproveJoinPayloadKt.Dsl._create(com.sakayori.music.listentogether.proto.Listentogether.ApproveJoinPayload.newBuilder()).apply { block() }._build()
+@JvmName("-initializeapproveJoinPayload")
+inline fun approveJoinPayload(block: ApproveJoinPayloadKt.Dsl.() -> Unit): Listentogether.ApproveJoinPayload =
+  ApproveJoinPayloadKt.Dsl._create(Listentogether.ApproveJoinPayload.newBuilder()).apply { block() }._build()
 /**
  * Protobuf type `listentogether.ApproveJoinPayload`
  */
-public object ApproveJoinPayloadKt {
-  @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+object ApproveJoinPayloadKt {
+  @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
-  public class Dsl private constructor(
-    private val _builder: com.sakayori.music.listentogether.proto.Listentogether.ApproveJoinPayload.Builder
+  class Dsl private constructor(
+    private val _builder: Listentogether.ApproveJoinPayload.Builder
   ) {
-    public companion object {
-      @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-      internal fun _create(builder: com.sakayori.music.listentogether.proto.Listentogether.ApproveJoinPayload.Builder): Dsl = Dsl(builder)
+    companion object {
+      @JvmSynthetic
+    @PublishedApi
+      internal fun _create(builder: Listentogether.ApproveJoinPayload.Builder): Dsl = Dsl(builder)
     }
 
-    @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-    internal fun _build(): com.sakayori.music.listentogether.proto.Listentogether.ApproveJoinPayload = _builder.build()
+    @JvmSynthetic
+  @PublishedApi
+    internal fun _build(): Listentogether.ApproveJoinPayload = _builder.build()
 
     /**
      * `string user_id = 1;`
      */
-    public var userId: kotlin.String
-      @kotlin.jvm.JvmName("getUserId")
+    var userId: String
+      @JvmName("getUserId")
         get() = _builder.userId
-      @kotlin.jvm.JvmName("setUserId")
+      @JvmName("setUserId")
         set(value) {
         _builder.userId = value
       }
     /**
      * `string user_id = 1;`
      */
-    public fun clearUserId() {
+    fun clearUserId() {
       _builder.clearUserId()
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
-public inline fun com.sakayori.music.listentogether.proto.Listentogether.ApproveJoinPayload.copy(block: `com.sakayori.music.listentogether.proto`.ApproveJoinPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.ApproveJoinPayload =
-  `com.sakayori.music.listentogether.proto`.ApproveJoinPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+@JvmSynthetic
+inline fun Listentogether.ApproveJoinPayload.copy(block: ApproveJoinPayloadKt.Dsl.() -> Unit): Listentogether.ApproveJoinPayload =
+  ApproveJoinPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

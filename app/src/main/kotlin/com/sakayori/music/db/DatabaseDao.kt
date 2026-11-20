@@ -466,7 +466,7 @@ interface DatabaseDao {
     suspend fun addToPlayCountRow(toSongId: String, year: Int, month: Int, delta: Int): Int
 
     // 3) Insert new target row if none existed
-    @androidx.room.Insert(onConflict = androidx.room.OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertPlayCountRow(row: PlayCountEntity): Long
 
 

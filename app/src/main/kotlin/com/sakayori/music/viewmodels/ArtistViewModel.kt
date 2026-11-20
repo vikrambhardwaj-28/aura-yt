@@ -291,7 +291,7 @@ class ArtistViewModel @Inject constructor(
                 // Also set isPodcastChannel if subscribing from podcast context
                 val updatedArtist = artist.copy(
                     bookmarkedAt = newBookmark,
-                    isPodcastChannel = if (shouldBeSubscribed && isPodcastChannel) true else artist.isPodcastChannel
+                    isPodcastChannel = shouldBeSubscribed && isPodcastChannel || artist.isPodcastChannel
                 )
                 Timber.d("[CHANNEL_TOGGLE] Updating existing artist: ${artist.id} -> bookmarkedAt=$newBookmark, isPodcastChannel=${updatedArtist.isPodcastChannel}")
                 database.update(updatedArtist)

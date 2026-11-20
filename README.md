@@ -1,32 +1,8 @@
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Sakayorii/sakayori-music/blob/main/assets/ic_launcher_dark.png" />
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/Sakayorii/sakayori-music/blob/main/fastlane/metadata/android/en-US/images/icon.png" />
-  <img src="https://github.com/Sakayorii/sakayori-music/blob/main/fastlane/metadata/android/en-US/images/icon.png" alt="Sakayori Music app icon" width="200" />
-</picture>
-
-# Sakayori Music
+# Aura Music
 
 ### YouTube Music client for Android
-
-<br/>
-
-<a href="https://www.blacksmith.sh">
-  <img src="https://github.com/Sakayorii/sakayori-music/blob/main/assets/blacksmith-powered.png" alt="CI powered by Blacksmith" width="280" />
-</a>
-
-<br/>
-<br/>
-
-[![Latest release](https://img.shields.io/github/v/release/Sakayorii/sakayori-music?style=for-the-badge&labelColor=0d1117)](https://github.com/Sakayorii/sakayori-music/releases)
-[![License](https://img.shields.io/github/license/Sakayorii/sakayori-music?style=for-the-badge&labelColor=0d1117)](https://github.com/Sakayorii/sakayori-music/blob/main/LICENSE)
-[![Downloads](https://img.shields.io/github/downloads/Sakayorii/sakayori-music/total?style=for-the-badge&labelColor=0d1117)](https://github.com/Sakayorii/sakayori-music/releases)
-
-<br/>
-
-[![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white&labelColor=0d1117)](https://discord.gg/XUQQzGNDgA)
-[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white&labelColor=0d1117)](https://t.me/uwasewaaaau)
 
 <br/>
 
@@ -36,34 +12,12 @@
 
 > [!IMPORTANT]
 > # Attribution
-> **Sakayori Music is a fork of [Metrolist](https://github.com/MetrolistGroup/Metrolist)**, a YouTube Music client for Android by the Metrolist Group and its contributors. Most of this codebase originates from Metrolist, which itself builds on [InnerTune](https://github.com/z-huang/InnerTune) and OuterTune.
+> **Aura Music is a fork of [Metrolist](https://github.com/MetrolistGroup/Metrolist)**, a YouTube Music client for Android by the Metrolist Group and its contributors. Most of this codebase originates from Metrolist, which itself builds on [InnerTune](https://github.com/z-huang/InnerTune) and OuterTune.
 >
-> Full credit for the original work belongs to the Metrolist team and contributors. Sakayori Music only adds its own modifications, branding, and maintenance on top of it, and is distributed under the same GNU General Public License v3.0. If you enjoy this app, please also consider supporting the upstream project: [Metrolist on GitHub](https://github.com/MetrolistGroup/Metrolist).
->
-> This attribution was missing from earlier versions of this README. That was an oversight, and it has been corrected here and in the in-app About screen.
-
-> [!WARNING]
-> # MAINTENANCE MODE
-> Sakayori Music is currently in maintenance mode. This means we will only be fixing bugs and making minor improvements. Please do not submit PRs for new features or major changes, as they will not be accepted.  
-> The app is **NOT** dead, please stay tuned for updates on our discord (found above).
+> Full credit for the original work belongs to the Metrolist team and contributors. Aura Music adds its own modifications, branding, and maintenance on top of it, and is distributed under the same GNU General Public License v3.0. If you enjoy this app, please also consider supporting the upstream project: [Metrolist on GitHub](https://github.com/MetrolistGroup/Metrolist).
 
 > [!WARNING]
 > **Regional Restriction** - If YouTube Music is unavailable in your region, this app will not work without a **VPN or proxy** connecting to a supported region.
-
----
-
-<div align="center">
-
-<h1><a id="screenshots"></a>Screenshots</h1>
-
-<img src="https://github.com/Sakayorii/sakayori-music/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_1.png" alt="Home screen" width="30%" />
-<img src="https://github.com/Sakayorii/sakayori-music/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_2.png" alt="Artist screen" width="30%" />
-<img src="https://github.com/Sakayorii/sakayori-music/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_3.png" alt="Recognize music screen" width="30%" />
-<img src="https://github.com/Sakayorii/sakayori-music/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_4.png" alt="Listen together screen" width="30%" />
-<img src="https://github.com/Sakayorii/sakayori-music/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_5.png" alt="Player screen" width="30%" />
-<img src="https://github.com/Sakayorii/sakayori-music/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_6.png" alt="Player lyrics screen" width="30%" />
-
-</div>
 
 ---
 
@@ -126,8 +80,8 @@
 #### Interface
 - Home screen widget
 - Light / Dark / Black / Dynamic theme modes
-- Dynamic color + 19 preset color palettes
-- Built with Material 3
+- Dynamic color + custom color wheel & gradients
+- Built with Material 3 & Apple Music aesthetics
 
 </td>
   </tr>
@@ -139,221 +93,9 @@
 
 <div align="center">
 
-<h1><a id="download-now"></a>Download Now</h1>
-
-<h2>Stable Release</h2>
-
-<table>
-  <tr>
-    <th align="center">GitHub</th>
-  </tr>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/Sakayorii/sakayori-music/releases/latest/download/SakayoriMusic.apk">
-        <img src="https://github.com/machiav3lli/oandbackupx/blob/034b226cea5c1b30eb4f6a6f313e4dadcbb0ece4/badge_github.png" alt="Download from GitHub" height="60">
-      </a>
-    </td>
-  </tr>
-</table>
-
-<h2>Nightly Build</h2>
-
-<table>
-  <tr>
-    <th align="center">GitHub</th>
-  </tr>
-  <tr>
-    <td align="center">
-      <a href="https://nightly.link/Sakayorii/sakayori-music/workflows/build/main/app-with-Google-Cast.zip">
-        <img src="https://github.com/machiav3lli/oandbackupx/blob/034b226cea5c1b30eb4f6a6f313e4dadcbb0ece4/badge_github.png" alt="Download from GitHub" height="75">
-      </a>
-    </td>
-  </tr>
-</table>
-
-</div>
-
----
-
-<div align="center">
-
-<h1><a id="faq"></a>FAQ</h1>
-
-<h3>Got questions? Check out our <a href="https://music.sakayori.dev/#faq">FAQ page</a> for answers to the most common ones.</h3>
-
-</div>
-
----
-
-<div align="center">
-
 <h1><a id="support-the-project"></a>Support the Project</h1>
 
-<h3>Sakayori Music is free and open-source. If it brings you joy, consider supporting its development!</h3>
-
-#### Monero (XMR)
-
-<img src="https://github.com/Sakayorii/sakayori-music/blob/main/assets/XMR.png" alt="Monero QR code" width="150" />
-
-```text
-45SsusJDkAEaQgz8jWKPonhvWjhUj2EEfdTQat22TaaFLyb1noVfzN2U9PGpGeX5Qe55XikAKZ42eC7z1F9E3uL9LsLx14L
-```
-
-#### Buy Me a Coffee
-
-<a href="https://www.buymeacoffee.com/sakayori">
-  <img src="https://github.com/Sakayorii/sakayori-music/blob/main/assets/buymeacoffee.png?raw=true" alt="Buy Me a Coffee" width="150" />
-</a>
-
-#### VietQR
-
-<img src="https://qr.sakayori.me/image/970454-99ZP26301M80823757-payos.png?addInfo=ung%20ho%20nha%20phat%20trien" alt="VietQR Image" width="150" />
-
-</div>
-
----
-
-<div align="center">
-
-<h1>Special Thanks</h1>
-
-<h3>Sakayori Music stands on the shoulders of incredible open-source work.</h3>
-
-<h3>Upstream Project</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th align="center">Project</th>
-      <th align="center">Authors</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td align="center"><a href="https://github.com/MetrolistGroup/Metrolist"><strong>Metrolist</strong></a></td>
-      <td align="center"><a href="https://github.com/MetrolistGroup">Metrolist Group</a> and contributors, created by <a href="https://github.com/mostafaalagamy">Mo Agamy</a></td>
-    </tr>
-  </tbody>
-</table>
-
-<h3>Sakayori Music is a fork of Metrolist. Without Metrolist, this project would not exist.</h3>
-
-<h3>Main Inspirations</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th align="center">Project</th>
-      <th align="center">Authors</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td align="center"><strong>InnerTune</strong></td>
-      <td align="center"><a href="https://github.com/z-huang">Zion Huang</a> · <a href="https://github.com/Malopieds">Malopieds</a></td>
-    </tr>
-    <tr>
-      <td align="center"><strong>OuterTune</strong></td>
-      <td align="center"><a href="https://github.com/DD3Boh">Davide Garberi</a> · <a href="https://github.com/mikooomich">Michael Zh</a></td>
-    </tr>
-  </tbody>
-</table>
-
-<h3>Libraries & Integrations</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th align="center">Project</th>
-      <th align="center">Contribution</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td align="center"><a href="https://better-lyrics.boidu.dev"><strong>Better Lyrics</strong></a></td>
-      <td>Time-synced lyrics with word-by-word highlighting & YouTube Music integration</td>
-    </tr>
-    <tr>
-      <td align="center"><a href="https://github.com/Sakayorii/sakayori-server"><strong>sakayori-server</strong></a></td>
-      <td>Listen-together real-time backend</td>
-    </tr>
-    <tr>
-      <td align="center"><a href="https://github.com/aleksey-saenko/MusicRecognizer"><strong>MusicRecognizer</strong></a></td>
-      <td>Music recognition feature & Shazam API integration</td>
-    </tr>
-    <tr>
-      <td align="center"><a href="https://github.com/ZemerTeam/zemer-cipher"><strong>zemer-cipher</strong></a></td>
-      <td>YouTube cipher deobfuscation and PoToken generation</td>
-    </tr>
-    <tr>
-      <td align="center"><a href="https://www.blacksmith.sh"><strong>Blacksmith</strong></a></td>
-      <td>High-performance GitHub Actions runners powering our CI</td>
-    </tr>
-  </tbody>
-</table>
-
-<br/>
-
-<a href="https://www.blacksmith.sh">
-  <img src="https://github.com/Sakayorii/sakayori-music/blob/main/assets/blacksmith-powered.png" alt="CI powered by Blacksmith" width="280" />
-</a>
-
-<h3>We also thank the entire open-source community! For every library, tool, and API that powers this project.</h3>
-
-</div>
-
----
-
-<div align="center">
-
-<h1>Contributors</h1>
-
-<h3>This project wouldn't exist without these amazing people!</h3>
-
-<h3>Sakayori Music Team</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th align="center"></th>
-      <th align="center">Name</th>
-      <th align="center">Role</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td align="center"><a href="https://github.com/Sakayorii"><img src="https://github.com/Sakayorii.png" width="60" alt="Sakayori Iroha" /></a></td>
-      <td align="center"><a href="https://github.com/Sakayorii"><strong>Sakayori Iroha</strong></a></td>
-      <td align="center">Lead developer</td>
-    </tr>
-    <tr>
-      <td align="center"><a href="https://github.com/Lammk"><img src="https://github.com/Lammk.png" width="60" alt="Lammk" /></a></td>
-      <td align="center"><a href="https://github.com/Lammk"><strong>Lammk</strong></a></td>
-      <td align="center">Collaborator</td>
-    </tr>
-    <tr>
-      <td align="center"><a href="https://github.com/Giangnam0201"><img src="https://github.com/Giangnam0201.png" width="60" alt="Giangnam0201" /></a></td>
-      <td align="center"><a href="https://github.com/Giangnam0201"><strong>Giangnam0201</strong></a></td>
-      <td align="center">Collaborator</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3>Contributors to this fork</h3>
-
-<a href="https://github.com/Sakayorii/sakayori-music/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Sakayorii/sakayori-music" alt="Contributors" />
-</a>
-
-<h3>Upstream Contributors</h3>
-
-<h3>Sakayori Music is a fork of Metrolist, so most of the code in this project was written by the Metrolist contributors. They do not appear in this repository's Contributors graph, because that graph is generated by GitHub from this repository's own commit history only. Full credit to all of them:</h3>
-
-<a href="https://github.com/MetrolistGroup/Metrolist/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=MetrolistGroup/Metrolist" alt="Metrolist contributors" />
-</a>
-
-<h3><a href="https://github.com/MetrolistGroup/Metrolist/graphs/contributors">See all Metrolist contributors on GitHub</a></h3>
+<h3>Aura Music is free and open-source. Enjoy your music experience!</h3>
 
 </div>
 
@@ -363,7 +105,7 @@
 
 <h1>Disclaimer</h1>
 
-This project is **not affiliated with, funded, authorized, endorsed by, or in any way associated** with YouTube, Google LLC, Sakayori Studio, the Metrolist Group, or any of their affiliates and subsidiaries. It is an independent fork of Metrolist, distributed under GPL-3.0.
+This project is **not affiliated with, funded, authorized, endorsed by, or in any way associated** with YouTube, Google LLC, or any of their affiliates and subsidiaries. It is distributed under GPL-3.0.
 
 All trademarks, service marks, and intellectual property rights referenced in this project belong to their respective owners.
 
@@ -375,8 +117,6 @@ All trademarks, service marks, and intellectual property rights referenced in th
 
 <br/>
 
-**Made with ❤️ by [Sakayori Iroha](https://github.com/Sakayorii)**
-
-**This project stands with Vietnam 🇻🇳**
+**Made with ❤️ for Music Lovers**
 
 </div>

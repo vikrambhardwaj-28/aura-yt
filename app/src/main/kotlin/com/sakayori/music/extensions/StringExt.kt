@@ -33,8 +33,7 @@ fun String.normalizeForSearch(): String =
 
 fun matchesNormalizedQuery(normalizedQuery: String, vararg values: String?): Boolean {
     val q = normalizedQuery.trim()
-    if (q.isBlank()) return true
-    return values.any { value ->
+    return q.isBlank() || values.any { value ->
         value?.normalizeForSearch()?.contains(q) == true
     }
 }

@@ -147,6 +147,10 @@ import com.sakayori.music.constants.ListenTogetherInTopBarKey
 import com.sakayori.music.constants.ListenTogetherUsernameKey
 import com.sakayori.music.constants.LyricsProviderOrderKey
 import com.sakayori.music.constants.MiniPlayerBottomSpacing
+import androidx.compose.ui.graphics.Brush
+import com.sakayori.music.constants.AppBackgroundGradient
+import com.sakayori.music.constants.AppBackgroundGradientKey
+import com.sakayori.music.constants.CustomAppBackgroundColorKey
 import com.sakayori.music.constants.MiniPlayerHeight
 import com.sakayori.music.constants.NavigationBarAnimationSpec
 import com.sakayori.music.constants.NavigationBarHeight
@@ -298,6 +302,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    @SuppressLint("NewApi")
     override fun onStart() {
         super.onStart()
         // Request notification permission on Android 13+
@@ -537,7 +542,14 @@ class MainActivity : ComponentActivity() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
                 val layoutParams = window.attributes
                 if (enableHighRefreshRate) {
-                    layoutParams.preferredDisplayModeId = 0
+                    val modes = window.windowManager.defaultDisplay.supportedModes
+                    val highRefreshMode = modes.filter { it.refreshRate >= 89f }
+                        .maxByOrNull { it.refreshRate } ?: modes.maxByOrNull { it.refreshRate }
+                    if (highRefreshMode != null) {
+                        layoutParams.preferredDisplayModeId = highRefreshMode.modeId
+                    } else {
+                        layoutParams.preferredDisplayModeId = 0
+                    }
                 } else {
                     val modes = window.windowManager.defaultDisplay.supportedModes
                     val mode60 =
@@ -552,7 +564,7 @@ class MainActivity : ComponentActivity() {
             } else {
                 val params = window.attributes
                 if (enableHighRefreshRate) {
-                    params.preferredRefreshRate = 0f
+                    params.preferredRefreshRate = 90f
                 } else {
                     params.preferredRefreshRate = 60f
                 }
@@ -560,7 +572,7 @@ class MainActivity : ComponentActivity() {
             }
         }
 
-        val darkTheme by rememberEnumPreference(DarkModeKey, defaultValue = DarkMode.AUTO)
+        val darkTheme by rememberEnumPreference(DarkModeKey, defaultValue = DarkMode.ON)
         val isSystemInDarkTheme = isSystemInDarkTheme()
         val useDarkTheme =
             remember(darkTheme, isSystemInDarkTheme) {
@@ -717,12 +729,29 @@ class MainActivity : ComponentActivity() {
             }
 
             CompositionLocalProvider(LocalDensity provides scaledDensity) {
-            Box(
-                modifier =
-                    Modifier
-                        .fillMaxSize()
-                        .background(if (pureBlack) Color.Black else MaterialTheme.colorScheme.surface),
-            ) {
+                var showSplash by remember { mutableStateOf(true) }
+                if (showSplash) {
+                    com.sakayori.music.ui.screens.SplashScreen(onSplashFinished = { showSplash = false })
+                } else {
+                val appBackgroundGradient by rememberEnumPreference(AppBackgroundGradientKey, AppBackgroundGradient.APPLE_MUSIC_DARK)
+                val customBgColorInt by rememberPreference(CustomAppBackgroundColorKey, defaultValue = 0)
+
+                val bgModifier = if (customBgColorInt != 0 && !pureBlack) {
+                    val customColor = Color(customBgColorInt)
+                    Modifier.fillMaxSize().background(
+                        Brush.verticalGradient(
+                            colors = listOf(customColor, Color(0xFF07070B), Color(0xFF020308))
+                        )
+                    )
+                } else if (appBackgroundGradient != AppBackgroundGradient.DEFAULT && !pureBlack) {
+                    Modifier.fillMaxSize().background(Brush.verticalGradient(colors = appBackgroundGradient.colors))
+                } else {
+                    Modifier.fillMaxSize().background(if (pureBlack) Color.Black else MaterialTheme.colorScheme.surface)
+                }
+
+                Box(
+                    modifier = bgModifier,
+                ) {
                 val density = LocalDensity.current
                 val configuration = LocalWindowInfo.current
                 val cutoutInsets = WindowInsets.displayCutout
@@ -776,6 +805,18 @@ class MainActivity : ComponentActivity() {
                             else -> null
                         }
                     }
+
+                val isConnected = remember {
+                    val cm = getSystemService(CONNECTIVITY_SERVICE) as? android.net.ConnectivityManager
+                    val caps = cm?.getNetworkCapabilities(cm.activeNetwork)
+                    caps?.hasCapability(android.net.NetworkCapabilities.NET_CAPABILITY_INTERNET) == true
+                }
+
+                val initialTab = if (!isConnected) {
+                    NavigationTab.LIBRARY
+                } else {
+                    tabOpenedFromShortcut ?: defaultOpenTab
+                }
 
                 val topLevelScreens =
                     remember {
@@ -1390,7 +1431,7 @@ class MainActivity : ComponentActivity() {
                                 NavHost(
                                     navController = navController,
                                     startDestination =
-                                        when (tabOpenedFromShortcut ?: defaultOpenTab) {
+                                        when (initialTab) {
                                             NavigationTab.HOME -> Screens.Home
                                             NavigationTab.SEARCH -> Screens.Search
                                             NavigationTab.LIBRARY -> Screens.Library
@@ -1497,6 +1538,7 @@ class MainActivity : ComponentActivity() {
 
 
                 }
+            }
             }
             }
         }

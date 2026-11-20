@@ -5,49 +5,49 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.sakayori.music.listentogether.proto;
+package com.sakayori.music.listentogether.proto
 
-@kotlin.jvm.JvmName("-initializebufferReadyPayload")
-public inline fun bufferReadyPayload(block: com.sakayori.music.listentogether.proto.BufferReadyPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.BufferReadyPayload =
-  com.sakayori.music.listentogether.proto.BufferReadyPayloadKt.Dsl._create(com.sakayori.music.listentogether.proto.Listentogether.BufferReadyPayload.newBuilder()).apply { block() }._build()
+@JvmName("-initializebufferReadyPayload")
+inline fun bufferReadyPayload(block: BufferReadyPayloadKt.Dsl.() -> Unit): Listentogether.BufferReadyPayload =
+  BufferReadyPayloadKt.Dsl._create(Listentogether.BufferReadyPayload.newBuilder()).apply { block() }._build()
 /**
  * Protobuf type `listentogether.BufferReadyPayload`
  */
-public object BufferReadyPayloadKt {
-  @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+object BufferReadyPayloadKt {
+  @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
-  public class Dsl private constructor(
-    private val _builder: com.sakayori.music.listentogether.proto.Listentogether.BufferReadyPayload.Builder
+  class Dsl private constructor(
+    private val _builder: Listentogether.BufferReadyPayload.Builder
   ) {
-    public companion object {
-      @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-      internal fun _create(builder: com.sakayori.music.listentogether.proto.Listentogether.BufferReadyPayload.Builder): Dsl = Dsl(builder)
+    companion object {
+      @JvmSynthetic
+    @PublishedApi
+      internal fun _create(builder: Listentogether.BufferReadyPayload.Builder): Dsl = Dsl(builder)
     }
 
-    @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-    internal fun _build(): com.sakayori.music.listentogether.proto.Listentogether.BufferReadyPayload = _builder.build()
+    @JvmSynthetic
+  @PublishedApi
+    internal fun _build(): Listentogether.BufferReadyPayload = _builder.build()
 
     /**
      * `string track_id = 1;`
      */
-    public var trackId: kotlin.String
-      @kotlin.jvm.JvmName("getTrackId")
+    var trackId: String
+      @JvmName("getTrackId")
         get() = _builder.trackId
-      @kotlin.jvm.JvmName("setTrackId")
+      @JvmName("setTrackId")
         set(value) {
         _builder.trackId = value
       }
     /**
      * `string track_id = 1;`
      */
-    public fun clearTrackId() {
+    fun clearTrackId() {
       _builder.clearTrackId()
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
-public inline fun com.sakayori.music.listentogether.proto.Listentogether.BufferReadyPayload.copy(block: `com.sakayori.music.listentogether.proto`.BufferReadyPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.BufferReadyPayload =
-  `com.sakayori.music.listentogether.proto`.BufferReadyPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+@JvmSynthetic
+inline fun Listentogether.BufferReadyPayload.copy(block: BufferReadyPayloadKt.Dsl.() -> Unit): Listentogether.BufferReadyPayload =
+  BufferReadyPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

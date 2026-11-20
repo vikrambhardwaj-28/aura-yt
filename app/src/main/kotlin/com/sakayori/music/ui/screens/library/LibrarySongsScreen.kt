@@ -508,7 +508,7 @@ fun LibrarySongsScreen(
 
         // Show upload FAB when on UPLOADED filter, shuffle FAB otherwise
         HideOnScrollFAB(
-            visible = if (filter == SongFilter.UPLOADED) true else filteredSongs.isNotEmpty(),
+            visible = filter == SongFilter.UPLOADED || filteredSongs.isNotEmpty(),
             lazyListState = lazyListState,
             icon = if (filter == SongFilter.UPLOADED) R.drawable.upload else R.drawable.shuffle,
             onClick = {

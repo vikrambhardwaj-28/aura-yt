@@ -134,10 +134,8 @@ class AudioRenditionStore @Inject constructor(
             download?.let { it.provider == AudioRendition.YOUTUBE && !it.legacy } == true ||
                 playback.any { it.provider == AudioRendition.YOUTUBE && !it.legacy }
         }
-        if (completeLegacyLength(downloadCache, mediaId, fallback) != null ||
-            completeLegacyLength(playerCache, mediaId, fallback) != null
-        ) return true
-        return false
+        return completeLegacyLength(downloadCache, mediaId, fallback) != null ||
+                completeLegacyLength(playerCache, mediaId, fallback) != null
     }
 
     fun removePlayerCopies(mediaId: String) = synchronized(lock) {

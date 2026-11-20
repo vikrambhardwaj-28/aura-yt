@@ -17,12 +17,17 @@ import androidx.compose.material3.NavigationRailItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
@@ -30,7 +35,9 @@ import androidx.compose.ui.platform.LocalViewConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.dp
 import com.sakayori.music.ui.screens.Screens
+import com.sakayori.music.ui.theme.glassBackground
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 
@@ -201,10 +208,26 @@ fun AppNavigationBar(
                 },
                 interactionSource = interactionSource,
                 icon = {
-                    Icon(
-                        painter = painterResource(id = iconRes),
-                        contentDescription = stringResource(screen.titleId)
-                    )
+                    Box(
+                        modifier = if (isSelected) {
+                            Modifier
+                                .size(width = 56.dp, height = 32.dp)
+                                .clip(RoundedCornerShape(16.dp))
+                                .glassBackground(
+                                    color = MaterialTheme.colorScheme.primary.copy(alpha = 0.3f),
+                                    shape = RoundedCornerShape(16.dp)
+                                )
+                        } else {
+                            Modifier.size(32.dp)
+                        },
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(
+                            painter = painterResource(id = iconRes),
+                            contentDescription = stringResource(screen.titleId),
+                            tint = if (isSelected) MaterialTheme.colorScheme.primary else contentColor
+                        )
+                    }
                 },
                 label = if (!slimNav) {
                     {

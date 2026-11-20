@@ -123,6 +123,7 @@ import com.sakayori.music.ui.menu.PlayerMenu
 import com.sakayori.music.ui.menu.QueueMenu
 import com.sakayori.music.ui.menu.SelectionMediaMetadataMenu
 import com.sakayori.music.ui.utils.ShowMediaInfo
+import com.sakayori.music.ui.theme.glassBackground
 import com.sakayori.music.utils.dataStore
 import com.sakayori.music.utils.makeTimeString
 import com.sakayori.music.utils.rememberPreference
@@ -170,7 +171,7 @@ fun Queue(
 
     // Listen Together state (reactive)
     val listenTogetherManager = LocalListenTogetherManager.current
-    val listenTogetherRoleState = listenTogetherManager?.role?.collectAsStateWithLifecycle(initialValue = com.sakayori.music.listentogether.RoomRole.NONE)
+    val listenTogetherRoleState = listenTogetherManager?.role?.collectAsStateWithLifecycle(initialValue = RoomRole.NONE)
     val isListenTogetherGuest = listenTogetherRoleState?.value == RoomRole.GUEST
 
     val playerConnection = LocalPlayerConnection.current ?: return
@@ -389,7 +390,7 @@ fun Queue(
                             Modifier
                                 .size(buttonSize)
                                 .clip(CircleShape)
-                                .background(textButtonColor)
+                                .glassBackground(color = Color.White.copy(alpha = 0.12f), shape = CircleShape)
                                 .clickable {
                                     menuState.show {
                                         PlayerMenu(
@@ -412,7 +413,7 @@ fun Queue(
                             painter = painterResource(id = R.drawable.more_vert),
                             contentDescription = null,
                             modifier = Modifier.size(iconSize),
-                            tint = iconButtonColor,
+                            tint = Color.White,
                         )
                     }
                 }
@@ -685,11 +686,9 @@ fun Queue(
             if (!snapshot.shuffled) {
                 player.moveMediaItem(from, to)
             } else {
-                player.setShuffleOrder(
-                    DefaultShuffleOrder(
-                        windows.map { it.firstPeriodIndex }.toMutableList().move(from, to).toIntArray(),
-                        System.currentTimeMillis(),
-                    ),
+                player.shuffleOrder = DefaultShuffleOrder(
+                    windows.map { it.firstPeriodIndex }.toMutableList().move(from, to).toIntArray(),
+                    System.currentTimeMillis(),
                 )
             }
         }
@@ -1288,6 +1287,7 @@ fun Queue(
     }
 }
 
+@Suppress("UNUSED_PARAMETER")
 @Composable
 private fun PlayerQueueButton(
     icon: Int,
@@ -1306,23 +1306,14 @@ private fun PlayerQueueButton(
     val buttonModifier =
         Modifier
             .clip(shape)
+            .glassBackground(
+                color = if (isActive) MaterialTheme.colorScheme.primary.copy(alpha = 0.45f) else Color.White.copy(alpha = 0.12f),
+                shape = shape
+            )
             .clickable(enabled = enabled, onClick = onClick)
 
     val alphaFactor = if (enabled) 1f else 0.35f
-
-    val appliedModifier =
-        if (isActive) {
-            modifier.then(buttonModifier.background(textButtonColor)).alpha(alphaFactor)
-        } else {
-            modifier
-                .then(
-                    buttonModifier.border(
-                        width = 1.dp,
-                        color = textButtonColor.copy(alpha = 0.3f),
-                        shape = shape,
-                    ),
-                ).alpha(alphaFactor)
-        }
+    val appliedModifier = modifier.then(buttonModifier).alpha(alphaFactor)
 
     Box(
         modifier = appliedModifier,
@@ -1331,7 +1322,7 @@ private fun PlayerQueueButton(
         if (text != null) {
             Text(
                 text = text,
-                color = iconButtonColor.copy(alpha = if (enabled) 1f else 0.6f),
+                color = Color.White,
                 fontSize = 10.sp,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
@@ -1342,26 +1333,11 @@ private fun PlayerQueueButton(
                         .basicMarquee(),
             )
         } else {
-            val baseTint =
-                if (isActive) {
-                    iconButtonColor
-                } else {
-                    when (playerBackground) {
-                        PlayerBackgroundStyle.BLUR, PlayerBackgroundStyle.GRADIENT -> {
-                            Color.White
-                        }
-
-                        PlayerBackgroundStyle.DEFAULT -> {
-                            MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)
-                        }
-                    }
-                }
-            val finalTint = if (enabled) baseTint else baseTint.copy(alpha = 0.5f)
             Icon(
                 painter = painterResource(id = icon),
                 contentDescription = null,
                 modifier = Modifier.size(iconSize),
-                tint = finalTint,
+                tint = if (enabled) Color.White else Color.White.copy(alpha = 0.5f),
             )
         }
     }

@@ -122,7 +122,7 @@ object FunctionNameExtractor {
     /**
      * Extract player.js hash from embedded URLs or compute from content
      */
-    fun extractPlayerHash(playerJs: String): String? {
+    fun extractPlayerHash(playerJs: String): String {
         Timber.tag(TAG).d("Extracting player hash from playerJs (${playerJs.length} chars)")
 
         // Try to extract from embedded URLs first
@@ -353,7 +353,7 @@ object FunctionNameExtractor {
         val signatureTimestamp = extractSignatureTimestamp(playerJs, playerHash)
 
         Timber.tag(TAG).d("=== ANALYSIS SUMMARY ===")
-        Timber.tag(TAG).d("Player Hash:        ${playerHash ?: "unknown"}")
+        Timber.tag(TAG).d("Player Hash:        ${playerHash}")
         Timber.tag(TAG).d("Q-Array Obfuscated: $hasQArray")
         Timber.tag(TAG).d("Sig Function:       ${sigInfo?.name ?: "NOT FOUND"} (hardcoded=${sigInfo?.isHardcoded})")
         Timber.tag(TAG).d("Sig Constant Arg:   ${sigInfo?.constantArg}")

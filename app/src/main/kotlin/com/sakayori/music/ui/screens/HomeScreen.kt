@@ -1412,7 +1412,7 @@ fun HomeScreen(
                                         Column(
                                             modifier = Modifier.padding(16.dp),
                                             horizontalAlignment = Alignment.CenterHorizontally,
-                                            verticalArrangement = androidx.compose.foundation.layout.Arrangement.Center,
+                                            verticalArrangement = Arrangement.Center,
                                         ) {
                                             Text(
                                                 text = stringResource(R.string.wrapped_ready_title),
@@ -1746,7 +1746,7 @@ fun HomeScreen(
                                                     Modifier
                                                         .height(24.dp)
                                                         .fillMaxWidth(),
-                                                horizontalArrangement = androidx.compose.foundation.layout.Arrangement.Center,
+                                                horizontalArrangement = Arrangement.Center,
                                                 verticalAlignment = Alignment.CenterVertically,
                                             ) {
                                                 repeat(pagerState.pageCount) { iteration ->
@@ -2495,8 +2495,7 @@ fun HomeScreen(
                 // Only show shimmer during initial loading, not for pagination
                 if (isLoading && homePage?.sections.isNullOrEmpty()) {
                     item(key = "loading_shimmer") {
-                        ShimmerHost(
-                        ) {
+                        ShimmerHost {
                             repeat(2) {
                                 TextPlaceholder(
                                     height = 36.dp,

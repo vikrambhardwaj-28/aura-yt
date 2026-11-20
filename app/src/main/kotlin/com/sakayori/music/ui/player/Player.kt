@@ -183,6 +183,7 @@ import com.sakayori.music.ui.menu.PlayerMenu
 import com.sakayori.music.ui.screens.settings.DarkMode
 import com.sakayori.music.ui.theme.PlayerColorExtractor
 import com.sakayori.music.ui.theme.PlayerSliderColors
+import com.sakayori.music.ui.theme.glassBackground
 import com.sakayori.music.ui.utils.ShowMediaInfo
 import com.sakayori.music.ui.utils.ShowOffsetDialog
 import com.sakayori.music.utils.dataStore
@@ -214,7 +215,7 @@ fun BottomSheetPlayer(
     pureBlack: Boolean,
 ) {
     val context = LocalContext.current
-    val clipboardManager = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+    val clipboardManager = context.getSystemService("clipboard") as ClipboardManager
     val menuState = LocalMenuState.current
     val sleepTimerDefaultSetTemplate = stringResource(R.string.sleep_timer_default_set)
     val copiedTitleStr = stringResource(R.string.copied_title)
@@ -242,7 +243,7 @@ fun BottomSheetPlayer(
 
     val playerBackground by rememberEnumPreference(
         key = PlayerBackgroundStyleKey,
-        defaultValue = PlayerBackgroundStyle.DEFAULT,
+        defaultValue = PlayerBackgroundStyle.GRADIENT,
     )
     val playerButtonsStyle by rememberEnumPreference(
         key = PlayerButtonsStyleKey,
@@ -797,10 +798,10 @@ fun BottomSheetPlayer(
         if (currentId != null &&
             currentId != previousMediaId &&
             previousMediaId != null &&
-            playbackState == Player.STATE_ENDED &&
+            playbackState == STATE_ENDED &&
             repeatMode == Player.REPEAT_MODE_ONE &&
             !isListenTogetherGuest) {
-            playerConnection.player.setRepeatMode(Player.REPEAT_MODE_ALL)
+            playerConnection.player.repeatMode = Player.REPEAT_MODE_ALL
         }
 
         previousMediaId = currentId
@@ -1171,14 +1172,19 @@ fun BottomSheetPlayer(
                                     shape = shareShape,
                                     colors =
                                         IconButtonDefaults.filledIconButtonColors(
-                                            containerColor = textButtonColor,
-                                            contentColor = iconButtonColor,
+                                            containerColor = Color.White.copy(alpha = 0.12f),
+                                            contentColor = Color.White,
                                         ),
-                                    modifier = Modifier.size(42.dp),
+                                    modifier =
+                                        Modifier
+                                            .size(42.dp)
+                                            .clip(shareShape)
+                                            .glassBackground(color = Color.White.copy(alpha = 0.12f), shape = shareShape),
                                 ) {
                                     Icon(
                                         painter = painterResource(R.drawable.fullscreen),
                                         contentDescription = null,
+                                        tint = Color.White,
                                         modifier = Modifier.size(24.dp),
                                     )
                                 }
@@ -1199,14 +1205,19 @@ fun BottomSheetPlayer(
                                     shape = shareShape,
                                     colors =
                                         IconButtonDefaults.filledIconButtonColors(
-                                            containerColor = textButtonColor,
-                                            contentColor = iconButtonColor,
+                                            containerColor = Color.White.copy(alpha = 0.12f),
+                                            contentColor = Color.White,
                                         ),
-                                    modifier = Modifier.size(42.dp),
+                                    modifier =
+                                        Modifier
+                                            .size(42.dp)
+                                            .clip(shareShape)
+                                            .glassBackground(color = Color.White.copy(alpha = 0.12f), shape = shareShape),
                                 ) {
                                     Icon(
                                         painter = painterResource(R.drawable.share),
                                         contentDescription = null,
+                                        tint = Color.White,
                                         modifier = Modifier.size(24.dp),
                                     )
                                 }
@@ -1237,14 +1248,19 @@ fun BottomSheetPlayer(
                                     shape = favShape,
                                     colors =
                                         IconButtonDefaults.filledIconButtonColors(
-                                            containerColor = textButtonColor,
-                                            contentColor = iconButtonColor,
+                                            containerColor = Color.White.copy(alpha = 0.12f),
+                                            contentColor = Color.White,
                                         ),
-                                    modifier = Modifier.size(42.dp),
+                                    modifier =
+                                        Modifier
+                                            .size(42.dp)
+                                            .clip(favShape)
+                                            .glassBackground(color = Color.White.copy(alpha = 0.12f), shape = favShape),
                                 ) {
                                     Icon(
                                         painter = painterResource(R.drawable.more_horiz),
                                         contentDescription = null,
+                                        tint = Color.White,
                                         modifier = Modifier.size(24.dp),
                                     )
                                 }
@@ -1257,10 +1273,14 @@ fun BottomSheetPlayer(
                                     shape = favShape,
                                     colors =
                                         IconButtonDefaults.filledIconButtonColors(
-                                            containerColor = textButtonColor,
-                                            contentColor = iconButtonColor,
+                                            containerColor = Color.White.copy(alpha = 0.12f),
+                                            contentColor = if (isFavorite) MaterialTheme.colorScheme.error else Color.White,
                                         ),
-                                    modifier = Modifier.size(42.dp),
+                                    modifier =
+                                        Modifier
+                                            .size(42.dp)
+                                            .clip(favShape)
+                                            .glassBackground(color = Color.White.copy(alpha = 0.12f), shape = favShape),
                                 ) {
                                     Icon(
                                         painter =
@@ -1272,6 +1292,7 @@ fun BottomSheetPlayer(
                                                 },
                                             ),
                                         contentDescription = null,
+                                        tint = if (isFavorite) MaterialTheme.colorScheme.error else Color.White,
                                         modifier = Modifier.size(24.dp),
                                     )
                                 }
@@ -1497,17 +1518,23 @@ fun BottomSheetPlayer(
                                 interactionSource = backInteractionSource,
                                 colors =
                                     IconButtonDefaults.filledIconButtonColors(
-                                        containerColor = sideButtonContainerColor,
-                                        contentColor = sideButtonContentColor,
+                                        containerColor = Color.White.copy(alpha = 0.12f),
+                                        contentColor = Color.White,
                                     ),
                                 modifier =
                                     Modifier
                                         .height(68.dp)
+                                        .clip(RoundedCornerShape(50))
+                                        .glassBackground(
+                                            color = Color.White.copy(alpha = 0.12f),
+                                            shape = RoundedCornerShape(50)
+                                        )
                                         .weight(backButtonWeight),
                             ) {
                                 Icon(
                                     painter = painterResource(R.drawable.skip_previous),
                                     contentDescription = null,
+                                    tint = Color.White,
                                     modifier = Modifier.size(32.dp),
                                 )
                             }
@@ -1537,47 +1564,33 @@ fun BottomSheetPlayer(
                                 interactionSource = playPauseInteractionSource,
                                 colors =
                                     IconButtonDefaults.filledIconButtonColors(
-                                        containerColor = textButtonColor,
-                                        contentColor = iconButtonColor,
+                                        containerColor = Color.White.copy(alpha = 0.12f),
+                                        contentColor = Color.White,
                                     ),
                                 modifier =
                                     Modifier
                                         .height(68.dp)
+                                        .clip(RoundedCornerShape(50))
+                                        .glassBackground(
+                                            color = Color.White.copy(alpha = 0.12f),
+                                            shape = RoundedCornerShape(50)
+                                        )
                                         .weight(playPauseWeight)
                                         .focusRequester(focusRequester),
                             ) {
-                                Row(
-                                    verticalAlignment = Alignment.CenterVertically,
-                                    horizontalArrangement = Arrangement.Center,
-                                ) {
-                                    Icon(
-                                        painter =
-                                            painterResource(
-                                                if (isListenTogetherGuest) {
-                                                    if (isMuted) R.drawable.volume_off else R.drawable.volume_up
-                                                } else {
-                                                    if (effectiveIsPlaying) R.drawable.pause else R.drawable.play
-                                                },
-                                            ),
-                                        contentDescription =
+                                Icon(
+                                    painter =
+                                        painterResource(
                                             if (isListenTogetherGuest) {
-                                                if (isMuted) stringResource(R.string.unmute) else stringResource(R.string.mute)
+                                                if (isMuted) R.drawable.volume_off else R.drawable.volume_up
                                             } else {
-                                                if (effectiveIsPlaying) stringResource(R.string.pause) else stringResource(R.string.play)
+                                                if (effectiveIsPlaying) R.drawable.pause else R.drawable.play
                                             },
-                                        modifier = Modifier.size(32.dp),
-                                    )
-                                    Spacer(modifier = Modifier.width(8.dp))
-                                    Text(
-                                        text =
-                                            if (isListenTogetherGuest) {
-                                                if (isMuted) stringResource(R.string.unmute) else stringResource(R.string.mute)
-                                            } else {
-                                                if (effectiveIsPlaying) stringResource(R.string.pause) else stringResource(R.string.play)
-                                            },
-                                        style = MaterialTheme.typography.titleMedium,
-                                    )
-                                }
+                                        ),
+                                    contentDescription = null,
+                                    tint = Color.White,
+                                    modifier = Modifier.size(36.dp),
+                                )
                             }
 
                             Spacer(modifier = Modifier.width(8.dp))
@@ -1589,17 +1602,23 @@ fun BottomSheetPlayer(
                                 interactionSource = nextInteractionSource,
                                 colors =
                                     IconButtonDefaults.filledIconButtonColors(
-                                        containerColor = sideButtonContainerColor,
-                                        contentColor = sideButtonContentColor,
+                                        containerColor = Color.White.copy(alpha = 0.12f),
+                                        contentColor = Color.White,
                                     ),
                                 modifier =
                                     Modifier
                                         .height(68.dp)
+                                        .clip(RoundedCornerShape(50))
+                                        .glassBackground(
+                                            color = Color.White.copy(alpha = 0.12f),
+                                            shape = RoundedCornerShape(50)
+                                        )
                                         .weight(nextButtonWeight),
                             ) {
                                 Icon(
                                     painter = painterResource(R.drawable.skip_next),
                                     contentDescription = null,
+                                    tint = Color.White,
                                     modifier = Modifier.size(32.dp),
                                 )
                             }
@@ -1609,8 +1628,11 @@ fun BottomSheetPlayer(
                             verticalAlignment = Alignment.CenterVertically,
                             modifier =
                                 Modifier
+                                    .padding(horizontal = PlayerHorizontalPadding)
                                     .fillMaxWidth()
-                                    .padding(horizontal = PlayerHorizontalPadding),
+                                    .clip(RoundedCornerShape(32.dp))
+                                    .glassBackground(shape = RoundedCornerShape(32.dp))
+                                    .padding(horizontal = 16.dp, vertical = 14.dp),
                         ) {
                             Box(modifier = Modifier.weight(1f)) {
                                 ResizableIconButton(
@@ -1620,7 +1642,7 @@ fun BottomSheetPlayer(
                                             Player.REPEAT_MODE_ONE -> R.drawable.repeat_one
                                             else -> throw IllegalStateException()
                                         },
-                                    color = TextBackgroundColor,
+                                    color = Color.White,
                                     modifier =
                                         Modifier
                                             .size(32.dp)
@@ -1640,7 +1662,7 @@ fun BottomSheetPlayer(
                                 ResizableIconButton(
                                     icon = R.drawable.skip_previous,
                                     enabled = canSkipPrevious && !isListenTogetherGuest,
-                                    color = TextBackgroundColor,
+                                    color = Color.White,
                                     modifier =
                                         Modifier
                                             .size(32.dp)
@@ -1708,7 +1730,7 @@ fun BottomSheetPlayer(
                                 ResizableIconButton(
                                     icon = R.drawable.skip_next,
                                     enabled = canSkipNext && !isListenTogetherGuest,
-                                    color = TextBackgroundColor,
+                                    color = Color.White,
                                     modifier =
                                         Modifier
                                             .size(32.dp)
@@ -1724,7 +1746,7 @@ fun BottomSheetPlayer(
                                 val isFavorite = if (isEpisode) currentSong?.song?.inLibrary != null else currentSong?.song?.liked == true
                                 ResizableIconButton(
                                     icon = if (isFavorite) R.drawable.favorite else R.drawable.favorite_border,
-                                    color = if (isFavorite) MaterialTheme.colorScheme.error else TextBackgroundColor,
+                                    color = if (isFavorite) MaterialTheme.colorScheme.error else Color.White,
                                     modifier =
                                         Modifier
                                             .size(32.dp)
@@ -2038,6 +2060,7 @@ fun InlineLyricsView(
     }
 }
 
+@Suppress("UNUSED_PARAMETER")
 @Composable
 private fun PlayerMoreMenuButton(
     mediaMetadata: MediaMetadata,
@@ -2055,7 +2078,7 @@ private fun PlayerMoreMenuButton(
             Modifier
                 .size(40.dp)
                 .clip(RoundedCornerShape(24.dp))
-                .background(textButtonColor)
+                .glassBackground(color = Color.White.copy(alpha = 0.12f), shape = RoundedCornerShape(24.dp))
                 .clickable {
                     menuState.show {
                         PlayerMenu(
@@ -2076,7 +2099,7 @@ private fun PlayerMoreMenuButton(
         Image(
             painter = painterResource(R.drawable.more_horiz),
             contentDescription = null,
-            colorFilter = ColorFilter.tint(iconButtonColor),
+            colorFilter = ColorFilter.tint(Color.White),
         )
     }
 }

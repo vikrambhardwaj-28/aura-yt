@@ -107,10 +107,7 @@ object DiscordRpcManager {
             lastActivity?.largeImage == null && lastActivity?.smallImage == null &&
             (imageResolutionJob == null || imageResolutionJob?.isCompleted == true)
         ) {
-            if (imageResolveFailedSongId == songId && imageResolveFailures >= MAX_IMAGE_RESOLVE_ATTEMPTS) {
-                return true
-            }
-            return false
+            return imageResolveFailedSongId == songId && imageResolveFailures >= MAX_IMAGE_RESOLVE_ATTEMPTS
         }
         return true
     }

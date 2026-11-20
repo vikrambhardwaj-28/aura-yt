@@ -401,13 +401,13 @@ class App :
     private fun isMainProcess(): Boolean {
         val processName =
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                Application.getProcessName()
+                getProcessName()
             } else {
                 runCatching {
                     File("/proc/self/cmdline").readText().substringBefore('\u0000')
                 }.getOrNull()?.takeIf(String::isNotBlank)
                     ?: run {
-                        val activityManager = getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+                        val activityManager = getSystemService(ACTIVITY_SERVICE) as ActivityManager
                         activityManager.runningAppProcesses
                             ?.firstOrNull { it.pid == Process.myPid() }
                             ?.processName

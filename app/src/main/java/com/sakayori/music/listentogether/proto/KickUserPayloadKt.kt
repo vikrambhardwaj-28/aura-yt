@@ -5,66 +5,66 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.sakayori.music.listentogether.proto;
+package com.sakayori.music.listentogether.proto
 
-@kotlin.jvm.JvmName("-initializekickUserPayload")
-public inline fun kickUserPayload(block: com.sakayori.music.listentogether.proto.KickUserPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.KickUserPayload =
-  com.sakayori.music.listentogether.proto.KickUserPayloadKt.Dsl._create(com.sakayori.music.listentogether.proto.Listentogether.KickUserPayload.newBuilder()).apply { block() }._build()
+@JvmName("-initializekickUserPayload")
+inline fun kickUserPayload(block: KickUserPayloadKt.Dsl.() -> Unit): Listentogether.KickUserPayload =
+  KickUserPayloadKt.Dsl._create(Listentogether.KickUserPayload.newBuilder()).apply { block() }._build()
 /**
  * Protobuf type `listentogether.KickUserPayload`
  */
-public object KickUserPayloadKt {
-  @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+object KickUserPayloadKt {
+  @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
-  public class Dsl private constructor(
-    private val _builder: com.sakayori.music.listentogether.proto.Listentogether.KickUserPayload.Builder
+  class Dsl private constructor(
+    private val _builder: Listentogether.KickUserPayload.Builder
   ) {
-    public companion object {
-      @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-      internal fun _create(builder: com.sakayori.music.listentogether.proto.Listentogether.KickUserPayload.Builder): Dsl = Dsl(builder)
+    companion object {
+      @JvmSynthetic
+    @PublishedApi
+      internal fun _create(builder: Listentogether.KickUserPayload.Builder): Dsl = Dsl(builder)
     }
 
-    @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-    internal fun _build(): com.sakayori.music.listentogether.proto.Listentogether.KickUserPayload = _builder.build()
+    @JvmSynthetic
+  @PublishedApi
+    internal fun _build(): Listentogether.KickUserPayload = _builder.build()
 
     /**
      * `string user_id = 1;`
      */
-    public var userId: kotlin.String
-      @kotlin.jvm.JvmName("getUserId")
+    var userId: String
+      @JvmName("getUserId")
         get() = _builder.userId
-      @kotlin.jvm.JvmName("setUserId")
+      @JvmName("setUserId")
         set(value) {
         _builder.userId = value
       }
     /**
      * `string user_id = 1;`
      */
-    public fun clearUserId() {
+    fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
      * `string reason = 2;`
      */
-    public var reason: kotlin.String
-      @kotlin.jvm.JvmName("getReason")
+    var reason: String
+      @JvmName("getReason")
         get() = _builder.reason
-      @kotlin.jvm.JvmName("setReason")
+      @JvmName("setReason")
         set(value) {
         _builder.reason = value
       }
     /**
      * `string reason = 2;`
      */
-    public fun clearReason() {
+    fun clearReason() {
       _builder.clearReason()
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
-public inline fun com.sakayori.music.listentogether.proto.Listentogether.KickUserPayload.copy(block: `com.sakayori.music.listentogether.proto`.KickUserPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.KickUserPayload =
-  `com.sakayori.music.listentogether.proto`.KickUserPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+@JvmSynthetic
+inline fun Listentogether.KickUserPayload.copy(block: KickUserPayloadKt.Dsl.() -> Unit): Listentogether.KickUserPayload =
+  KickUserPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

@@ -415,4 +415,4 @@ internal fun LyricsColorPickerDialog(
 }
 
 // Helper for coroutine scope
-typealias CoroutineScope = kotlinx.coroutines.CoroutineScope
+typealias CoroutineScope = CoroutineScope

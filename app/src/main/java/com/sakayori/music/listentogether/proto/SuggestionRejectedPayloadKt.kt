@@ -5,66 +5,66 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.sakayori.music.listentogether.proto;
+package com.sakayori.music.listentogether.proto
 
-@kotlin.jvm.JvmName("-initializesuggestionRejectedPayload")
-public inline fun suggestionRejectedPayload(block: com.sakayori.music.listentogether.proto.SuggestionRejectedPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.SuggestionRejectedPayload =
-  com.sakayori.music.listentogether.proto.SuggestionRejectedPayloadKt.Dsl._create(com.sakayori.music.listentogether.proto.Listentogether.SuggestionRejectedPayload.newBuilder()).apply { block() }._build()
+@JvmName("-initializesuggestionRejectedPayload")
+inline fun suggestionRejectedPayload(block: SuggestionRejectedPayloadKt.Dsl.() -> Unit): Listentogether.SuggestionRejectedPayload =
+  SuggestionRejectedPayloadKt.Dsl._create(Listentogether.SuggestionRejectedPayload.newBuilder()).apply { block() }._build()
 /**
  * Protobuf type `listentogether.SuggestionRejectedPayload`
  */
-public object SuggestionRejectedPayloadKt {
-  @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+object SuggestionRejectedPayloadKt {
+  @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
-  public class Dsl private constructor(
-    private val _builder: com.sakayori.music.listentogether.proto.Listentogether.SuggestionRejectedPayload.Builder
+  class Dsl private constructor(
+    private val _builder: Listentogether.SuggestionRejectedPayload.Builder
   ) {
-    public companion object {
-      @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-      internal fun _create(builder: com.sakayori.music.listentogether.proto.Listentogether.SuggestionRejectedPayload.Builder): Dsl = Dsl(builder)
+    companion object {
+      @JvmSynthetic
+    @PublishedApi
+      internal fun _create(builder: Listentogether.SuggestionRejectedPayload.Builder): Dsl = Dsl(builder)
     }
 
-    @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-    internal fun _build(): com.sakayori.music.listentogether.proto.Listentogether.SuggestionRejectedPayload = _builder.build()
+    @JvmSynthetic
+  @PublishedApi
+    internal fun _build(): Listentogether.SuggestionRejectedPayload = _builder.build()
 
     /**
      * `string suggestion_id = 1;`
      */
-    public var suggestionId: kotlin.String
-      @kotlin.jvm.JvmName("getSuggestionId")
+    var suggestionId: String
+      @JvmName("getSuggestionId")
         get() = _builder.suggestionId
-      @kotlin.jvm.JvmName("setSuggestionId")
+      @JvmName("setSuggestionId")
         set(value) {
         _builder.suggestionId = value
       }
     /**
      * `string suggestion_id = 1;`
      */
-    public fun clearSuggestionId() {
+    fun clearSuggestionId() {
       _builder.clearSuggestionId()
     }
 
     /**
      * `string reason = 2;`
      */
-    public var reason: kotlin.String
-      @kotlin.jvm.JvmName("getReason")
+    var reason: String
+      @JvmName("getReason")
         get() = _builder.reason
-      @kotlin.jvm.JvmName("setReason")
+      @JvmName("setReason")
         set(value) {
         _builder.reason = value
       }
     /**
      * `string reason = 2;`
      */
-    public fun clearReason() {
+    fun clearReason() {
       _builder.clearReason()
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
-public inline fun com.sakayori.music.listentogether.proto.Listentogether.SuggestionRejectedPayload.copy(block: `com.sakayori.music.listentogether.proto`.SuggestionRejectedPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.SuggestionRejectedPayload =
-  `com.sakayori.music.listentogether.proto`.SuggestionRejectedPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+@JvmSynthetic
+inline fun Listentogether.SuggestionRejectedPayload.copy(block: SuggestionRejectedPayloadKt.Dsl.() -> Unit): Listentogether.SuggestionRejectedPayload =
+  SuggestionRejectedPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

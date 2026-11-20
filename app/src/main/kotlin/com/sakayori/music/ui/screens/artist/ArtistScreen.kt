@@ -1029,7 +1029,7 @@ fun ArtistScreen(
             IconButton(
                 onClick = {
                     viewModel.artistPage?.artist?.shareLink?.let { link ->
-                        val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                        val clipboard = context.getSystemService("clipboard") as ClipboardManager
                         val clip = ClipData.newPlainText("Artist Link", link)
                         clipboard.setPrimaryClip(clip)
                         Toast.makeText(context, R.string.link_copied, Toast.LENGTH_SHORT).show()

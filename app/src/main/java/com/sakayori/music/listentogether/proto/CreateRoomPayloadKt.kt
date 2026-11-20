@@ -5,49 +5,49 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.sakayori.music.listentogether.proto;
+package com.sakayori.music.listentogether.proto
 
-@kotlin.jvm.JvmName("-initializecreateRoomPayload")
-public inline fun createRoomPayload(block: com.sakayori.music.listentogether.proto.CreateRoomPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.CreateRoomPayload =
-  com.sakayori.music.listentogether.proto.CreateRoomPayloadKt.Dsl._create(com.sakayori.music.listentogether.proto.Listentogether.CreateRoomPayload.newBuilder()).apply { block() }._build()
+@JvmName("-initializecreateRoomPayload")
+inline fun createRoomPayload(block: CreateRoomPayloadKt.Dsl.() -> Unit): Listentogether.CreateRoomPayload =
+  CreateRoomPayloadKt.Dsl._create(Listentogether.CreateRoomPayload.newBuilder()).apply { block() }._build()
 /**
  * Protobuf type `listentogether.CreateRoomPayload`
  */
-public object CreateRoomPayloadKt {
-  @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+object CreateRoomPayloadKt {
+  @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
-  public class Dsl private constructor(
-    private val _builder: com.sakayori.music.listentogether.proto.Listentogether.CreateRoomPayload.Builder
+  class Dsl private constructor(
+    private val _builder: Listentogether.CreateRoomPayload.Builder
   ) {
-    public companion object {
-      @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-      internal fun _create(builder: com.sakayori.music.listentogether.proto.Listentogether.CreateRoomPayload.Builder): Dsl = Dsl(builder)
+    companion object {
+      @JvmSynthetic
+    @PublishedApi
+      internal fun _create(builder: Listentogether.CreateRoomPayload.Builder): Dsl = Dsl(builder)
     }
 
-    @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-    internal fun _build(): com.sakayori.music.listentogether.proto.Listentogether.CreateRoomPayload = _builder.build()
+    @JvmSynthetic
+  @PublishedApi
+    internal fun _build(): Listentogether.CreateRoomPayload = _builder.build()
 
     /**
      * `string username = 1;`
      */
-    public var username: kotlin.String
-      @kotlin.jvm.JvmName("getUsername")
+    var username: String
+      @JvmName("getUsername")
         get() = _builder.username
-      @kotlin.jvm.JvmName("setUsername")
+      @JvmName("setUsername")
         set(value) {
         _builder.username = value
       }
     /**
      * `string username = 1;`
      */
-    public fun clearUsername() {
+    fun clearUsername() {
       _builder.clearUsername()
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
-public inline fun com.sakayori.music.listentogether.proto.Listentogether.CreateRoomPayload.copy(block: `com.sakayori.music.listentogether.proto`.CreateRoomPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.CreateRoomPayload =
-  `com.sakayori.music.listentogether.proto`.CreateRoomPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+@JvmSynthetic
+inline fun Listentogether.CreateRoomPayload.copy(block: CreateRoomPayloadKt.Dsl.() -> Unit): Listentogether.CreateRoomPayload =
+  CreateRoomPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

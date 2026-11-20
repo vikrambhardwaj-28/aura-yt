@@ -5,49 +5,49 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.sakayori.music.listentogether.proto;
+package com.sakayori.music.listentogether.proto
 
-@kotlin.jvm.JvmName("-initializeapproveSuggestionPayload")
-public inline fun approveSuggestionPayload(block: com.sakayori.music.listentogether.proto.ApproveSuggestionPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.ApproveSuggestionPayload =
-  com.sakayori.music.listentogether.proto.ApproveSuggestionPayloadKt.Dsl._create(com.sakayori.music.listentogether.proto.Listentogether.ApproveSuggestionPayload.newBuilder()).apply { block() }._build()
+@JvmName("-initializeapproveSuggestionPayload")
+inline fun approveSuggestionPayload(block: ApproveSuggestionPayloadKt.Dsl.() -> Unit): Listentogether.ApproveSuggestionPayload =
+  ApproveSuggestionPayloadKt.Dsl._create(Listentogether.ApproveSuggestionPayload.newBuilder()).apply { block() }._build()
 /**
  * Protobuf type `listentogether.ApproveSuggestionPayload`
  */
-public object ApproveSuggestionPayloadKt {
-  @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+object ApproveSuggestionPayloadKt {
+  @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
-  public class Dsl private constructor(
-    private val _builder: com.sakayori.music.listentogether.proto.Listentogether.ApproveSuggestionPayload.Builder
+  class Dsl private constructor(
+    private val _builder: Listentogether.ApproveSuggestionPayload.Builder
   ) {
-    public companion object {
-      @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-      internal fun _create(builder: com.sakayori.music.listentogether.proto.Listentogether.ApproveSuggestionPayload.Builder): Dsl = Dsl(builder)
+    companion object {
+      @JvmSynthetic
+    @PublishedApi
+      internal fun _create(builder: Listentogether.ApproveSuggestionPayload.Builder): Dsl = Dsl(builder)
     }
 
-    @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-    internal fun _build(): com.sakayori.music.listentogether.proto.Listentogether.ApproveSuggestionPayload = _builder.build()
+    @JvmSynthetic
+  @PublishedApi
+    internal fun _build(): Listentogether.ApproveSuggestionPayload = _builder.build()
 
     /**
      * `string suggestion_id = 1;`
      */
-    public var suggestionId: kotlin.String
-      @kotlin.jvm.JvmName("getSuggestionId")
+    var suggestionId: String
+      @JvmName("getSuggestionId")
         get() = _builder.suggestionId
-      @kotlin.jvm.JvmName("setSuggestionId")
+      @JvmName("setSuggestionId")
         set(value) {
         _builder.suggestionId = value
       }
     /**
      * `string suggestion_id = 1;`
      */
-    public fun clearSuggestionId() {
+    fun clearSuggestionId() {
       _builder.clearSuggestionId()
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
-public inline fun com.sakayori.music.listentogether.proto.Listentogether.ApproveSuggestionPayload.copy(block: `com.sakayori.music.listentogether.proto`.ApproveSuggestionPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.ApproveSuggestionPayload =
-  `com.sakayori.music.listentogether.proto`.ApproveSuggestionPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+@JvmSynthetic
+inline fun Listentogether.ApproveSuggestionPayload.copy(block: ApproveSuggestionPayloadKt.Dsl.() -> Unit): Listentogether.ApproveSuggestionPayload =
+  ApproveSuggestionPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

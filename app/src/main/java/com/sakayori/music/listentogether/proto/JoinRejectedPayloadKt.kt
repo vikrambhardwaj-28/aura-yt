@@ -5,49 +5,49 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.sakayori.music.listentogether.proto;
+package com.sakayori.music.listentogether.proto
 
-@kotlin.jvm.JvmName("-initializejoinRejectedPayload")
-public inline fun joinRejectedPayload(block: com.sakayori.music.listentogether.proto.JoinRejectedPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.JoinRejectedPayload =
-  com.sakayori.music.listentogether.proto.JoinRejectedPayloadKt.Dsl._create(com.sakayori.music.listentogether.proto.Listentogether.JoinRejectedPayload.newBuilder()).apply { block() }._build()
+@JvmName("-initializejoinRejectedPayload")
+inline fun joinRejectedPayload(block: JoinRejectedPayloadKt.Dsl.() -> Unit): Listentogether.JoinRejectedPayload =
+  JoinRejectedPayloadKt.Dsl._create(Listentogether.JoinRejectedPayload.newBuilder()).apply { block() }._build()
 /**
  * Protobuf type `listentogether.JoinRejectedPayload`
  */
-public object JoinRejectedPayloadKt {
-  @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+object JoinRejectedPayloadKt {
+  @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
-  public class Dsl private constructor(
-    private val _builder: com.sakayori.music.listentogether.proto.Listentogether.JoinRejectedPayload.Builder
+  class Dsl private constructor(
+    private val _builder: Listentogether.JoinRejectedPayload.Builder
   ) {
-    public companion object {
-      @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-      internal fun _create(builder: com.sakayori.music.listentogether.proto.Listentogether.JoinRejectedPayload.Builder): Dsl = Dsl(builder)
+    companion object {
+      @JvmSynthetic
+    @PublishedApi
+      internal fun _create(builder: Listentogether.JoinRejectedPayload.Builder): Dsl = Dsl(builder)
     }
 
-    @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-    internal fun _build(): com.sakayori.music.listentogether.proto.Listentogether.JoinRejectedPayload = _builder.build()
+    @JvmSynthetic
+  @PublishedApi
+    internal fun _build(): Listentogether.JoinRejectedPayload = _builder.build()
 
     /**
      * `string reason = 1;`
      */
-    public var reason: kotlin.String
-      @kotlin.jvm.JvmName("getReason")
+    var reason: String
+      @JvmName("getReason")
         get() = _builder.reason
-      @kotlin.jvm.JvmName("setReason")
+      @JvmName("setReason")
         set(value) {
         _builder.reason = value
       }
     /**
      * `string reason = 1;`
      */
-    public fun clearReason() {
+    fun clearReason() {
       _builder.clearReason()
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
-public inline fun com.sakayori.music.listentogether.proto.Listentogether.JoinRejectedPayload.copy(block: `com.sakayori.music.listentogether.proto`.JoinRejectedPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.JoinRejectedPayload =
-  `com.sakayori.music.listentogether.proto`.JoinRejectedPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+@JvmSynthetic
+inline fun Listentogether.JoinRejectedPayload.copy(block: JoinRejectedPayloadKt.Dsl.() -> Unit): Listentogether.JoinRejectedPayload =
+  JoinRejectedPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

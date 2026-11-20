@@ -5,83 +5,83 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.sakayori.music.listentogether.proto;
+package com.sakayori.music.listentogether.proto
 
-@kotlin.jvm.JvmName("-initializeserverCapabilities")
-public inline fun serverCapabilities(block: com.sakayori.music.listentogether.proto.ServerCapabilitiesKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.ServerCapabilities =
-  com.sakayori.music.listentogether.proto.ServerCapabilitiesKt.Dsl._create(com.sakayori.music.listentogether.proto.Listentogether.ServerCapabilities.newBuilder()).apply { block() }._build()
+@JvmName("-initializeserverCapabilities")
+inline fun serverCapabilities(block: ServerCapabilitiesKt.Dsl.() -> Unit): Listentogether.ServerCapabilities =
+  ServerCapabilitiesKt.Dsl._create(Listentogether.ServerCapabilities.newBuilder()).apply { block() }._build()
 /**
  * Protobuf type `listentogether.ServerCapabilities`
  */
-public object ServerCapabilitiesKt {
-  @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+object ServerCapabilitiesKt {
+  @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
-  public class Dsl private constructor(
-    private val _builder: com.sakayori.music.listentogether.proto.Listentogether.ServerCapabilities.Builder
+  class Dsl private constructor(
+    private val _builder: Listentogether.ServerCapabilities.Builder
   ) {
-    public companion object {
-      @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-      internal fun _create(builder: com.sakayori.music.listentogether.proto.Listentogether.ServerCapabilities.Builder): Dsl = Dsl(builder)
+    companion object {
+      @JvmSynthetic
+    @PublishedApi
+      internal fun _create(builder: Listentogether.ServerCapabilities.Builder): Dsl = Dsl(builder)
     }
 
-    @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-    internal fun _build(): com.sakayori.music.listentogether.proto.Listentogether.ServerCapabilities = _builder.build()
+    @JvmSynthetic
+  @PublishedApi
+    internal fun _build(): Listentogether.ServerCapabilities = _builder.build()
 
     /**
      * `bool supports_protobuf = 1;`
      */
-    public var supportsProtobuf: kotlin.Boolean
-      @kotlin.jvm.JvmName("getSupportsProtobuf")
+    var supportsProtobuf: Boolean
+      @JvmName("getSupportsProtobuf")
         get() = _builder.supportsProtobuf
-      @kotlin.jvm.JvmName("setSupportsProtobuf")
+      @JvmName("setSupportsProtobuf")
         set(value) {
         _builder.supportsProtobuf = value
       }
     /**
      * `bool supports_protobuf = 1;`
      */
-    public fun clearSupportsProtobuf() {
+    fun clearSupportsProtobuf() {
       _builder.clearSupportsProtobuf()
     }
 
     /**
      * `bool supports_compression = 2;`
      */
-    public var supportsCompression: kotlin.Boolean
-      @kotlin.jvm.JvmName("getSupportsCompression")
+    var supportsCompression: Boolean
+      @JvmName("getSupportsCompression")
         get() = _builder.supportsCompression
-      @kotlin.jvm.JvmName("setSupportsCompression")
+      @JvmName("setSupportsCompression")
         set(value) {
         _builder.supportsCompression = value
       }
     /**
      * `bool supports_compression = 2;`
      */
-    public fun clearSupportsCompression() {
+    fun clearSupportsCompression() {
       _builder.clearSupportsCompression()
     }
 
     /**
      * `string server_version = 3;`
      */
-    public var serverVersion: kotlin.String
-      @kotlin.jvm.JvmName("getServerVersion")
+    var serverVersion: String
+      @JvmName("getServerVersion")
         get() = _builder.serverVersion
-      @kotlin.jvm.JvmName("setServerVersion")
+      @JvmName("setServerVersion")
         set(value) {
         _builder.serverVersion = value
       }
     /**
      * `string server_version = 3;`
      */
-    public fun clearServerVersion() {
+    fun clearServerVersion() {
       _builder.clearServerVersion()
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
-public inline fun com.sakayori.music.listentogether.proto.Listentogether.ServerCapabilities.copy(block: `com.sakayori.music.listentogether.proto`.ServerCapabilitiesKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.ServerCapabilities =
-  `com.sakayori.music.listentogether.proto`.ServerCapabilitiesKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+@JvmSynthetic
+inline fun Listentogether.ServerCapabilities.copy(block: ServerCapabilitiesKt.Dsl.() -> Unit): Listentogether.ServerCapabilities =
+  ServerCapabilitiesKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

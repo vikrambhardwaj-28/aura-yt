@@ -209,7 +209,7 @@ fun ShowMediaInfo(videoId: String) {
 
                     val cardsBaseList = mutableListOf<Material3SettingsItem>()
                     val cardsExtendedList = mutableListOf<Material3SettingsItem>()
-                    val cm = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                    val cm = context.getSystemService("clipboard") as ClipboardManager
 
                     baseList.forEachIndexed { index, (label, text) ->
                         val displayText = text ?: stringResource(R.string.unknown)

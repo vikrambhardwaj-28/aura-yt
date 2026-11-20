@@ -299,7 +299,7 @@ class HomeViewModel @Inject constructor(
         // Use a synchronized list to collect results safely from concurrent coroutines
         val items = java.util.Collections.synchronizedList(mutableListOf<DailyDiscoverItem>())
 
-        kotlinx.coroutines.coroutineScope {
+        coroutineScope {
             seeds.map { seed ->
                 launch(Dispatchers.IO) {
                     val endpoint = YouTube.next(WatchEndpoint(videoId = seed.id)).getOrNull()?.relatedEndpoint
@@ -391,7 +391,7 @@ class HomeViewModel @Inject constructor(
 
         val candidatePlaylists = java.util.Collections.synchronizedList(mutableListOf<PlaylistItem>())
 
-        kotlinx.coroutines.coroutineScope {
+        coroutineScope {
             artistSeeds.map { seed ->
                 launch(Dispatchers.IO) {
                     YouTube.artist(seed.id).onSuccess { page ->
@@ -437,7 +437,7 @@ class HomeViewModel @Inject constructor(
 
         val playlists = java.util.Collections.synchronizedList(mutableListOf<CommunityPlaylistItem>())
 
-        kotlinx.coroutines.coroutineScope {
+        coroutineScope {
             uniqueCandidates.map { playlist ->
                 launch(Dispatchers.IO) {
                     YouTube.playlist(playlist.id).onSuccess { page ->

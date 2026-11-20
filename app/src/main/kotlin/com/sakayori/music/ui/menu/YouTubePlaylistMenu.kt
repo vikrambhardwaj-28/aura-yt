@@ -217,11 +217,11 @@ fun YouTubePlaylistMenu(
                                     }.onFailure { e ->
                                         timber.log.Timber.e(e, "[PODCAST_SAVE] savePodcast API failed for ${playlist.id}")
                                         withContext(Dispatchers.Main) {
-                                            android.widget.Toast
+                                            Toast
                                                 .makeText(
                                                     context,
                                                     if (isCurrentlySaved) R.string.error_podcast_unsubscribe else R.string.error_podcast_subscribe,
-                                                    android.widget.Toast.LENGTH_SHORT,
+                                                    Toast.LENGTH_SHORT,
                                                 ).show()
                                         }
                                     }

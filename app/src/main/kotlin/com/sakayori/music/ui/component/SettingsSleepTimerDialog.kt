@@ -554,7 +554,7 @@ fun SleepTimerDialog(
                 ) {
                     Text(stringResource(android.R.string.cancel))
                 }
-                androidx.compose.material3.Button(
+                Button(
                     shapes = ButtonDefaults.shapes(),
                     onClick = {
                             val (finalRepeat, finalDayTimes) =

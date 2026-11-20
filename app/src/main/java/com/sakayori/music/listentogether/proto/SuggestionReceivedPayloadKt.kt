@@ -5,113 +5,113 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.sakayori.music.listentogether.proto;
+package com.sakayori.music.listentogether.proto
 
-@kotlin.jvm.JvmName("-initializesuggestionReceivedPayload")
-public inline fun suggestionReceivedPayload(block: com.sakayori.music.listentogether.proto.SuggestionReceivedPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.SuggestionReceivedPayload =
-  com.sakayori.music.listentogether.proto.SuggestionReceivedPayloadKt.Dsl._create(com.sakayori.music.listentogether.proto.Listentogether.SuggestionReceivedPayload.newBuilder()).apply { block() }._build()
+@JvmName("-initializesuggestionReceivedPayload")
+inline fun suggestionReceivedPayload(block: SuggestionReceivedPayloadKt.Dsl.() -> Unit): Listentogether.SuggestionReceivedPayload =
+  SuggestionReceivedPayloadKt.Dsl._create(Listentogether.SuggestionReceivedPayload.newBuilder()).apply { block() }._build()
 /**
  * Protobuf type `listentogether.SuggestionReceivedPayload`
  */
-public object SuggestionReceivedPayloadKt {
-  @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+object SuggestionReceivedPayloadKt {
+  @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
-  public class Dsl private constructor(
-    private val _builder: com.sakayori.music.listentogether.proto.Listentogether.SuggestionReceivedPayload.Builder
+  class Dsl private constructor(
+    private val _builder: Listentogether.SuggestionReceivedPayload.Builder
   ) {
-    public companion object {
-      @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-      internal fun _create(builder: com.sakayori.music.listentogether.proto.Listentogether.SuggestionReceivedPayload.Builder): Dsl = Dsl(builder)
+    companion object {
+      @JvmSynthetic
+    @PublishedApi
+      internal fun _create(builder: Listentogether.SuggestionReceivedPayload.Builder): Dsl = Dsl(builder)
     }
 
-    @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-    internal fun _build(): com.sakayori.music.listentogether.proto.Listentogether.SuggestionReceivedPayload = _builder.build()
+    @JvmSynthetic
+  @PublishedApi
+    internal fun _build(): Listentogether.SuggestionReceivedPayload = _builder.build()
 
     /**
      * `string suggestion_id = 1;`
      */
-    public var suggestionId: kotlin.String
-      @kotlin.jvm.JvmName("getSuggestionId")
+    var suggestionId: String
+      @JvmName("getSuggestionId")
         get() = _builder.suggestionId
-      @kotlin.jvm.JvmName("setSuggestionId")
+      @JvmName("setSuggestionId")
         set(value) {
         _builder.suggestionId = value
       }
     /**
      * `string suggestion_id = 1;`
      */
-    public fun clearSuggestionId() {
+    fun clearSuggestionId() {
       _builder.clearSuggestionId()
     }
 
     /**
      * `string from_user_id = 2;`
      */
-    public var fromUserId: kotlin.String
-      @kotlin.jvm.JvmName("getFromUserId")
+    var fromUserId: String
+      @JvmName("getFromUserId")
         get() = _builder.fromUserId
-      @kotlin.jvm.JvmName("setFromUserId")
+      @JvmName("setFromUserId")
         set(value) {
         _builder.fromUserId = value
       }
     /**
      * `string from_user_id = 2;`
      */
-    public fun clearFromUserId() {
+    fun clearFromUserId() {
       _builder.clearFromUserId()
     }
 
     /**
      * `string from_username = 3;`
      */
-    public var fromUsername: kotlin.String
-      @kotlin.jvm.JvmName("getFromUsername")
+    var fromUsername: String
+      @JvmName("getFromUsername")
         get() = _builder.fromUsername
-      @kotlin.jvm.JvmName("setFromUsername")
+      @JvmName("setFromUsername")
         set(value) {
         _builder.fromUsername = value
       }
     /**
      * `string from_username = 3;`
      */
-    public fun clearFromUsername() {
+    fun clearFromUsername() {
       _builder.clearFromUsername()
     }
 
     /**
      * `.listentogether.TrackInfo track_info = 4;`
      */
-    public var trackInfo: com.sakayori.music.listentogether.proto.Listentogether.TrackInfo
-      @kotlin.jvm.JvmName("getTrackInfo")
+    var trackInfo: Listentogether.TrackInfo
+      @JvmName("getTrackInfo")
         get() = _builder.trackInfo
-      @kotlin.jvm.JvmName("setTrackInfo")
+      @JvmName("setTrackInfo")
         set(value) {
         _builder.trackInfo = value
       }
     /**
      * `.listentogether.TrackInfo track_info = 4;`
      */
-    public fun clearTrackInfo() {
+    fun clearTrackInfo() {
       _builder.clearTrackInfo()
     }
     /**
      * `.listentogether.TrackInfo track_info = 4;`
      * @return Whether the trackInfo field is set.
      */
-    public fun hasTrackInfo(): kotlin.Boolean {
+    fun hasTrackInfo(): Boolean {
       return _builder.hasTrackInfo()
     }
 
-    public val SuggestionReceivedPayloadKt.Dsl.trackInfoOrNull: com.sakayori.music.listentogether.proto.Listentogether.TrackInfo?
+    val Dsl.trackInfoOrNull: Listentogether.TrackInfo?
       get() = _builder.trackInfoOrNull
   }
 }
-@kotlin.jvm.JvmSynthetic
-public inline fun com.sakayori.music.listentogether.proto.Listentogether.SuggestionReceivedPayload.copy(block: `com.sakayori.music.listentogether.proto`.SuggestionReceivedPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.SuggestionReceivedPayload =
-  `com.sakayori.music.listentogether.proto`.SuggestionReceivedPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+@JvmSynthetic
+inline fun Listentogether.SuggestionReceivedPayload.copy(block: SuggestionReceivedPayloadKt.Dsl.() -> Unit): Listentogether.SuggestionReceivedPayload =
+  SuggestionReceivedPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 
-public val com.sakayori.music.listentogether.proto.Listentogether.SuggestionReceivedPayloadOrBuilder.trackInfoOrNull: com.sakayori.music.listentogether.proto.Listentogether.TrackInfo?
+val Listentogether.SuggestionReceivedPayloadOrBuilder.trackInfoOrNull: Listentogether.TrackInfo?
   get() = if (hasTrackInfo()) getTrackInfo() else null
 

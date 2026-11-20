@@ -5,113 +5,113 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.sakayori.music.listentogether.proto;
+package com.sakayori.music.listentogether.proto
 
-@kotlin.jvm.JvmName("-initializereconnectedPayload")
-public inline fun reconnectedPayload(block: com.sakayori.music.listentogether.proto.ReconnectedPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.ReconnectedPayload =
-  com.sakayori.music.listentogether.proto.ReconnectedPayloadKt.Dsl._create(com.sakayori.music.listentogether.proto.Listentogether.ReconnectedPayload.newBuilder()).apply { block() }._build()
+@JvmName("-initializereconnectedPayload")
+inline fun reconnectedPayload(block: ReconnectedPayloadKt.Dsl.() -> Unit): Listentogether.ReconnectedPayload =
+  ReconnectedPayloadKt.Dsl._create(Listentogether.ReconnectedPayload.newBuilder()).apply { block() }._build()
 /**
  * Protobuf type `listentogether.ReconnectedPayload`
  */
-public object ReconnectedPayloadKt {
-  @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+object ReconnectedPayloadKt {
+  @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
-  public class Dsl private constructor(
-    private val _builder: com.sakayori.music.listentogether.proto.Listentogether.ReconnectedPayload.Builder
+  class Dsl private constructor(
+    private val _builder: Listentogether.ReconnectedPayload.Builder
   ) {
-    public companion object {
-      @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-      internal fun _create(builder: com.sakayori.music.listentogether.proto.Listentogether.ReconnectedPayload.Builder): Dsl = Dsl(builder)
+    companion object {
+      @JvmSynthetic
+    @PublishedApi
+      internal fun _create(builder: Listentogether.ReconnectedPayload.Builder): Dsl = Dsl(builder)
     }
 
-    @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-    internal fun _build(): com.sakayori.music.listentogether.proto.Listentogether.ReconnectedPayload = _builder.build()
+    @JvmSynthetic
+  @PublishedApi
+    internal fun _build(): Listentogether.ReconnectedPayload = _builder.build()
 
     /**
      * `string room_code = 1;`
      */
-    public var roomCode: kotlin.String
-      @kotlin.jvm.JvmName("getRoomCode")
+    var roomCode: String
+      @JvmName("getRoomCode")
         get() = _builder.roomCode
-      @kotlin.jvm.JvmName("setRoomCode")
+      @JvmName("setRoomCode")
         set(value) {
         _builder.roomCode = value
       }
     /**
      * `string room_code = 1;`
      */
-    public fun clearRoomCode() {
+    fun clearRoomCode() {
       _builder.clearRoomCode()
     }
 
     /**
      * `string user_id = 2;`
      */
-    public var userId: kotlin.String
-      @kotlin.jvm.JvmName("getUserId")
+    var userId: String
+      @JvmName("getUserId")
         get() = _builder.userId
-      @kotlin.jvm.JvmName("setUserId")
+      @JvmName("setUserId")
         set(value) {
         _builder.userId = value
       }
     /**
      * `string user_id = 2;`
      */
-    public fun clearUserId() {
+    fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
      * `.listentogether.RoomState state = 3;`
      */
-    public var state: com.sakayori.music.listentogether.proto.Listentogether.RoomState
-      @kotlin.jvm.JvmName("getState")
+    var state: Listentogether.RoomState
+      @JvmName("getState")
         get() = _builder.state
-      @kotlin.jvm.JvmName("setState")
+      @JvmName("setState")
         set(value) {
         _builder.state = value
       }
     /**
      * `.listentogether.RoomState state = 3;`
      */
-    public fun clearState() {
+    fun clearState() {
       _builder.clearState()
     }
     /**
      * `.listentogether.RoomState state = 3;`
      * @return Whether the state field is set.
      */
-    public fun hasState(): kotlin.Boolean {
+    fun hasState(): Boolean {
       return _builder.hasState()
     }
 
-    public val ReconnectedPayloadKt.Dsl.stateOrNull: com.sakayori.music.listentogether.proto.Listentogether.RoomState?
+    val Dsl.stateOrNull: Listentogether.RoomState?
       get() = _builder.stateOrNull
 
     /**
      * `bool is_host = 4;`
      */
-    public var isHost: kotlin.Boolean
-      @kotlin.jvm.JvmName("getIsHost")
+    var isHost: Boolean
+      @JvmName("getIsHost")
         get() = _builder.isHost
-      @kotlin.jvm.JvmName("setIsHost")
+      @JvmName("setIsHost")
         set(value) {
         _builder.isHost = value
       }
     /**
      * `bool is_host = 4;`
      */
-    public fun clearIsHost() {
+    fun clearIsHost() {
       _builder.clearIsHost()
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
-public inline fun com.sakayori.music.listentogether.proto.Listentogether.ReconnectedPayload.copy(block: `com.sakayori.music.listentogether.proto`.ReconnectedPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.ReconnectedPayload =
-  `com.sakayori.music.listentogether.proto`.ReconnectedPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+@JvmSynthetic
+inline fun Listentogether.ReconnectedPayload.copy(block: ReconnectedPayloadKt.Dsl.() -> Unit): Listentogether.ReconnectedPayload =
+  ReconnectedPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 
-public val com.sakayori.music.listentogether.proto.Listentogether.ReconnectedPayloadOrBuilder.stateOrNull: com.sakayori.music.listentogether.proto.Listentogether.RoomState?
+val Listentogether.ReconnectedPayloadOrBuilder.stateOrNull: Listentogether.RoomState?
   get() = if (hasState()) getState() else null
 

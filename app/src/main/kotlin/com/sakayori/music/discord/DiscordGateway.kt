@@ -37,7 +37,7 @@ sealed interface GatewayEvent {
 class DiscordGateway(
     private val appId: String,
     private val tokenProvider: suspend () -> String,
-    private val externalScope: kotlinx.coroutines.CoroutineScope,
+    private val externalScope: CoroutineScope,
 ) {
 
     private val _events = MutableSharedFlow<GatewayEvent>(

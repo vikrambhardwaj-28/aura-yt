@@ -3119,7 +3119,7 @@ object YouTube {
             (1..16)
                 .map {
                     "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_"[
-                        Random.Default.nextInt(
+                        Random.nextInt(
                             0,
                             64,
                         ),

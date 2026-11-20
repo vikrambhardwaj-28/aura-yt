@@ -115,6 +115,7 @@ import com.sakayori.music.db.entities.Artist
 import com.sakayori.music.db.entities.ArtistEntity
 import com.sakayori.music.db.entities.Playlist
 import com.sakayori.music.db.entities.Song
+import com.sakayori.music.ui.theme.glassBackground
 import com.sakayori.music.extensions.toMediaItem
 import com.sakayori.music.models.MediaMetadata
 import com.sakayori.music.playback.queues.LocalAlbumRadio
@@ -304,21 +305,23 @@ inline fun ListItem(
         modifier = if (isActive) {
             modifier // playing highlight
                 .height(ListItemHeight)
-                .padding(horizontal = 8.dp)
-                .clip(RoundedCornerShape(8.dp))
-                .background(
-                    color = // selected active
-                        if (isSelected == true) MaterialTheme.colorScheme.primary.copy(alpha = 0.4f)
-                        else MaterialTheme.colorScheme.secondaryContainer
+                .padding(horizontal = 8.dp, vertical = 2.dp)
+                .clip(RoundedCornerShape(12.dp))
+                .glassBackground(
+                    color = MaterialTheme.colorScheme.primary.copy(alpha = 0.35f),
+                    shape = RoundedCornerShape(12.dp)
                 )
         } else if (isSelected == true) {
-            modifier // inactive selected
+            modifier // selected
                 .height(ListItemHeight)
-                .padding(horizontal = 8.dp)
-                .clip(RoundedCornerShape(8.dp))
-                .background(color = MaterialTheme.colorScheme.inversePrimary.copy(alpha = 0.4f))
+                .padding(horizontal = 8.dp, vertical = 2.dp)
+                .clip(RoundedCornerShape(12.dp))
+                .glassBackground(
+                    color = MaterialTheme.colorScheme.inversePrimary.copy(alpha = 0.35f),
+                    shape = RoundedCornerShape(12.dp)
+                )
         } else {
-            modifier // default
+            modifier // default clean Apple Music list row
                 .height(ListItemHeight)
                 .padding(horizontal = 8.dp)
         }
@@ -451,10 +454,16 @@ fun GridItem(
     Column(
         modifier = if (fillMaxWidth) {
             modifier
+                .padding(8.dp)
+                .clip(RoundedCornerShape(20.dp))
+                .glassBackground(shape = RoundedCornerShape(20.dp))
                 .padding(12.dp)
                 .fillMaxWidth()
         } else {
             modifier
+                .padding(8.dp)
+                .clip(RoundedCornerShape(20.dp))
+                .glassBackground(shape = RoundedCornerShape(20.dp))
                 .padding(12.dp)
                 .width(gridHeight * thumbnailRatio)
         }

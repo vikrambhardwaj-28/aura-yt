@@ -173,7 +173,7 @@ fun ListenTogetherScreen(
 
                 is ListenTogetherEvent.RoomCreated -> {
                     isCreatingRoom = false
-                    val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as android.content.ClipboardManager
+                    val clipboard = context.getSystemService("clipboard") as android.content.ClipboardManager
                     val clip = android.content.ClipData.newPlainText("ListenTogetherRoom", event.roomCode)
                     clipboard.setPrimaryClip(clip)
                 }
@@ -707,7 +707,7 @@ private fun RoomStatusCard(
                 ) {
                     FilledTonalButton(
                         onClick = {
-                            val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as android.content.ClipboardManager
+                            val clipboard = context.getSystemService("clipboard") as android.content.ClipboardManager
                             val clip = android.content.ClipData.newPlainText("Listen Together Link", inviteLink)
                             clipboard.setPrimaryClip(clip)
                             Toast.makeText(context, R.string.copied_to_clipboard, Toast.LENGTH_SHORT).show()
@@ -725,7 +725,7 @@ private fun RoomStatusCard(
 
                     FilledTonalButton(
                         onClick = {
-                            val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as android.content.ClipboardManager
+                            val clipboard = context.getSystemService("clipboard") as android.content.ClipboardManager
                             val clip = android.content.ClipData.newPlainText("Room Code", roomCode)
                             clipboard.setPrimaryClip(clip)
                             Toast.makeText(context, R.string.copied_to_clipboard, Toast.LENGTH_SHORT).show()

@@ -5,44 +5,44 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.sakayori.music.listentogether.proto;
+package com.sakayori.music.listentogether.proto
 
-@kotlin.jvm.JvmName("-initializebufferWaitPayload")
-public inline fun bufferWaitPayload(block: com.sakayori.music.listentogether.proto.BufferWaitPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.BufferWaitPayload =
-  com.sakayori.music.listentogether.proto.BufferWaitPayloadKt.Dsl._create(com.sakayori.music.listentogether.proto.Listentogether.BufferWaitPayload.newBuilder()).apply { block() }._build()
+@JvmName("-initializebufferWaitPayload")
+inline fun bufferWaitPayload(block: BufferWaitPayloadKt.Dsl.() -> Unit): Listentogether.BufferWaitPayload =
+  BufferWaitPayloadKt.Dsl._create(Listentogether.BufferWaitPayload.newBuilder()).apply { block() }._build()
 /**
  * Protobuf type `listentogether.BufferWaitPayload`
  */
-public object BufferWaitPayloadKt {
-  @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+object BufferWaitPayloadKt {
+  @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
-  public class Dsl private constructor(
-    private val _builder: com.sakayori.music.listentogether.proto.Listentogether.BufferWaitPayload.Builder
+  class Dsl private constructor(
+    private val _builder: Listentogether.BufferWaitPayload.Builder
   ) {
-    public companion object {
-      @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-      internal fun _create(builder: com.sakayori.music.listentogether.proto.Listentogether.BufferWaitPayload.Builder): Dsl = Dsl(builder)
+    companion object {
+      @JvmSynthetic
+    @PublishedApi
+      internal fun _create(builder: Listentogether.BufferWaitPayload.Builder): Dsl = Dsl(builder)
     }
 
-    @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-    internal fun _build(): com.sakayori.music.listentogether.proto.Listentogether.BufferWaitPayload = _builder.build()
+    @JvmSynthetic
+  @PublishedApi
+    internal fun _build(): Listentogether.BufferWaitPayload = _builder.build()
 
     /**
      * `string track_id = 1;`
      */
-    public var trackId: kotlin.String
-      @kotlin.jvm.JvmName("getTrackId")
+    var trackId: String
+      @JvmName("getTrackId")
         get() = _builder.trackId
-      @kotlin.jvm.JvmName("setTrackId")
+      @JvmName("setTrackId")
         set(value) {
         _builder.trackId = value
       }
     /**
      * `string track_id = 1;`
      */
-    public fun clearTrackId() {
+    fun clearTrackId() {
       _builder.clearTrackId()
     }
 
@@ -50,14 +50,14 @@ public object BufferWaitPayloadKt {
      * An uninstantiable, behaviorless type to represent the field in
      * generics.
      */
-    @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
-    public class WaitingForProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
+    @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+    class WaitingForProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
      * `repeated string waiting_for = 2;`
      * @return A list containing the waitingFor.
      */
-    public val waitingFor: com.google.protobuf.kotlin.DslList<kotlin.String, WaitingForProxy>
-    @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+    val waitingFor: com.google.protobuf.kotlin.DslList<String, WaitingForProxy>
+    @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
       get() = com.google.protobuf.kotlin.DslList(
         _builder.waitingForList
       )
@@ -65,38 +65,38 @@ public object BufferWaitPayloadKt {
      * `repeated string waiting_for = 2;`
      * @param value The waitingFor to add.
      */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addWaitingFor")
-    public fun com.google.protobuf.kotlin.DslList<kotlin.String, WaitingForProxy>.add(value: kotlin.String) {
+    @JvmSynthetic
+@JvmName("addWaitingFor")
+    fun com.google.protobuf.kotlin.DslList<String, WaitingForProxy>.add(value: String) {
       _builder.addWaitingFor(value)
     }
     /**
      * `repeated string waiting_for = 2;`
      * @param value The waitingFor to add.
      */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignWaitingFor")
+    @JvmSynthetic
+@JvmName("plusAssignWaitingFor")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, WaitingForProxy>.plusAssign(value: kotlin.String) {
+    inline operator fun com.google.protobuf.kotlin.DslList<String, WaitingForProxy>.plusAssign(value: String) {
       add(value)
     }
     /**
      * `repeated string waiting_for = 2;`
      * @param values The waitingFor to add.
      */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addAllWaitingFor")
-    public fun com.google.protobuf.kotlin.DslList<kotlin.String, WaitingForProxy>.addAll(values: kotlin.collections.Iterable<kotlin.String>) {
+    @JvmSynthetic
+@JvmName("addAllWaitingFor")
+    fun com.google.protobuf.kotlin.DslList<String, WaitingForProxy>.addAll(values: Iterable<String>) {
       _builder.addAllWaitingFor(values)
     }
     /**
      * `repeated string waiting_for = 2;`
      * @param values The waitingFor to add.
      */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignAllWaitingFor")
+    @JvmSynthetic
+@JvmName("plusAssignAllWaitingFor")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, WaitingForProxy>.plusAssign(values: kotlin.collections.Iterable<kotlin.String>) {
+    inline operator fun com.google.protobuf.kotlin.DslList<String, WaitingForProxy>.plusAssign(values: Iterable<String>) {
       addAll(values)
     }
     /**
@@ -104,20 +104,20 @@ public object BufferWaitPayloadKt {
      * @param index The index to set the value at.
      * @param value The waitingFor to set.
      */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("setWaitingFor")
-    public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, WaitingForProxy>.set(index: kotlin.Int, value: kotlin.String) {
+    @JvmSynthetic
+@JvmName("setWaitingFor")
+    operator fun com.google.protobuf.kotlin.DslList<String, WaitingForProxy>.set(index: Int, value: String) {
       _builder.setWaitingFor(index, value)
     }/**
      * `repeated string waiting_for = 2;`
      */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("setWaitingFor")
-    public fun com.google.protobuf.kotlin.DslList<kotlin.String, WaitingForProxy>.clear() {
+    @JvmSynthetic
+@JvmName("setWaitingFor")
+      fun com.google.protobuf.kotlin.DslList<String, WaitingForProxy>.clear() {
       _builder.clearWaitingFor()
     }}
 }
-@kotlin.jvm.JvmSynthetic
-public inline fun com.sakayori.music.listentogether.proto.Listentogether.BufferWaitPayload.copy(block: `com.sakayori.music.listentogether.proto`.BufferWaitPayloadKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.BufferWaitPayload =
-  `com.sakayori.music.listentogether.proto`.BufferWaitPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+@JvmSynthetic
+inline fun Listentogether.BufferWaitPayload.copy(block: BufferWaitPayloadKt.Dsl.() -> Unit): Listentogether.BufferWaitPayload =
+  BufferWaitPayloadKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

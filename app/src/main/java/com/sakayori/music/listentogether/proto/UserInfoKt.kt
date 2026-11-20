@@ -5,11 +5,11 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.sakayori.music.listentogether.proto;
+package com.sakayori.music.listentogether.proto
 
-@kotlin.jvm.JvmName("-initializeuserInfo")
-public inline fun userInfo(block: com.sakayori.music.listentogether.proto.UserInfoKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.UserInfo =
-  com.sakayori.music.listentogether.proto.UserInfoKt.Dsl._create(com.sakayori.music.listentogether.proto.Listentogether.UserInfo.newBuilder()).apply { block() }._build()
+@JvmName("-initializeuserInfo")
+inline fun userInfo(block: UserInfoKt.Dsl.() -> Unit): Listentogether.UserInfo =
+  UserInfoKt.Dsl._create(Listentogether.UserInfo.newBuilder()).apply { block() }._build()
 /**
  * ```
  * User information
@@ -17,92 +17,92 @@ public inline fun userInfo(block: com.sakayori.music.listentogether.proto.UserIn
  *
  * Protobuf type `listentogether.UserInfo`
  */
-public object UserInfoKt {
-  @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+object UserInfoKt {
+  @OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
-  public class Dsl private constructor(
-    private val _builder: com.sakayori.music.listentogether.proto.Listentogether.UserInfo.Builder
+  class Dsl private constructor(
+    private val _builder: Listentogether.UserInfo.Builder
   ) {
-    public companion object {
-      @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-      internal fun _create(builder: com.sakayori.music.listentogether.proto.Listentogether.UserInfo.Builder): Dsl = Dsl(builder)
+    companion object {
+      @JvmSynthetic
+    @PublishedApi
+      internal fun _create(builder: Listentogether.UserInfo.Builder): Dsl = Dsl(builder)
     }
 
-    @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-    internal fun _build(): com.sakayori.music.listentogether.proto.Listentogether.UserInfo = _builder.build()
+    @JvmSynthetic
+  @PublishedApi
+    internal fun _build(): Listentogether.UserInfo = _builder.build()
 
     /**
      * `string user_id = 1;`
      */
-    public var userId: kotlin.String
-      @kotlin.jvm.JvmName("getUserId")
+    var userId: String
+      @JvmName("getUserId")
         get() = _builder.userId
-      @kotlin.jvm.JvmName("setUserId")
+      @JvmName("setUserId")
         set(value) {
         _builder.userId = value
       }
     /**
      * `string user_id = 1;`
      */
-    public fun clearUserId() {
+    fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
      * `string username = 2;`
      */
-    public var username: kotlin.String
-      @kotlin.jvm.JvmName("getUsername")
+    var username: String
+      @JvmName("getUsername")
         get() = _builder.username
-      @kotlin.jvm.JvmName("setUsername")
+      @JvmName("setUsername")
         set(value) {
         _builder.username = value
       }
     /**
      * `string username = 2;`
      */
-    public fun clearUsername() {
+    fun clearUsername() {
       _builder.clearUsername()
     }
 
     /**
      * `bool is_host = 3;`
      */
-    public var isHost: kotlin.Boolean
-      @kotlin.jvm.JvmName("getIsHost")
+    var isHost: Boolean
+      @JvmName("getIsHost")
         get() = _builder.isHost
-      @kotlin.jvm.JvmName("setIsHost")
+      @JvmName("setIsHost")
         set(value) {
         _builder.isHost = value
       }
     /**
      * `bool is_host = 3;`
      */
-    public fun clearIsHost() {
+    fun clearIsHost() {
       _builder.clearIsHost()
     }
 
     /**
      * `bool is_connected = 4;`
      */
-    public var isConnected: kotlin.Boolean
-      @kotlin.jvm.JvmName("getIsConnected")
+    var isConnected: Boolean
+      @JvmName("getIsConnected")
         get() = _builder.isConnected
-      @kotlin.jvm.JvmName("setIsConnected")
+      @JvmName("setIsConnected")
         set(value) {
         _builder.isConnected = value
       }
     /**
      * `bool is_connected = 4;`
      */
-    public fun clearIsConnected() {
+    fun clearIsConnected() {
       _builder.clearIsConnected()
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
-public inline fun com.sakayori.music.listentogether.proto.Listentogether.UserInfo.copy(block: `com.sakayori.music.listentogether.proto`.UserInfoKt.Dsl.() -> kotlin.Unit): com.sakayori.music.listentogether.proto.Listentogether.UserInfo =
-  `com.sakayori.music.listentogether.proto`.UserInfoKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+@JvmSynthetic
+inline fun Listentogether.UserInfo.copy(block: UserInfoKt.Dsl.() -> Unit): Listentogether.UserInfo =
+  UserInfoKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 
